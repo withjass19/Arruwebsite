@@ -1,0 +1,38 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+:root{
+    --bg-color: #13072E;
+    --color: #B3AAFF;
+}
+.main-bg-color{
+    background-color: #13072E;
+}
+.main-color{
+    color: #B3AAFF;
+}
+
+.bg{
+    background: rgb(24,10,55);
+    background: linear-gradient(130deg, rgba(24,10,55,1) 35%, rgba(62,33,128,1) 100%);
+}
+.text{
+    color: white;
+    font-size: 3.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    line-height: 4.3rem;
+}
+.text-get-start{
+    background-color: var(--color);
+    color: #13072E;
+    font-weight: 600;
+    letter-spacing: 0.03rem;
+}
+.text-get-start:hover{
+    color: var(--color);
+    background-color: var(--bg-color);
+    border: 2px solid var(--color);
+}
