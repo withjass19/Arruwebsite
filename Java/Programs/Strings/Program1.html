@@ -45,23 +45,41 @@
 
                     <p class="fs-5 py-3">1.Program to Check if a String contains only digits?</p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>def contains_only_digits(input_string):
-                # Check if all characters in the string are digits
-                return input_string.isdigit()
-            
-            # Get input from the user
-            user_input = input("Enter a string: ")
-            
-            # Check if the string contains only digits and print the result
-            if contains_only_digits(user_input):
-                print("The string contains only digits.")
-            else:
-                print("The string does not contain only digits.")
-            
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.util.Scanner;
+
+                public class CheckDigitsInString {
+                    public static void main(String[] args) {
+                        // Get input from the user
+                        Scanner scanner = new Scanner(System.in);
+                        System.out.print("Enter a string: ");
+                        String userInput = scanner.nextLine();
+                
+                        // Check if the string contains only digits and print the result
+                        if (containsOnlyDigits(userInput)) {
+                            System.out.println("The string contains only digits.");
+                        } else {
+                            System.out.println("The string does not contain only digits.");
+                        }
+                    }
+                
+                    // Function to check if a string contains only digits
+                    private static boolean containsOnlyDigits(String inputString) {
+                        // Check each character in the string
+                        for (char c : inputString.toCharArray()) {
+                            // If any character is not a digit, return false
+                            if (!Character.isDigit(c)) {
+                                return false;
+                            }
+                        }
+                        // If all characters are digits, return true
+                        return true;
+                    }
+                }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Enter a string: 12345<br>
+ Enter a string: 12345<br>
 The string contains only digits.
 
 </pre>
