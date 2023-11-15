@@ -43,30 +43,27 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">2.Program to perform Deep Copy for String? </p>
+                    <p class="fs-5 py-3">5. Program to append the string using StringBuffer class </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-public class DeepCopyString {
-public static void main(String[] args) {
+public class AppendStringBuffer {
+    public static void main(String[] args) {
+        // Create a StringBuffer object
+        StringBuffer stringBuffer = new StringBuffer("Hello, ");
 
-   // Original string
-    String originalString = "Hello, World!";<br>
+        // Append a string to the StringBuffer
+        stringBuffer.append("World!");
 
-    // Performing a "deep copy" by creating a new string
-    String copiedString = new String(originalString);<br>
-
-    // Display the original and copied strings
- System.out.println("Original String: " + originalString);
- System.out.println("Copied String: " + copiedString);
-     }
+        // Display the result
+       System.out.println("Appended String: " + stringBuffer.toString());
+    }
 }
-            
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Original String: Hello, World!<br>
-Copied String: Hello, World!
-    
+    Appended String: Hello, World!
+
 </pre>
                 </div>
             </div>

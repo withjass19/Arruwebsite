@@ -43,29 +43,43 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">2.Program to perform Deep Copy for String? </p>
+                    <p class="fs-5 py-3">4. Program to remove all occurrences of a given character from input String?</p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-public class DeepCopyString {
-public static void main(String[] args) {
+import java.util.Scanner;
+public class RemoveCharacterFromString {
+    public static void main(String[] args) {
+        // Get input from the user
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
 
-   // Original string
-    String originalString = "Hello, World!";<br>
+        // Get the character to be removed
+        System.out.print("Enter the character to remove: ");
+        char charToRemove = scanner.next().charAt(0);
 
-    // Performing a "deep copy" by creating a new string
-    String copiedString = new String(originalString);<br>
+        // Remove all occurrences of the given character
+        String resultString = removeCharacter(inputString, charToRemove);
 
-    // Display the original and copied strings
- System.out.println("Original String: " + originalString);
- System.out.println("Copied String: " + copiedString);
-     }
+        // Display the original and modified strings
+        System.out.println("Original String: " + inputString);
+        System.out.println("String after removing '" + charToRemove + "': " + resultString);
+    }
+
+    // Function to remove all occurrences of a character from a string
+    private static String removeCharacter(String inputString, char charToRemove) {
+        // Using replaceAll to remove all occurrences of the character
+        return inputString.replaceAll(String.valueOf(charToRemove), "");
+   }
 }
-            
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Original String: Hello, World!<br>
-Copied String: Hello, World!
+    Enter a string: programming is fun
+    Enter the character to remove: g
+    Original String: programming is fun
+    String after removing 'g': proammin is fun
     
 </pre>
                 </div>

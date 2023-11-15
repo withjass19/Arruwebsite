@@ -43,30 +43,47 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">2.Program to perform Deep Copy for String? </p>
+                    <p class="fs-5 py-3">10. Program to check whether a string is a Palindrome </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-public class DeepCopyString {
-public static void main(String[] args) {
+import java.util.Scanner;
 
-   // Original string
-    String originalString = "Hello, World!";<br>
+public class PalindromeChecker {
+    public static void main(String[] args) {
+        // Get input from the user
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine().toLowerCase(); // Case-insensitive comparison
 
-    // Performing a "deep copy" by creating a new string
-    String copiedString = new String(originalString);<br>
+        // Check if the string is a palindrome
+        if (isPalindrome(inputString)) {
+            System.out.println("The string is a palindrome.");
+        } else {
+            System.out.println("The string is not a palindrome.");
+        }
+    }
 
-    // Display the original and copied strings
- System.out.println("Original String: " + originalString);
- System.out.println("Copied String: " + copiedString);
-     }
+    // Function to check if a string is a palindrome
+    private static boolean isPalindrome(String str) {
+        // Remove spaces and convert the string to a char array
+        char[] charArray = str.replaceAll("\\s", "").toCharArray();
+
+        // Check if the string is the same when read forward and backward
+        for (int i = 0; i < charArray.length / 2; i++) {
+            if (charArray[i] != charArray[charArray.length - 1 - i]) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
-            
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Original String: Hello, World!<br>
-Copied String: Hello, World!
-    
+Enter a string: A man a plan a canal Panama
+The string is a palindrome.
+
 </pre>
                 </div>
             </div>

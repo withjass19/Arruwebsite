@@ -43,29 +43,36 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">2.Program to perform Deep Copy for String? </p>
+                    <p class="fs-5 py-3">3. Program to prove String is immutable programmatically? </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-public class DeepCopyString {
-public static void main(String[] args) {
+public class ImmutableStringExample {
+    public static void main(String[] args) {
+        // Original string
+        String originalString = "Hello, World!";
 
-   // Original string
-    String originalString = "Hello, World!";<br>
+        // Demonstrate immutability by performing operations
+        String modifiedString = originalString.concat(" Welcome");
 
-    // Performing a "deep copy" by creating a new string
-    String copiedString = new String(originalString);<br>
+        // Display original and modified strings
+        System.out.println("Original String: " + originalString);
+        System.out.println("Modified String: " + modifiedString);
 
-    // Display the original and copied strings
- System.out.println("Original String: " + originalString);
- System.out.println("Copied String: " + copiedString);
-     }
+        // Check if the original string is still the same
+       if (originalString.equals(modifiedString)) {
+            System.out.println("The original string is immutable.");
+        } else {
+            System.out.println("The original string is mutable.");
+        }
+    }
 }
-            
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Original String: Hello, World!<br>
-Copied String: Hello, World!
+    Original String: Hello, World!
+    Modified String: Hello, World! Welcome
+    The original string is immutable.
     
 </pre>
                 </div>

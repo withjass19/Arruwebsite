@@ -43,30 +43,30 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">2.Program to perform Deep Copy for String? </p>
+                    <p class="fs-5 py-3">8. Program to Add Characters to a String </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-public class DeepCopyString {
-public static void main(String[] args) {
+public class AddCharactersToString {
+    public static void main(String[] args) {
+        // Original string
+        String originalString = "Hello, ";
 
-   // Original string
-    String originalString = "Hello, World!";<br>
+        // Characters to add
+        String charactersToAdd = "World!";
 
-    // Performing a "deep copy" by creating a new string
-    String copiedString = new String(originalString);<br>
+        // Using the + operator to add characters
+       String modifiedString = originalString + charactersToAdd;
 
-    // Display the original and copied strings
- System.out.println("Original String: " + originalString);
- System.out.println("Copied String: " + copiedString);
-     }
+        // Display the result
+        System.out.println("Modified String: " + modifiedString);
+    }
 }
-            
-</code></pre>
+                
+</code></pre>     
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Original String: Hello, World!<br>
-Copied String: Hello, World!
-    
+    Modified String: Hello, World!
+
 </pre>
                 </div>
             </div>

@@ -43,30 +43,51 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">2.Program to perform Deep Copy for String? </p>
+                    <p class="fs-5 py-3">9. Program to Check Anagram </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-public class DeepCopyString {
-public static void main(String[] args) {
+import java.util.Arrays;
+import java.util.Scanner;
+ 
+ public class AnagramChecker {
+     public static void main(String[] args) {
+         // Get input from the user
+         Scanner scanner = new Scanner(System.in);
+         System.out.print("Enter the first string: ");
+         String str1 = scanner.nextLine().toLowerCase(); // Case-insensitive comparison
+         System.out.print("Enter the second string: ");
+         String str2 = scanner.nextLine().toLowerCase(); // Case-insensitive comparison
 
-   // Original string
-    String originalString = "Hello, World!";<br>
-
-    // Performing a "deep copy" by creating a new string
-    String copiedString = new String(originalString);<br>
-
-    // Display the original and copied strings
- System.out.println("Original String: " + originalString);
- System.out.println("Copied String: " + copiedString);
+         // Check if the strings are anagrams
+         if (areAnagrams(str1, str2)) {
+             System.out.println("The strings are anagrams.");
+         } else {
+             System.out.println("The strings are not anagrams.");
+         }
+     }
+ 
+     // Function to check if two strings are anagrams
+     private static boolean areAnagrams(String str1, String str2) {
+         // Remove spaces and convert strings to char arrays
+         char[] charArray1 = str1.replaceAll("\\s", "").toCharArray();
+         char[] charArray2 = str2.replaceAll("\\s", "").toCharArray();
+ 
+         // Sort the char arrays
+         Arrays.sort(charArray1);
+         Arrays.sort(charArray2);
+ 
+         // Compare the sorted char arrays
+        return Arrays.equals(charArray1, charArray2);
      }
 }
-            
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Original String: Hello, World!<br>
-Copied String: Hello, World!
-    
+Enter the first string: listen
+Enter the second string: silent
+The strings are anagrams.
+
 </pre>
                 </div>
             </div>
