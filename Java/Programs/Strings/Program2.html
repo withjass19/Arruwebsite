@@ -47,16 +47,18 @@
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
 public class DeepCopyString {
-public static void main(String[] args) {
-   // Original string
-    String originalString = "Hello, World!";
-    // Performing a "deep copy" by creating a new string
-    String copiedString = new String(originalString);
-    // Display the original and copied strings
- System.out.println("Original String: " + originalString);
- System.out.println("Copied String: " + copiedString);
-                }
-            }
+    public static void main(String[] args) {
+        // Original string
+        String originalString = "Hello, World!";
+
+        // Performing a "deep copy" by creating a new string
+        String copiedString = new String(originalString);
+        
+        // Display the original and copied strings
+        System.out.println("Original String: " + originalString);
+        System.out.println("Copied String: " + copiedString);
+    }
+}
             
 </code></pre>
 <h4 class="py-3">Output</h4>
