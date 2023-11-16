@@ -43,18 +43,57 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">Multithreading</p>
 
-                    <p class="fs-5 py-3">Program name</p>
+                    <p class="fs-5 py-3">10. Create the program to create multiple threads, set its name and its priority.  </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+class MyThread extends Thread {
+    public MyThread(String name, int priority) {
+        super(name);
+        setPriority(priority);
+    }
+
+    public void run() {
+        System.out.println("Thread " + getName() + " with priority " + getPriority() + " is starting");
+        
+        // Simulate some work
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Thread " + getName() + " is exiting");
     }
 }
+
+public class ThreadExample {
+    public static void main(String[] args) {
+        // Create multiple threads
+        MyThread thread1 = new MyThread("Thread-1", Thread.MAX_PRIORITY);
+        MyThread thread2 = new MyThread("Thread-2", Thread.MIN_PRIORITY);
+
+        // Start the threads
+        thread1.start();
+        thread2.start();
+
+        // Wait for threads to finish
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Thread Thread-1 with priority 10 is starting
+Thread Thread-2 with priority 1 is starting
+Thread Thread-2 is exiting
+Thread Thread-1 is exiting
+
 </pre>
                 </div>
             </div>

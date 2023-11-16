@@ -43,18 +43,74 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">Multithreading</p>
 
-                    <p class="fs-5 py-3">Program name</p>
+                    <p class="fs-5 py-3">8. Create the program to create multiple threads by using Runnbale interface  </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+class Task implements Runnable {
+    private String taskName;
+
+    public Task(String taskName) {
+        this.taskName = taskName;
+    }
+
+    @Override
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(taskName + " - Count: " + i);
+            try {
+                Thread.sleep(100); // Simulate some work being done
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
+
+public class MultiThreadExample {
+    public static void main(String[] args) {
+        // Create multiple threads using the Runnable interface
+        Thread thread1 = new Thread(new Task("Task 1"));
+        Thread thread2 = new Thread(new Task("Task 2"));
+        Thread thread3 = new Thread(new Task("Task 3"));
+
+        // Start the threads
+        thread1.start();
+        thread2.start();
+        thread3.start();
+
+        // Wait for all threads to finish
+        try {
+            thread1.join();
+            thread2.join();
+            thread3.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("All threads have finished.");
+    }
+}
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Task 1 - Count: 1
+Task 2 - Count: 1
+Task 3 - Count: 1
+Task 1 - Count: 2
+Task 2 - Count: 2
+Task 3 - Count: 2
+Task 1 - Count: 3
+Task 2 - Count: 3
+Task 3 - Count: 3
+Task 1 - Count: 4
+Task 2 - Count: 4
+Task 3 - Count: 4
+Task 1 - Count: 5
+Task 2 - Count: 5
+Task 3 - Count: 5
+All threads have finished.
+
 </pre>
                 </div>
             </div>

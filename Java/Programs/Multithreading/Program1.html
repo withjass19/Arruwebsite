@@ -43,18 +43,25 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">Multithreading</p>
 
-                    <p class="fs-5 py-3">Program name</p>
+                    <p class="fs-5 py-3">1. Write a Java program to create a basic Java thread that prints "Hello, World!" when executed.</p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class HelloWorldThread extends Thread {
+    public void run() {
+       System.out.println("Hello, World!");
+    }
+
+    public static void main(String[] args) {
+       HelloWorldThread helloThread = new HelloWorldThread();
+        helloThread.start();
     }
 }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Hello, World!
+
 </pre>
                 </div>
             </div>

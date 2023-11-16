@@ -43,18 +43,74 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">Multithreading</p>
 
-                    <p class="fs-5 py-3">Program name</p>
+                    <p class="fs-5 py-3">9. Create the program to create multiple threads by using Thread class  </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+class Task extends Thread {
+    private String taskName;
+
+    public Task(String taskName) {
+        this.taskName = taskName;
+    }
+
+    @Override
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(taskName + " - Count: " + i);
+            try {
+                sleep(100); // Simulate some work being done
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
+
+public class MultiThreadExample {
+    public static void main(String[] args) {
+        // Create multiple threads using the Thread class
+        Task thread1 = new Task("Thread 1");
+        Task thread2 = new Task("Thread 2");
+        Task thread3 = new Task("Thread 3");
+
+        // Start the threads
+        thread1.start();
+        thread2.start();
+        thread3.start();
+
+        // Wait for all threads to finish
+        try {
+            thread1.join();
+            thread2.join();
+            thread3.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("All threads have finished.");
+    }
+}
+  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Thread 1 - Count: 1
+Thread 2 - Count: 1
+Thread 3 - Count: 1
+Thread 1 - Count: 2
+Thread 2 - Count: 2
+Thread 3 - Count: 2
+Thread 1 - Count: 3
+Thread 2 - Count: 3
+Thread 3 - Count: 3
+Thread 1 - Count: 4
+Thread 2 - Count: 4
+Thread 3 - Count: 4
+Thread 1 - Count: 5
+Thread 2 - Count: 5
+Thread 3 - Count: 5
+All threads have finished.
+
 </pre>
                 </div>
             </div>

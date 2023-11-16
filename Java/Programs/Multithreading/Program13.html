@@ -43,18 +43,69 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">Multithreading</p>
 
-                    <p class="fs-5 py-3">Program name</p>
+                    <p class="fs-5 py-3">13. Create the program to create multiple threads, show an example of join and yield methods.  </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+class MyThread extends Thread {
+    public MyThread(String name) {
+        super(name);
+    }
+
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(Thread.currentThread().getName() + ": " + i);
+
+            // Demonstrate the use of yield method
+            Thread.yield();
+        }
     }
 }
+
+public class ThreadExample {
+    public static void main(String[] args) {
+        // Create three threads
+        MyThread thread1 = new MyThread("Thread 1");
+        MyThread thread2 = new MyThread("Thread 2");
+        MyThread thread3 = new MyThread("Thread 3");
+
+        // Start the threads
+        thread1.start();
+        thread2.start();
+        thread3.start();
+
+        try {
+            // Demonstrate the use of join method
+            thread1.join();
+            thread2.join();
+            thread3.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Main thread finished.");
+    }
+}
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Thread 1: 1
+Thread 2: 1
+Thread 3: 1
+Thread 1: 2
+Thread 2: 2
+Thread 3: 2
+Thread 1: 3
+Thread 2: 3
+Thread 3: 3
+Thread 1: 4
+Thread 2: 4
+Thread 3: 4
+Thread 1: 5
+Thread 2: 5
+Thread 3: 5
+Main thread finished.
+  
 </pre>
                 </div>
             </div>

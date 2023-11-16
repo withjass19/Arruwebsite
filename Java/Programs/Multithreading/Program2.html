@@ -43,18 +43,80 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">Multithreading</p>
 
-                    <p class="fs-5 py-3">Program name</p>
+                    <p class="fs-5 py-3">2. Write a Java program that creates two threads to find and print even and odd numbers from 1 to 20. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class EvenOddPrinter extends Thread {
+                    private final int start;
+                    private final int end;
+                
+                    public EvenOddPrinter(int start, int end) {
+                        this.start = start;
+                        this.end = end;
+                    }
+                
+                    @Override
+                    public void run() {
+                        if (start % 2 == 0) {
+                            printEven();
+                        } else {
+                            printOdd();
+                        }
+                    }
+                
+                    private void printEven() {
+                        for (int i = start; i <= end; i += 2) {
+                            System.out.println(Thread.currentThread().getName() + ": " + i);
+                        }
+                    }
+                
+                    private void printOdd() {
+                        for (int i = start; i <= end; i += 2) {
+                            System.out.println(Thread.currentThread().getName() + ": " + i);
+                        }
+                    }
+                }
+                
+                public class EvenOddThreadExample {
+                    public static void main(String[] args) {
+                        int start = 1;
+                        int end = 20;
+                
+                        EvenOddPrinter evenPrinter = new EvenOddPrinter(start, end);
+                        EvenOddPrinter oddPrinter = new EvenOddPrinter(start + 1, end);
+                
+                        Thread evenThread = new Thread(evenPrinter, "EvenThread");
+                        Thread oddThread = new Thread(oddPrinter, "OddThread");
+                
+                        evenThread.start();
+                        oddThread.start();
+                    }
+                }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+EvenThread: 2
+OddThread: 1
+EvenThread: 4
+OddThread: 3
+EvenThread: 6
+OddThread: 5
+EvenThread: 8
+OddThread: 7
+EvenThread: 10
+OddThread: 9
+EvenThread: 12
+OddThread: 11
+EvenThread: 14
+OddThread: 13
+EvenThread: 16
+OddThread: 15
+EvenThread: 18
+OddThread: 17
+EvenThread: 20
+OddThread: 19
+   
 </pre>
                 </div>
             </div>
