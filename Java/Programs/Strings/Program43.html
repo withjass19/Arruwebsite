@@ -43,18 +43,49 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">43. Program to Swapping Pair of Characters</p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Scanner;
+public class SwapCharacterPairs {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the string
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // Swap pairs of characters
+        String swappedString = swapCharacterPairs(inputString);
+
+        // Output the result
+        System.out.println("Original String: " + inputString);
+        System.out.println("String after swapping pairs: " + swappedString);
+    }
+
+    private static String swapCharacterPairs(String input) {
+        // Convert the string to a character array
+        char[] charArray = input.toCharArray();
+
+        // Iterate through the characters and swap pairs
+        for (int i = 0; i < charArray.length - 1; i += 2) {
+            char temp = charArray[i];
+            charArray[i] = charArray[i + 1];
+            charArray[i + 1] = temp;
+        }
+
+        // Convert the character array back to a string
+        return new String(charArray);
     }
 }
+                  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter a string: HelloWorld
+Original String: HelloWorld
+String after swapping pairs: eHlloWrdlo
+       
 </pre>
                 </div>
             </div>

@@ -43,18 +43,53 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">26. Program to find the frequency of characters </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.HashMap;
+import java.util.Map;
+
+public class CharacterFrequency {
+    public static void main(String[] args) {
+        String inputString = "programming";
+
+        // Calling the method to find character frequencies
+        findCharacterFrequencies(inputString);
+    }
+
+    public static void findCharacterFrequencies(String str) {
+        // Creating a map to store character frequencies
+        Map<Character, Integer> charFrequencyMap = new HashMap<>();
+
+        // Populating the map with character frequencies
+        for (char c : str.toCharArray()) {
+            charFrequencyMap.put(c, charFrequencyMap.getOrDefault(c, 0) + 1);
+        }
+
+        // Displaying character frequencies
+        System.out.println("Input String: " + str);
+        System.out.println("Character Frequencies:");
+
+        for (Map.Entry<Character, Integer> entry : charFrequencyMap.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue() + " times");
+        }
     }
 }
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Input String: programming
+Character Frequencies:
+p: 1 times
+r: 2 times
+o: 1 times
+g: 2 times
+a: 1 times
+m: 2 times
+i: 1 times
+n: 1 times
+
 </pre>
                 </div>
             </div>

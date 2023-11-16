@@ -43,18 +43,46 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">44. Read two String user input and check if first contains second? </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Scanner;
+public class CheckSubstring {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the first string
+        System.out.print("Enter the first string: ");
+        String firstString = scanner.nextLine();
+
+        // Input the second string
+        System.out.print("Enter the second string: ");
+        String secondString = scanner.nextLine();
+
+        // Check if the first string contains the second string
+        boolean containsSubstring = checkSubstring(firstString, secondString);
+
+        // Output the result
+        if (containsSubstring) {
+            System.out.println("The first string contains the second string.");
+        } else {
+            System.out.println("The first string does not contain the second string.");
+        }
+   }
+
+    private static boolean checkSubstring(String first, String second) {
+        // Using the contains method to check if the first string contains the second string
+        return first.contains(second);
     }
 }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter the first string: HelloWorld
+Enter the second string: World
+The first string contains the second string.
+      
 </pre>
                 </div>
             </div>

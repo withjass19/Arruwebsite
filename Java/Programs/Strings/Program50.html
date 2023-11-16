@@ -43,18 +43,40 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">50. Create an object StringBuffer class to show functionality of insert, append, delete and replace functions. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class StringBufferExample {
+    public static void main(String[] args) {
+        // Creating a StringBuffer object
+        StringBuffer stringBuffer = new StringBuffer("Hello, World!");
+        
+        // Appending a string at the end
+        stringBuffer.append(" How are you?");
+        System.out.println("After Append: " + stringBuffer);
+        
+        // Inserting a string at a specific position
+        stringBuffer.insert(7, "Awesome ");
+        System.out.println("After Insert: " + stringBuffer);
+        
+        // Deleting characters from index 7 to 15
+        stringBuffer.delete(7, 15);
+        System.out.println("After Delete: " + stringBuffer);
+        
+       // Replacing a substring
+        stringBuffer.replace(0, 5, "Hi");
+        System.out.println("After Replace: " + stringBuffer);
     }
 }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+After Append: Hello, World! How are you?
+After Insert: Hello, Awesome World! How are you?
+After Delete: Hello, World! How are you?
+After Replace: Hi, World! How are you?
+    
 </pre>
                 </div>
             </div>

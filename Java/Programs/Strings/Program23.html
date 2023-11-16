@@ -43,18 +43,51 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">23. Program to find Reverse of the string </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class ReverseString {
+    public static void main(String[] args) {
+        String inputString = "Hello, World!";
+
+        // Calling the method to find the reverse of the string
+        String reversedString = reverseString(inputString);
+
+        // Displaying the result
+        System.out.println("Input String: " + inputString);
+        System.out.println("Reversed String: " + reversedString);
+    }
+
+    public static String reverseString(String str) {
+        // Converting the string to a character array
+        char[] charArray = str.toCharArray();
+
+        // Reversing the character array
+       int start = 0;
+        int end = charArray.length - 1;
+
+        while (start < end) {
+            // Swapping characters at start and end indices
+            char temp = charArray[start];
+            charArray[start] = charArray[end];
+            charArray[end] = temp;
+
+            // Moving indices towards the center
+            start++;
+           end--;
+        }
+
+        // Creating a new string from the reversed character array
+        return new String(charArray);
     }
 }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Input String: Hello, World!
+Reversed String: !dlroW ,olleH
+
 </pre>
                 </div>
             </div>

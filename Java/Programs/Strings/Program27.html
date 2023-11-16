@@ -43,18 +43,52 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">27. Program to find the largest and smallest word in a string </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class LargestSmallestWord {
+    public static void main(String[] args) {
+        String inputString = "Java is a powerful programming language";
+
+        // Calling the method to find the largest and smallest words
+       findLargestSmallestWords(inputString);
+    }
+
+    public static void findLargestSmallestWords(String str) {
+        // Splitting the string into words
+        String[] words = str.split("\\s+");
+
+        // Initializing variables for the largest and smallest words
+        String smallestWord = words[0];
+        String largestWord = words[0];
+
+        // Finding the largest and smallest words
+        for (String word : words) {
+            // Updating smallestWord if the current word is smaller
+            if (word.length() < smallestWord.length()) {
+                smallestWord = word;
+            }
+
+           // Updating largestWord if the current word is larger
+            if (word.length() > largestWord.length()) {
+                largestWord = word;
+            }
+        }
+
+       // Displaying the result
+        System.out.println("Input String: " + str);
+       System.out.println("Smallest Word: " + smallestWord);
+        System.out.println("Largest Word: " + largestWord);
     }
 }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Input String: Java is a powerful programming language
+Smallest Word: is
+Largest Word: programming
+
 </pre>
                 </div>
             </div>

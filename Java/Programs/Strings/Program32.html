@@ -43,18 +43,45 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">32. Program to Insert a string into another string </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class InsertStringIntoAnother {
+    public static void main(String[] args) {
+        String originalString = "Hello, World!";
+        String stringToInsert = " Java";
+
+        int position = 6; // Position at which to insert the string
+
+       // Calling the method to insert a string into another
+        String resultString = insertString(originalString, stringToInsert, position);
+
+        // Displaying the result
+        System.out.println("Original String: " + originalString);
+        System.out.println("String to Insert: " + stringToInsert);
+        System.out.println("Result String: " + resultString);
+    }
+
+    public static String insertString(String original, String toInsert, int position) {
+       // Check if the position is valid
+        if (position >= 0 && position <= original.length()) {
+            // Use the substring method to insert the string at the specified position
+            return original.substring(0, position) + toInsert + original.substring(position);
+        } else {
+            // If the position is invalid, return the original string
+            System.out.println("Invalid position. Returning the original string.");
+            return original;
+        }
     }
 }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Original String: Hello, World!
+String to Insert:  Java
+Result String: Hello, Java World!
+
 </pre>
                 </div>
             </div>

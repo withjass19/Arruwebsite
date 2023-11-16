@@ -43,18 +43,35 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">49. Create an object StringBuffer class to reverse the string. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class ReverseStringExample {
+    public static void main(String[] args) {
+        // Original string
+        String originalString = "Hello, World!";
+       
+        // Creating a StringBuffer object and passing the original string to its constructor
+        StringBuffer stringBuffer = new StringBuffer(originalString);
+       
+        // Using the reverse() method of StringBuffer to reverse the string
+        stringBuffer.reverse();
+        
+        // Converting the StringBuffer back to a String
+        String reversedString = stringBuffer.toString();
+        
+        // Displaying the original and reversed strings
+       System.out.println("Original String: " + originalString);
+        System.out.println("Reversed String: " + reversedString);
     }
 }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Original String: Hello, World!
+Reversed String: !dlroW ,olleH
+
 </pre>
                 </div>
             </div>

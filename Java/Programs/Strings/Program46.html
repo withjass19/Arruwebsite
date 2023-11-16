@@ -43,18 +43,46 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">46. Reverse String Word by Word</p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Scanner;
+public class ReverseStringWordByWord {
+     public static void main(String[] args) {
+         // Input the string
+         Scanner scanner = new Scanner(System.in);
+         System.out.println("Enter a string:");
+         String input = scanner.nextLine();
+ 
+         // Reverse the string word by word
+         String reversedString = reverseStringWordByWord(input);
+ 
+         // Output the reversed string
+         System.out.println("Reversed String: " + reversedString);
+     }
+ 
+     private static String reverseStringWordByWord(String input) {
+         // Split the input string into words
+         String[] words = input.split("\\s+");
+
+         // Reverse each word
+         StringBuilder reversedStringBuilder = new StringBuilder();
+         for (int i = words.length - 1; i >= 0; i--) {
+            reversedStringBuilder.append(words[i]).append(" ");
+         }
+ 
+         // Remove the trailing space
+         return reversedStringBuilder.toString().trim();
+     }
 }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter a string:
+Hello World Java Program
+Reversed String: Program Java World Hello
+    
 </pre>
                 </div>
             </div>

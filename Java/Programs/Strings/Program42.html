@@ -43,18 +43,53 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3"> 42. Program to swap two string variables without using third or temp variable.
+                    </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Scanner;
+public class SwapStrings {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the first string
+        System.out.print("Enter the first string: ");
+       String firstString = scanner.nextLine();
+
+        // Input the second string
+        System.out.print("Enter the second string: ");
+        String secondString = scanner.nextLine();
+
+        // Display the strings before swapping
+        System.out.println("Before swapping:");
+        System.out.println("First String: " + firstString);
+        System.out.println("Second String: " + secondString);
+
+        // Swap the strings without using a third variable
+        firstString = firstString + secondString;
+        secondString = firstString.substring(0, firstString.length() - secondString.length());
+        firstString = firstString.substring(secondString.length());
+
+        // Display the strings after swapping
+        System.out.println("\nAfter swapping:");
+       System.out.println("First String: " + firstString);
+        System.out.println("Second String: " + secondString);
     }
 }
+                   
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter the first string: Hello
+Enter the second string: World
+Before swapping:
+First String: Hello
+Second String: World
+
+After swapping:
+First String: World
+Second String: Hello
+
 </pre>
                 </div>
             </div>

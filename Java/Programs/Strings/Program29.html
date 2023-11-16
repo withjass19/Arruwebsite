@@ -43,18 +43,66 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">29. Program to find the most repeated word in a text file </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+public class MostRepeatedWord {
+   public static void main(String[] args) {
+        String filePath = "path/to/your/sample.txt";
+
+        // Calling the method to find the most repeated word
+        String mostRepeatedWord = findMostRepeatedWord(filePath);
+
+        // Displaying the result
+        System.out.println("Most Repeated Word: " + mostRepeatedWord);
+    }
+
+    public static String findMostRepeatedWord(String filePath) {
+        // Creating a map to store word frequencies
+        Map<String, Integer> wordFrequencyMap = new HashMap<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            // Reading the file line by line
+            String line;
+            while ((line = br.readLine()) != null) {
+                // Splitting each line into words
+                String[] words = line.split("\\s+");
+
+                // Populating the map with word frequencies
+                for (String word : words) {
+                    word = word.toLowerCase(); // Case-insensitive comparison
+                    wordFrequencyMap.put(word, wordFrequencyMap.getOrDefault(word, 0) + 1);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Finding the most repeated word
+        String mostRepeatedWord = "";
+        int maxFrequency = 0;
+        for (Map.Entry<String, Integer> entry : wordFrequencyMap.entrySet()) {
+            if (entry.getValue() > maxFrequency) {
+                mostRepeatedWord = entry.getKey();
+                maxFrequency = entry.getValue();
+            }
+        }
+
+        return mostRepeatedWord;
     }
 }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Most Repeated Word: sample
+
 </pre>
                 </div>
             </div>

@@ -43,18 +43,71 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">22. Program to find maximum and minimum occurring character in a string </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.HashMap;
+import java.util.Map;
+
+public class MaxMinOccurringCharacter {
+    public static void main(String[] args) {
+        String inputString = "hello world";
+
+        // Calling the method to find max and min occurring characters
+        findMaxMinCharacters(inputString);
+    }
+
+    public static void findMaxMinCharacters(String str) {
+        // Removing spaces and converting the string to lowercase for case-insensitive comparison
+        str = str.replaceAll("\\s", "").toLowerCase();
+
+        // Creating a map to store character frequencies
+        Map<Character, Integer> charFrequencyMap = new HashMap<>();
+
+        // Populating the map with character frequencies
+        for (char c : str.toCharArray()) {
+            charFrequencyMap.put(c, charFrequencyMap.getOrDefault(c, 0) + 1);
+        }
+
+        // Finding the maximum occurring character
+        char maxChar = '\0'; // Placeholder for maxChar
+        int maxFrequency = Integer.MIN_VALUE;
+
+        // Finding the minimum occurring character
+        char minChar = '\0'; // Placeholder for minChar
+        int minFrequency = Integer.MAX_VALUE;
+
+        for (Map.Entry<Character, Integer> entry : charFrequencyMap.entrySet()) {
+            char currentChar = entry.getKey();
+            int currentFrequency = entry.getValue();
+
+            // Updating maxChar and maxFrequency
+            if (currentFrequency > maxFrequency) {
+                maxChar = currentChar;
+                maxFrequency = currentFrequency;
+            }
+
+            // Updating minChar and minFrequency
+            if (currentFrequency < minFrequency) {
+                minChar = currentChar;
+                minFrequency = currentFrequency;
+            }
+        }
+
+        // Displaying the result
+        System.out.println("Input String: " + str);
+        System.out.println("Maximum Occurring Character: " + maxChar + " (Frequency: " + maxFrequency + ")");
+        System.out.println("Minimum Occurring Character: " + minChar + " (Frequency: " + minFrequency + ")");
     }
 }
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Input String: helloworld
+Maximum Occurring Character: l (Frequency: 3)
+Minimum Occurring Character: h (Frequency: 1)
+
 </pre>
                 </div>
             </div>

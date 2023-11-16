@@ -43,18 +43,33 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">37. Program to remove all the white spaces from a string</p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class RemoveWhiteSpaces {
+    public static void main(String[] args) {
+        String inputString = "  This is a sample   string with   spaces.  ";
+
+        // Calling the method to remove white spaces
+        String stringWithoutSpaces = removeWhiteSpaces(inputString);
+
+        // Displaying the result
+        System.out.println("Input String: " + inputString);
+        System.out.println("String without Spaces: " + stringWithoutSpaces);
+    }
+
+    public static String removeWhiteSpaces(String str) {
+        // Using regex to replace all white spaces with an empty string
+        return str.replaceAll("\\s", "");
     }
 }
+                                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Input String:   This is a sample   string with   spaces.  
+String without Spaces: Thisisasamplestringwithspaces.
+    
 </pre>
                 </div>
             </div>

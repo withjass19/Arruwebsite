@@ -43,18 +43,57 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">47. Write a program to check if two Strings are created with same characters? </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class CheckSameCharacters {
+   public static void main(String[] args) {
+        // Input the first string
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the first string:");
+        String str1 = scanner.nextLine();
+
+        // Input the second string
+        System.out.println("Enter the second string:");
+        String str2 = scanner.nextLine();
+
+        // Check if the strings have the same characters
+        boolean areSame = areStringsSameCharacters(str1, str2);
+
+        // Output the result
+        if (areSame) {
+            System.out.println("The two strings have the same characters.");
+        } else {
+            System.out.println("The two strings do not have the same characters.");
+        }
+    }
+
+    private static boolean areStringsSameCharacters(String str1, String str2) {
+        // Convert the strings to character arrays
+        char[] charArray1 = str1.toCharArray();
+        char[] charArray2 = str2.toCharArray();
+
+        // Sort the character arrays
+        Arrays.sort(charArray1);
+        Arrays.sort(charArray2);
+
+        // Compare the sorted character arrays
+       return Arrays.equals(charArray1, charArray2);
     }
 }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter the first string:
+listen
+Enter the second string:
+silent
+The two strings have the same characters.
+
 </pre>
                 </div>
             </div>

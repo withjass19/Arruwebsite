@@ -43,18 +43,47 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">24. Program to find the duplicate characters in a string </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.HashMap;
+import java.util.Map;
+
+public class DuplicateCharacters {
+    public static void main(String[] args) {
+        String inputString = "programming";
+
+        // Calling the method to find duplicate characters
+        findDuplicateCharacters(inputString);
+    }
+
+    public static void findDuplicateCharacters(String str) {
+        // Creating a map to store character frequencies
+        Map<Character, Integer> charFrequencyMap = new HashMap<>();
+
+        // Populating the map with character frequencies
+        for (char c : str.toCharArray()) {
+            charFrequencyMap.put(c, charFrequencyMap.getOrDefault(c, 0) + 1);
+        }
+
+        // Displaying duplicate characters
+        System.out.println("Input String: " + str);
+        System.out.print("Duplicate Characters: ");
+
+        for (Map.Entry<Character, Integer> entry : charFrequencyMap.entrySet()) {
+            if (entry.getValue() > 1) {
+                System.out.print(entry.getKey() + " ");
+            }
+        }
     }
 }
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    Input String: programming
+    Duplicate Characters: r g m
+    
 </pre>
                 </div>
             </div>

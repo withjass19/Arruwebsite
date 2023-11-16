@@ -43,18 +43,39 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">35. Program to Print even length words </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class PrintEvenLengthWords {
+    public static void main(String[] args) {
+        String inputString = "This is a Java program to print even length words";
+
+        // Calling the method to print even length words
+        printEvenLengthWords(inputString);
     }
+
+    public static void printEvenLengthWords(String str) {
+        // Splitting the string into words
+        String[] words = str.split("\\s+");
+
+        // Displaying even length words
+        System.out.println("Input String: " + str);
+        System.out.print("Even Length Words: ");
+
+        for (String word : words) {
+            if (word.length() % 2 == 0) {
+                System.out.print(word + " ");
+            }
+       }
+   }
 }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Input String: This is a Java program to print even length words
+Even Length Words: is Java to even length
+
 </pre>
                 </div>
             </div>

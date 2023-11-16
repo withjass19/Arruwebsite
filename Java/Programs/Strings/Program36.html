@@ -43,18 +43,60 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">36. Program to print smallest and biggest possible palindrome word in a given string </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class SmallestBiggestPalindromeWords {
+    public static void main(String[] args) {
+        String inputString = "abc racecar def level ghi kayak jkl";
+
+        // Calling the method to print smallest and biggest palindrome words
+        printSmallestBiggestPalindromeWords(inputString);
+    }
+
+    public static void printSmallestBiggestPalindromeWords(String str) {
+        // Splitting the string into words
+        String[] words = str.split("\\s+");
+
+        // Initializing variables for smallest and biggest palindrome words
+        String smallestPalindrome = null;
+        String biggestPalindrome = null;
+
+        // Finding the smallest and biggest palindrome words
+        for (String word : words) {
+            if (isPalindrome(word)) {
+                if (smallestPalindrome == null || word.length() < smallestPalindrome.length()) {
+                    smallestPalindrome = word;
+                }
+                if (biggestPalindrome == null || word.length() > biggestPalindrome.length()) {
+                    biggestPalindrome = word;
+                }
+            }
+        }
+
+        // Displaying the result
+        System.out.println("Input String: " + str);
+       System.out.println("Smallest Palindrome Word: " + (smallestPalindrome != null ? smallestPalindrome : "None"));
+        System.out.println("Biggest Palindrome Word: " + (biggestPalindrome != null ? biggestPalindrome : "None"));
+    }
+
+    public static boolean isPalindrome(String str) {
+        // Removing spaces and converting to lowercase for palindrome check
+        String cleanStr = str.replaceAll("\\s", "").toLowerCase();
+
+        // Checking if the cleaned string is a palindrome
+        StringBuilder reversedStr = new StringBuilder(cleanStr).reverse();
+        return cleanStr.equals(reversedStr.toString());
     }
 }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Input String: abc racecar def level ghi kayak jkl
+Smallest Palindrome Word: abc
+Biggest Palindrome Word: racecar
+
 </pre>
                 </div>
             </div>

@@ -43,18 +43,51 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">38. Program to replace lower-case characters with upper-case and vice-versa </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class SwapCase {
+    public static void main(String[] args) {
+        String inputString = "Hello, World!";
+
+        // Calling the method to swap case
+        String swappedString = swapCase(inputString);
+
+        // Displaying the result
+        System.out.println("Input String: " + inputString);
+        System.out.println("Swapped Case String: " + swappedString);
+    }
+
+    public static String swapCase(String str) {
+        // Using a StringBuilder to efficiently build the swapped string
+        StringBuilder swappedStringBuilder = new StringBuilder();
+
+        // Iterating through each character in the string
+        for (char c : str.toCharArray()) {
+            // Checking if the character is uppercase
+            if (Character.isUpperCase(c)) {
+                // Converting uppercase to lowercase and appending to the StringBuilder
+                swappedStringBuilder.append(Character.toLowerCase(c));
+            } else if (Character.isLowerCase(c)) {
+                // Converting lowercase to uppercase and appending to the StringBuilder
+                swappedStringBuilder.append(Character.toUpperCase(c));
+            } else {
+                // Appending non-alphabetic characters directly to the StringBuilder
+                swappedStringBuilder.append(c);
+            }
+        }
+
+        // Converting the StringBuilder to a String and returning the result
+        return swappedStringBuilder.toString();
     }
 }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Input String: Hello, World!
+Swapped Case String: hELLO, wORLD!
+    
 </pre>
                 </div>
             </div>

@@ -43,18 +43,44 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">39. Program to replace the spaces of a string with a specific character </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Scanner;
+public class ReplaceSpaces {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the string
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // Input the character to replace spaces
+        System.out.print("Enter the character to replace spaces with: ");
+        char replacementChar = scanner.nextLine().charAt(0);
+
+        // Replace spaces with the specified character
+        String resultString = replaceSpaces(inputString, replacementChar);
+
+        // Output the result
+        System.out.println("Original String: " + inputString);
+        System.out.println("Modified String: " + resultString);
+    }
+
+    private static String replaceSpaces(String input, char replacement) {
+        // Using replaceAll to replace spaces with the specified character
+        return input.replaceAll(" ", String.valueOf(replacement));
     }
 }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter a string: Hello World
+Enter the character to replace spaces with: -
+Original String: Hello World
+Modified String: Hello-World
+    
 </pre>
                 </div>
             </div>

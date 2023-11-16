@@ -43,18 +43,25 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">34. Program to Print a New Line in String </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class PrintNewLineInString {
+    public static void main(String[] args) {
+        // Using the escape sequence \n to print a new line
+        String stringWithNewLine = "Hello, World!\nThis is a new line.";
+
+        // Displaying the result
+        System.out.println(stringWithNewLine);
     }
 }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Hello, World!
+This is a new line.
+    
 </pre>
                 </div>
             </div>

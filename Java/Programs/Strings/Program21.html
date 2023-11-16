@@ -43,18 +43,67 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">21. Program to find all the permutations of a string </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class StringPermutations {
+
+   // Function to find all permutations of a string
+    static ArrayList<String> getAllPermutations(String str) {
+       ArrayList<String> permutations = new ArrayList<>();
+        generatePermutations("", str, permutations);
+        return permutations;
+    }
+
+    // Helper function to generate permutations recursively
+    private static void generatePermutations(String prefix, String remaining, ArrayList<String> permutations) {
+       int n = remaining.length();
+       if (n == 0) {
+            permutations.add(prefix);
+        } else {
+            for (int i = 0; i < n; i++) {
+                String newPrefix = prefix + remaining.charAt(i);
+                String newRemaining = remaining.substring(0, i) + remaining.substring(i + 1);
+                generatePermutations(newPrefix, newRemaining, permutations);
+            }
+       }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the string
+       System.out.print("Enter the string: ");
+        String inputString = scanner.nextLine();
+
+        // Get all permutations of the string
+       ArrayList<String> permutations = getAllPermutations(inputString);
+
+       // Display the permutations
+        System.out.println("All permutations of the string are:");
+        for (String permutation : permutations) {
+            System.out.println(permutation);
+        }
+
+        scanner.close();
     }
 }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter the string: abc
+All permutations of the string are:
+abc
+acb
+bac
+bca
+cab
+cba
+
 </pre>
                 </div>
             </div>

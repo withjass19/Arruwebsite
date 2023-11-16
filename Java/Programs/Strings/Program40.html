@@ -43,18 +43,48 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">40. Program to separate the Individual Characters from a String </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Scanner;
+public class SeparateCharacters {
+     public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+ 
+         // Input the string
+         System.out.print("Enter a string: ");
+         String inputString = scanner.nextLine();
+ 
+         // Separate and print individual characters
+         System.out.println("Individual Characters:");
+         separateCharacters(inputString);
+     }
+ 
+     private static void separateCharacters(String input) {
+         // Loop through each character in the string
+         for (int i = 0; i < input.length(); i++) {
+             // Print each character on a new line
+             System.out.println(input.charAt(i));
+        }
+     }
 }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter a string: HelloWorld
+Individual Characters:
+H
+e
+l
+l
+o
+W
+o
+r
+l
+d
+
 </pre>
                 </div>
             </div>

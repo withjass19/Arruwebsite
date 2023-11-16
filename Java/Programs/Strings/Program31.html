@@ -43,18 +43,40 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">1. Write a Java program to print ‘Hello World!’ on screen</p>
+                    <p class="fs-5 py-3">31. Program to Get a Character From the Given String </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class GetCharacterFromIndex {
+    public static void main(String[] args) {
+        String inputString = "Hello, World!";
+        int position = 7; // Replace this with the desired position
+        // Calling the method to get a character from the given position
+        char result = getCharacterAtIndex(inputString, position);
+
+        // Displaying the result
+        System.out.println("Input String: " + inputString);
+        System.out.println("Character at position " + position + ": " + result);
+    }
+
+    public static char getCharacterAtIndex(String str, int position) {
+        // Check if the position is valid
+        if (position >= 0 && position < str.length()) {
+            // Use the charAt method to get the character at the specified position
+            return str.charAt(position);
+        } else {
+            // If the position is invalid, return a placeholder character (you can modify this behavior as needed)
+            System.out.println("Invalid position. Returning placeholder character.");
+            return '\0';
+        }
     }
 }
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Input String: Hello, World!
+Character at position 7: W
+
 </pre>
                 </div>
             </div>
