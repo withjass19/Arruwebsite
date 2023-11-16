@@ -43,29 +43,51 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">2.Program to perform Deep Copy for String? </p>
+                    <p class="fs-5 py-3">18. Program to determine whether one string is a rotation of another </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-public class DeepCopyString {
-public static void main(String[] args) {
+import java.util.Scanner;
+public class StringRotationChecker {
 
-   // Original string
-    String originalString = "Hello, World!";<br>
+    static boolean areRotations(String str1, String str2) {
+        // Check if lengths of both strings are the same
+        if (str1.length() != str2.length()) {
+            return false;
+        }
 
-    // Performing a "deep copy" by creating a new string
-    String copiedString = new String(originalString);<br>
+        // Concatenate str1 with itself
+        String concatenated = str1 + str1;
 
-    // Display the original and copied strings
- System.out.println("Original String: " + originalString);
- System.out.println("Copied String: " + copiedString);
-     }
-}         
+        // Check if str2 is a substring of concatenated string
+        return concatenated.contains(str2);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the two strings
+        System.out.print("Enter the first string: ");
+        String str1 = scanner.nextLine();
+
+        System.out.print("Enter the second string: ");
+        String str2 = scanner.nextLine();
+
+        // Check if str2 is a rotation of str1
+        if (areRotations(str1, str2)) {
+            System.out.println(str2 + " is a rotation of " + str1);
+        } else {
+            System.out.println(str2 + " is not a rotation of " + str1);
+        }
+        scanner.close();
+    }
+}
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Original String: Hello, World!<br>
-Copied String: Hello, World!
-    
+Enter the first string: hello
+Enter the second string: ollhe
+
 </pre>
                 </div>
             </div>

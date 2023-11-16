@@ -43,29 +43,73 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">2.Program to perform Deep Copy for String? </p>
+                    <p class="fs-5 py-3">20. Program to find all subsets of a string </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-public class DeepCopyString {
-public static void main(String[] args) {
+import java.util.ArrayList;
+import java.util.Scanner;
 
-   // Original string
-    String originalString = "Hello, World!";<br>
+public class SubsetsOfString {
 
-    // Performing a "deep copy" by creating a new string
-    String copiedString = new String(originalString);<br>
+    // Function to find all subsets of a string
+    static ArrayList<String> getAllSubsets(String str) {
+        int n = str.length();
+        ArrayList<String> subsets = new ArrayList<>();
 
-    // Display the original and copied strings
- System.out.println("Original String: " + originalString);
- System.out.println("Copied String: " + copiedString);
-     }
-}         
+        // Total number of subsets is 2^n
+        int totalSubsets = (int) Math.pow(2, n);
+
+        // Generate all possible binary representations of subsets
+        for (int i = 0; i < totalSubsets; i++) {
+            StringBuilder subset = new StringBuilder();
+
+            // Map each bit of binary representation to corresponding character in the string
+            for (int j = 0; j < n; j++) {
+                if ((i & (1 << j)) != 0) {
+                    subset.append(str.charAt(j));
+                }
+            }
+
+            // Add the subset to the list
+            subsets.add(subset.toString());
+        }
+
+        return subsets;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the string
+        System.out.print("Enter the string: ");
+        String inputString = scanner.nextLine();
+
+        // Get all subsets of the string
+        ArrayList<String> subsets = getAllSubsets(inputString);
+
+        // Display the subsets
+        System.out.println("All subsets of the string are:");
+        for (String subset : subsets) {
+            System.out.println(subset);
+        }
+
+        scanner.close();
+    }
+}
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Original String: Hello, World!<br>
-Copied String: Hello, World!
-    
+Enter the string: abc
+All subsets of the string are:
+a
+b
+ab
+c
+ac
+bc
+abc
+
 </pre>
                 </div>
             </div>

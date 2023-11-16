@@ -43,28 +43,35 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">2.Program to perform Deep Copy for String? </p>
+                    <p class="fs-5 py-3">13. Program to count number of words in a String? </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-public class DeepCopyString {
-public static void main(String[] args) {
+public class WordCountExample {
+   public static void main(String[] args) {
+        // Input string
+       String inputString = "This is a sample sentence. Count the words in this string.";
 
-   // Original string
-    String originalString = "Hello, World!";<br>
+      // Count the number of words
+        int wordCount = countWords(inputString);
 
-    // Performing a "deep copy" by creating a new string
-    String copiedString = new String(originalString);<br>
+        // Print the output
+        System.out.println("Input String: " + inputString);
+        System.out.println("Number of Words: " + wordCount);
+    }
 
-    // Display the original and copied strings
- System.out.println("Original String: " + originalString);
- System.out.println("Copied String: " + copiedString);
-     }
-}         
+    // Method to count the number of words in a string
+    private static int countWords(String input) {
+        // Using split to separate words based on spaces
+        String[] words = input.split("\\s+");
+        return words.length;
+    }
+}
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Original String: Hello, World!<br>
-Copied String: Hello, World!
+    Input String: This is a sample sentence. Count the words in this string.
+    Number of Words: 14
     
 </pre>
                 </div>

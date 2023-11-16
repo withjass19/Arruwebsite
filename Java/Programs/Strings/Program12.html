@@ -43,28 +43,43 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">2.Program to perform Deep Copy for String? </p>
+                    <p class="fs-5 py-3">12. Program to Convert String to String Array </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-public class DeepCopyString {
-public static void main(String[] args) {
+public class StringToArrayExample {
+    public static void main(String[] args) {
+        // Convert String to String array
+       String inputString = "Hello, World! This is a sample string.";
+        String[] stringArray = stringToStringArray(inputString);
 
-   // Original string
-    String originalString = "Hello, World!";<br>
+        // Print the output
+        System.out.println("Original String: " + inputString);
+        System.out.println("Converted String Array: ");
+        for (String str : stringArray) {
+            System.out.println(str);
+        }
+    }
 
-    // Performing a "deep copy" by creating a new string
-    String copiedString = new String(originalString);<br>
-
-    // Display the original and copied strings
- System.out.println("Original String: " + originalString);
- System.out.println("Copied String: " + copiedString);
-     }
-}         
+    // Method to convert String to String array
+    private static String[] stringToStringArray(String input) {
+        // Split the input string using a space as the delimiter
+        // You can change the delimiter based on your requirements
+        return input.split("\\s+");
+    }
+}
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Original String: Hello, World!<br>
-Copied String: Hello, World!
+    Original String: Hello, World! This is a sample string.
+    Converted String Array: 
+    Hello,
+    World!
+    This
+    is
+    a
+    sample
+    string.
     
 </pre>
                 </div>

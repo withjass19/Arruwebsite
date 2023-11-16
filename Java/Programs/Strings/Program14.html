@@ -43,28 +43,34 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">2.Program to perform Deep Copy for String? </p>
+                    <p class="fs-5 py-3">14. Program to count the total number of characters in a string </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-public class DeepCopyString {
-public static void main(String[] args) {
+public class CharacterCountExample {
+   public static void main(String[] args) {
+        // Input string
+       String inputString = "This is a sample string.";
 
-   // Original string
-    String originalString = "Hello, World!";<br>
+        // Count the number of characters
+        int characterCount = countCharacters(inputString);
 
-    // Performing a "deep copy" by creating a new string
-    String copiedString = new String(originalString);<br>
+        // Print the output
+        System.out.println("Input String: " + inputString);
+       System.out.println("Number of Characters: " + characterCount);
+    }
 
-    // Display the original and copied strings
- System.out.println("Original String: " + originalString);
- System.out.println("Copied String: " + copiedString);
-     }
-}         
+    // Method to count the number of characters in a string
+    private static int countCharacters(String input) {
+        // Using the length() method of the String class
+        return input.length();
+    }
+}
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Original String: Hello, World!<br>
-Copied String: Hello, World!
+    Input String: This is a sample string.
+    Number of Characters: 25
     
 </pre>
                 </div>

@@ -43,29 +43,46 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">2.Program to perform Deep Copy for String? </p>
+                    <p class="fs-5 py-3">17. Program to determine whether a given string is palindrome </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-public class DeepCopyString {
-public static void main(String[] args) {
+public class PalindromeCheckExample {
+    public static void main(String[] args) {
+        // Input string
+        String inputString = "level";
 
-   // Original string
-    String originalString = "Hello, World!";<br>
+        // Check if the string is a palindrome
+        boolean isPalindrome = isPalindrome(inputString);
 
-    // Performing a "deep copy" by creating a new string
-    String copiedString = new String(originalString);<br>
+        // Print the output
+        System.out.println("Input String: " + inputString);
+        if (isPalindrome) {
+            System.out.println("The string is a palindrome.");
+        } else {
+            System.out.println("The string is not a palindrome.");
+        }
+    }
 
-    // Display the original and copied strings
- System.out.println("Original String: " + originalString);
- System.out.println("Copied String: " + copiedString);
-     }
-}         
+    // Method to check if a string is a palindrome
+    private static boolean isPalindrome(String input) {
+        // Convert the input string to lowercase for case-insensitive comparison
+        input = input.toLowerCase();
+
+        // Remove non-alphanumeric characters from the string
+        input = input.replaceAll("[^a-zA-Z0-9]", "");
+
+        // Compare the original string with its reverse
+        String reversedString = new StringBuilder(input).reverse().toString();
+        return input.equals(reversedString);
+    }
+}
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Original String: Hello, World!<br>
-Copied String: Hello, World!
-    
+Input String: level
+The string is a palindrome.
+
 </pre>
                 </div>
             </div>

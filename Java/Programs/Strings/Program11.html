@@ -43,28 +43,36 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">2.Program to perform Deep Copy for String? </p>
+                    <p class="fs-5 py-3">11. Program to Convert Enum to String </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-public class DeepCopyString {
-public static void main(String[] args) {
+// Define an enum type
+enum Color {
+ RED, GREEN, BLUE
+}
+public class EnumToStringExample {
 
-   // Original string
-    String originalString = "Hello, World!";<br>
+    public static void main(String[] args) {
+        // Convert Enum to String
+        Color color = Color.RED;
+        String colorString = enumToString(color);
 
-    // Performing a "deep copy" by creating a new string
-    String copiedString = new String(originalString);<br>
+        // Print the output
+        System.out.println("Enum: " + color);
+        System.out.println("Converted String: " + colorString);
+    }
 
-    // Display the original and copied strings
- System.out.println("Original String: " + originalString);
- System.out.println("Copied String: " + copiedString);
-     }
-}         
+    // Method to convert Enum to String
+    private static String enumToString(Enum<?> enumeration) {
+        return enumeration.name();
+    }
+}
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Original String: Hello, World!<br>
-Copied String: Hello, World!
+    Enum: RED
+    Converted String: RED
     
 </pre>
                 </div>

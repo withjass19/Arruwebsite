@@ -43,29 +43,41 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">2.Program to perform Deep Copy for String? </p>
+                    <p class="fs-5 py-3">15. Program to count the total number of punctuation characters exists in a String </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-public class DeepCopyString {
-public static void main(String[] args) {
+public class PunctuationCountExample {
+    public static void main(String[] args) {
+        // Input string
+       String inputString = "Hello, world! This is a sample string with some punctuation.";
 
-   // Original string
-    String originalString = "Hello, World!";<br>
+        // Count the number of punctuation characters
+       int punctuationCount = countPunctuation(inputString);
 
-    // Performing a "deep copy" by creating a new string
-    String copiedString = new String(originalString);<br>
-
-    // Display the original and copied strings
- System.out.println("Original String: " + originalString);
- System.out.println("Copied String: " + copiedString);
-     }
-}         
+        // Print the output
+        System.out.println("Input String: " + inputString);
+        System.out.println("Number of Punctuation Characters: " + punctuationCount);
+   }
+    // Method to count the number of punctuation characters in a string
+    private static int countPunctuation(String input) {
+        int count = 0;
+        for (int i = 0; i < input.length(); i++) {
+           char ch = input.charAt(i);
+            // Using the Character class to check if a character is a punctuation character
+            if (Character.isPunctuation(ch)) {
+                count++;
+            }
+        }
+        return count;
+   }
+}
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Original String: Hello, World!<br>
-Copied String: Hello, World!
-    
+Input String: Hello, world! This is a sample string with some punctuation.
+Number of Punctuation Characters: 6
+
 </pre>
                 </div>
             </div>

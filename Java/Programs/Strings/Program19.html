@@ -43,28 +43,66 @@
                     <!-- topic name -->
                     <p class="fs-5 fw-medium text-center text-secondary">String</p>
 
-                    <p class="fs-5 py-3">2.Program to perform Deep Copy for String? </p>
+                    <p class="fs-5 py-3">19. Program to divide a string in 'N' equal parts. </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-public class DeepCopyString {
-public static void main(String[] args) {
+import java.util.Scanner;
 
-   // Original string
-    String originalString = "Hello, World!";<br>
+public class DivideString {
 
-    // Performing a "deep copy" by creating a new string
-    String copiedString = new String(originalString);<br>
+    // Function to divide a string into 'N' equal parts
+    static void divideString(String str, int parts) {
+        // Calculate the length of the string
+        int len = str.length();
 
-    // Display the original and copied strings
- System.out.println("Original String: " + originalString);
- System.out.println("Copied String: " + copiedString);
-     }
-}         
+        // Check if the string can be divided into 'N' equal parts
+        if (len % parts != 0) {
+            System.out.println("Cannot divide the string into equal parts.");
+            return;
+        }
+
+        // Calculate the size of each part
+        int partSize = len / parts;
+
+        // Display the divided parts
+        System.out.println("Dividing the string into " + parts + " equal parts:");
+        for (int i = 0; i < len; i++) {
+            if (i % partSize == 0 && i != 0) {
+                System.out.println(); // Move to the next line for a new part
+            }
+            System.out.print(str.charAt(i));
+        }
+        System.out.println(); // Ensure a newline at the end
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the string
+        System.out.print("Enter the string: ");
+        String inputString = scanner.nextLine();
+
+        // Input the number of parts
+        System.out.print("Enter the number of parts: ");
+        int numberOfParts = scanner.nextInt();
+
+        // Divide the string into 'N' equal parts
+        divideString(inputString, numberOfParts);
+
+        scanner.close();
+    }
+}
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Original String: Hello, World!<br>
-Copied String: Hello, World!
+    Enter the string: programming
+    Enter the number of parts: 3
+    Dividing the string into 3 equal parts:
+    pro
+    gra
+    mmi
+    ng
     
 </pre>
                 </div>
