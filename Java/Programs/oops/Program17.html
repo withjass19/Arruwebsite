@@ -45,16 +45,40 @@
 
                     <p class="fs-5 py-3">17. Write a Java program to create a class called "Movie" with attributes for title, director, actors, and reviews, and methods for adding and retrieving reviews. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                
+public class MovieDemo {
+    public static void main(String[] args) {
+        // Create a Movie object
+        List<String> actors = new ArrayList<>();
+        actors.add("Actor1");
+        actors.add("Actor2");
+
+        Movie movie = new Movie("Sample Movie", "Sample Director", actors);
+
+        // Add reviews
+        movie.addReview("Excellent movie! Must watch.");
+        movie.addReview("The plot was interesting.");
+
+        // Display movie information
+        movie.displayMovieInfo();
+
+        // Retrieve and display reviews
+        List<String> retrievedReviews = movie.getReviews();
+        System.out.println("Retrieved Reviews: " + retrievedReviews);
     }
 }
+  
+                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Title: Sample Movie
+Director: Sample Director
+Actors: [Actor1, Actor2]
+Reviews: [Excellent movie! Must watch., The plot was interesting.]
+Retrieved Reviews: [Excellent movie! Must watch., The plot was interesting.]
+
 </pre>
                 </div>
             </div>

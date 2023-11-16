@@ -45,16 +45,61 @@
 
                     <p class="fs-5 py-3">26. Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class Person {
+    private String name;
+    private int age;
+    private String country;
+
+    // Getter methods
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    // Setter methods
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public static void main(String[] args) {
+        // Create an instance of the Person class
+        Person person = new Person();
+
+        // Set the values using setter methods
+        person.setName("John Doe");
+        person.setAge(25);
+        person.setCountry("USA");
+
+        // Display the values using getter methods
+        System.out.println("Name: " + person.getName());
+        System.out.println("Age: " + person.getAge());
+        System.out.println("Country: " + person.getCountry());
     }
 }
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Name: John Doe
+Age: 25
+Country: USA
+
 </pre>
                 </div>
             </div>

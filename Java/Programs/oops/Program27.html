@@ -45,16 +45,49 @@
 
                     <p class="fs-5 py-3">27. Write a Java program to create a class called BankAccount with private instance variables accountNumber and balance. Provide public getter and setter methods to access and modify these variables. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class BankAccount {
+    private String accountNumber;
+    private double balance;
+
+    // Getter methods
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    // Setter methods
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public static void main(String[] args) {
+        // Create an instance of the BankAccount class
+        BankAccount account = new BankAccount();
+
+        // Set the values using setter methods
+        account.setAccountNumber("123456789");
+        account.setBalance(1000.50);
+
+        // Display the values using getter methods
+        System.out.println("Account Number: " + account.getAccountNumber());
+        System.out.println("Balance: $" + account.getBalance());
     }
 }
+   
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Account Number: 123456789
+Balance: $1000.5
+
 </pre>
                 </div>
             </div>

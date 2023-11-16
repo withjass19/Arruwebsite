@@ -45,16 +45,92 @@
 
                     <p class="fs-5 py-3">23. Create a class entering the rollno, name and class of the student from user but rollno should be automatically generated as we enter the information of 10 students </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Scanner;
+
+class Student {
+    private static int rollNumberCounter = 1; // Static variable to keep track of roll numbers
+    private int rollNumber;
+    private String name;
+    private String className;
+
+    // Parameterized constructor
+    public Student(String name, String className) {
+        this.rollNumber = rollNumberCounter++;
+        this.name = name;
+        this.className = className;
+    }
+
+    // Display method
+    public void displayInfo() {
+        System.out.println("Roll Number: " + rollNumber);
+        System.out.println("Name: " + name);
+        System.out.println("Class: " + className);
     }
 }
+
+public class StudentInformation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Create an array to store information for 10 students
+        Student[] students = new Student[10];
+
+        // Input information for each student
+        for (int i = 0; i < students.length; i++) {
+            System.out.println("Enter information for Student " + (i + 1));
+            System.out.print("Enter name: ");
+            String name = scanner.nextLine();
+            System.out.print("Enter class: ");
+            String className = scanner.nextLine();
+
+            // Create a new Student object with the entered information
+            students[i] = new Student(name, className);
+        }
+
+        // Display information for all students
+        System.out.println("\nStudent Information:");
+        for (Student student : students) {
+            student.displayInfo();
+            System.out.println(); // Add a newline for better readability
+        }
+
+        scanner.close();
+    }
+}
+   
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter information for Student 1
+Enter name: John Doe
+Enter class: 10A
+
+Enter information for Student 2
+Enter name: Jane Smith
+Enter class: 10B
+
+...
+
+Enter information for Student 10
+Enter name: Alex Johnson
+Enter class: 10C
+
+Student Information:
+Roll Number: 1
+Name: John Doe
+Class: 10A
+
+Roll Number: 2
+Name: Jane Smith
+Class: 10B
+
+...
+
+Roll Number: 10
+Name: Alex Johnson
+Class: 10C
+   
 </pre>
                 </div>
             </div>

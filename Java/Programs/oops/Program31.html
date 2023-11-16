@@ -45,16 +45,34 @@
 
                     <p class="fs-5 py-3">31. Write a Java program to create a class called Car with private instance variables company_name, model_name, year, and mileage. Provide public getter and setter methods to access and modify the company_name, model_name, and year variables. However, only provide a getter method for the mileage variable. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class CarDemo {
+    public static void main(String[] args) {
+        // Create an instance of the Car class
+        Car myCar = new Car();
+
+        // Set values using setter methods
+        myCar.setCompany_name("Toyota");
+        myCar.setModel_name("Camry");
+        myCar.setYear(2022);
+        myCar.setMileage(30.5);
+
+        // Display values using getter methods
+        System.out.println("Company Name: " + myCar.getCompany_name());
+        System.out.println("Model Name: " + myCar.getModel_name());
+        System.out.println("Year: " + myCar.getYear());
+        System.out.println("Mileage: " + myCar.getMileage());
     }
 }
+  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Company Name: Toyota
+Model Name: Camry
+Year: 2022
+Mileage: 30.5
+  
 </pre>
                 </div>
             </div>

@@ -45,16 +45,105 @@
 
                     <p class="fs-5 py-3">18. Write a Java program to create a class called "Restaurant" with attributes for menu items, prices, and ratings, and methods to add and remove items, and to calculate average rating. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.HashMap;
+import java.util.Map;
+
+class Restaurant {
+    private Map<String, Double> menu; // Map to store menu items and prices
+    private Map<String, Integer> ratings; // Map to store ratings for each item
+
+    // Constructor
+    public Restaurant() {
+        this.menu = new HashMap<>();
+        this.ratings = new HashMap<>();
+    }
+
+    // Method to add an item to the menu
+    public void addItem(String itemName, double price) {
+        menu.put(itemName, price);
+        ratings.put(itemName, 0); // Initialize the rating to 0 for the new item
+    }
+
+    // Method to remove an item from the menu
+    public void removeItem(String itemName) {
+        menu.remove(itemName);
+        ratings.remove(itemName);
+    }
+
+    // Method to add a rating for an item
+    public void addRating(String itemName, int rating) {
+        if (ratings.containsKey(itemName)) {
+            ratings.put(itemName, ratings.get(itemName) + rating);
+        }
+    }
+
+    // Method to calculate the average rating for all items
+    public double calculateAverageRating() {
+        if (ratings.isEmpty()) {
+            return 0.0;
+        }
+
+        int totalRatings = 0;
+        int numberOfItems = ratings.size();
+
+        for (int rating : ratings.values()) {
+            totalRatings += rating;
+        }
+
+        return (double) totalRatings / numberOfItems;
+    }
+
+    // Method to display the menu
+    public void displayMenu() {
+        System.out.println("Menu:");
+        for (Map.Entry<String, Double> entry : menu.entrySet()) {
+            System.out.println(entry.getKey() + " - $" + entry.getValue());
+        }
     }
 }
+
+public class RestaurantDemo {
+    public static void main(String[] args) {
+        // Create a Restaurant object
+        Restaurant restaurant = new Restaurant();
+
+        // Add items to the menu
+        restaurant.addItem("Burger", 8.99);
+        restaurant.addItem("Pizza", 12.99);
+        restaurant.addItem("Salad", 6.99);
+
+        // Display the menu
+        restaurant.displayMenu();
+
+        // Add ratings for items
+        restaurant.addRating("Burger", 4);
+        restaurant.addRating("Pizza", 5);
+        restaurant.addRating("Salad", 3);
+
+        // Display average rating
+        System.out.println("Average Rating: " + restaurant.calculateAverageRating());
+
+        // Remove an item from the menu
+        restaurant.removeItem("Salad");
+
+        // Display the updated menu
+        restaurant.displayMenu();
+    }
+}
+  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Menu:
+Burger - $8.99
+Pizza - $12.99
+Salad - $6.99
+Average Rating: 4.0
+Menu:
+Burger - $8.99
+Pizza - $12.99
+
 </pre>
                 </div>
             </div>

@@ -45,16 +45,31 @@
 
                     <p class="fs-5 py-3">25. Create a class, entering the command line arguments from the user and show all the arguments as output.. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class CommandLineArgumentsExample {
+    public static void main(String[] args) {
+        // Check if any command-line arguments are provided
+        if (args.length == 0) {
+            System.out.println("No command-line arguments provided.");
+        } else {
+            System.out.println("Command-line arguments provided:");
+
+            // Display each command-line argument
+            for (int i = 0; i < args.length; i++) {
+                System.out.println("Argument " + (i + 1) + ": " + args[i]);
+            }
+        }
     }
 }
+   
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Command-line arguments provided:
+Argument 1: arg1
+Argument 2: arg2
+Argument 3: arg3
+  
 </pre>
                 </div>
             </div>
