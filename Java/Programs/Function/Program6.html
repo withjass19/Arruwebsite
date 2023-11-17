@@ -45,16 +45,36 @@
 
                     <p class="fs-5 py-3">6. Write a Java method to print characters between two characters (i.e. A to P). </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class CharacterPrinter {
+
+    // Method to print characters between two specified characters
+    public static void printCharactersBetween(char startChar, char endChar) {
+        if (startChar > endChar) {
+            System.out.println("Start character should be less than or equal to end character.");
+            return;
+        }
+                                
+        for (char ch = startChar; ch <= endChar; ch++) {
+            System.out.print(ch + " ");
+        }
+        System.out.println(); // Move to the next line after printing the characters
     }
-}
+                                
+    public static void main(String[] args) {
+        // Example usage:
+        char startChar = 'A';
+        char endChar = 'P';
+                                
+        System.out.println("Characters between " + startChar + " and " + endChar + ":");
+        printCharactersBetween(startChar, endChar);
+    }
+}                         
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Characters between A and P: <br>
+A B C D E F G H I J K L M N O P    
 </pre>
                 </div>
             </div>

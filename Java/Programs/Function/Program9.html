@@ -45,16 +45,59 @@
 
                     <p class="fs-5 py-3">9. Write a Java method to find all twin prime numbers less than 100. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                public class TwinPrimeFinder {
+
+                    // Method to check if a number is prime
+                    private static boolean isPrime(int num) {
+                        if (num < 2) {
+                            return false;
+                        }
+                        for (int i = 2; i <= Math.sqrt(num); i++) {
+                            if (num % i == 0) {
+                                return false;
+                            }
+                        }
+                        return true;
+                    }
+                
+                    // Method to find all twin prime numbers less than 100
+                    public static void findTwinPrimes() {
+                        System.out.println("Twin Prime Numbers less than 100:");
+                
+                        for (int i = 3; i < 100; i++) {
+                            // Check if i and i+2 are both prime (twin prime condition)
+                            if (isPrime(i) && isPrime(i + 2)) {
+                                System.out.println("(" + i + ", " + (i + 2) + ")");
+                            }
+                        }
+                    }
+                
+                    public static void main(String[] args) {
+                        // Example usage:
+                        findTwinPrimes();
+                    }
+                }     
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Twin Prime Numbers less than 100: <br>
+(3, 5) <br>
+(5, 7) <br>
+(11, 13) <br>
+(17, 19) <br>
+(29, 31) <br>
+(41, 43) <br>
+(59, 61) <br>
+(71, 73) <br>
+(101, 103) <br>
+(107, 109) <br>
+(137, 139) <br>
+(149, 151) <br>
+(179, 181) <br>
+(191, 193) <br>
+(197, 199) <br>
+
 </pre>
                 </div>
             </div>

@@ -45,16 +45,34 @@
 
                     <p class="fs-5 py-3">8. Write a Java method to display the current date and time. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+                                
+public class CurrentDateTime {
+                                
+    // Method to display the current date and time
+    public static void displayCurrentDateTime() {
+        // Get the current date and time
+        LocalDateTime currentDateTime = LocalDateTime.now();
+                                
+        // Format the date and time using a DateTimeFormatter
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDateTime = currentDateTime.format(formatter);
+                                
+        // Display the formatted date and time
+        System.out.println("Current Date and Time: " + formattedDateTime);
     }
-}
+                                
+    public static void main(String[] args) {
+        // Example usage:
+        displayCurrentDateTime();
+    }
+}   
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Current Date and Time: 2023-11-14 15:30:45  
 </pre>
                 </div>
             </div>

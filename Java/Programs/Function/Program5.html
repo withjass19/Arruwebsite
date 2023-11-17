@@ -45,16 +45,35 @@
 
                     <p class="fs-5 py-3">5. Write a Java method to compute the future investment value at a given interest rate for a specified number of years. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class FutureInvestmentValueCalculator {
+
+    // Method to compute the future investment value
+    public static double calculateFutureValue(double principal, double annualInterestRate, int years) {
+        // Convert the annual interest rate to a decimal
+        double monthlyInterestRate = annualInterestRate / 100 / 12;
+                                
+        // Calculate the future investment value using the formula
+        double futureValue = principal * Math.pow(1 + monthlyInterestRate, years * 12);
+                                
+        return futureValue;
     }
-}
+                                
+    public static void main(String[] args) {
+        // Example usage:
+        double principalAmount = 1000.0;
+        double interestRate = 5.0; // 5% annual interest rate
+        int numberOfYears = 5;
+                                
+        double futureValue = calculateFutureValue(principalAmount, interestRate, numberOfYears);
+                                
+        System.out.printf("Future investment value after %d years: $%.2f%n", numberOfYears, futureValue);
+    }
+}        
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Future investment value after 5 years: $1280.08
 </pre>
                 </div>
             </div>

@@ -45,16 +45,45 @@
 
                     <p class="fs-5 py-3">3. Write a Java method to display the middle character of a string. Note: a) If the length of the string is odd there will be two middle characters. b) If the length of the string is even there will be one middle character. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                public class MiddleCharacterDisplay {
+
+                    // Method to display the middle character(s) of a string
+                    public static String displayMiddleCharacter(String input) {
+                        int length = input.length();
+                
+                        if (length == 0) {
+                            return "String is empty.";
+                        }
+                
+                        int middleIndex = length / 2;
+                
+                        if (length % 2 == 0) {
+                            // String has an even length, so there is one middle character
+                            return "Middle character: " + input.charAt(middleIndex - 1) + input.charAt(middleIndex);
+                        } else {
+                            // String has an odd length, so there are two middle characters
+                            return "Middle character: " + input.charAt(middleIndex);
+                        }
+                    }
+                
+                    public static void main(String[] args) {
+                        // Example usage:
+                        String str1 = "abcde";
+                        String str2 = "abcdef";
+                        String str3 = "";
+                
+                        System.out.println(displayMiddleCharacter(str1));
+                        System.out.println(displayMiddleCharacter(str2));
+                        System.out.println(displayMiddleCharacter(str3));
+                    }
+                }     
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Middle character: c <br>
+Middle character: de <br>
+String is empty. <br>
 </pre>
                 </div>
             </div>

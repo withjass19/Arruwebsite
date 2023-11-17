@@ -45,16 +45,29 @@
 
                     <p class="fs-5 py-3">2. Write a Java method to compute the average of three numbers</p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class AverageCalculator {
+
+    // Method to compute the average of three numbers
+    public static double calculateAverage(double num1, double num2, double num3) {
+        return (num1 + num2 + num3) / 3;
     }
-}
+                                
+    public static void main(String[] args) {
+        // Example usage:
+        double num1 = 10.5;
+        double num2 = 5.8;
+        double num3 = 8.2;
+                                
+        double average = calculateAverage(num1, num2, num3);
+                                
+        System.out.println("The average of " + num1 + ", " + num2 + ", and " + num3 + " is: " + average);
+    }
+}      
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+The average of 10.5, 5.8, and 8.2 is: 8.166666666666666
 </pre>
                 </div>
             </div>

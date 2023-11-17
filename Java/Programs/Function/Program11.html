@@ -45,16 +45,28 @@
 
                     <p class="fs-5 py-3">11. Write a Java method that accepts three integers and checks whether they are consecutive or not. Returns true or false. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class ConsecutiveChecker {
+
+    // Method to check if three integers are consecutive
+    public static boolean areConsecutive(int num1, int num2, int num3) {
+        // Check if the difference between consecutive numbers is 1
+        return (num2 == num1 + 1 && num3 == num2 + 1);
     }
-}
+                                
+    public static void main(String[] args) {
+        // Example usage:
+        int num1 = 4;
+        int num2 = 5;
+        int num3 = 6;
+                                
+        System.out.println("Are " + num1 + ", " + num2 + ", and " + num3 + " consecutive? " + areConsecutive(num1, num2, num3));
+    }
+}                   
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Are 4, 5, and 6 consecutive? true  
 </pre>
                 </div>
             </div>

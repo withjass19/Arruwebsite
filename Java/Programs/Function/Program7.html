@@ -45,16 +45,34 @@
 
                     <p class="fs-5 py-3">7. Write a Java method to check whether a string is a valid password. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+ public class PasswordValidator {
+
+    // Method to check whether a string is a valid password
+    public static boolean isValidPassword(String password) {
+        // Check if the password meets the criteria (example criteria: minimum length of 8 characters, at least one uppercase letter, one lowercase letter, and one digit)
+        if (password.length() < 8 || !password.matches(".*[A-Z].*") || !password.matches(".*[a-z].*") || !password.matches(".*\\d.*")) {
+            return false;
+        }
+                                
+        return true;
     }
-}
+                                
+    public static void main(String[] args) {
+        // Example usage:
+        String password1 = "StrongP@ssword123";
+        String password2 = "weak";
+                                
+        System.out.println("Is \"" + password1 + "\" a valid password? " + isValidPassword(password1));
+        System.out.println("Is \"" + password2 + "\" a valid password? " + isValidPassword(password2));
+    }
+}                       
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Is "StrongP@ssword123" a valid password? true <br>
+Is "weak" a valid password? false
+   
 </pre>
                 </div>
             </div>

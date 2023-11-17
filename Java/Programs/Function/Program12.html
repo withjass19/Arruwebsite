@@ -45,16 +45,32 @@
 
                     <p class="fs-5 py-3">12. Write a Java method that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class MiddlePointChecker {
+
+    // Method to check if one integer is the middle point between the other two
+    public static boolean isMiddlePoint(int num1, int num2, int num3) {
+        // Sort the numbers
+        int[] sortedNumbers = {num1, num2, num3};
+        java.util.Arrays.sort(sortedNumbers);
+                                
+        // Check if the middle number is the middle point
+        return (sortedNumbers[1] == num2);
     }
-}
+                                
+    public static void main(String[] args) {
+        // Example usage:
+        int num1 = 3;
+        int num2 = 6;
+        int num3 = 9;
+                                
+        System.out.println("Is " + num2 + " the middle point between " + num1 + " and " + num3 + "? " + isMiddlePoint(num1, num2, num3));
+    }
+}     
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Is 6 the middle point between 3 and 9? true
 </pre>
                 </div>
             </div>
