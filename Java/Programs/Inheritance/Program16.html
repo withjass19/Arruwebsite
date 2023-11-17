@@ -45,16 +45,84 @@
 
                     <p class="fs-5 py-3">16. Write a Java program to create an abstract class Shape with abstract methods calculateArea() and calculatePerimeter(). Create subclasses Circle and Triangle that extend the Shape class and implement the respective methods to calculate the area and perimeter of each shape. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+// Abstract class Shape
+abstract class Shape {
+    // Abstract methods
+    public abstract double calculateArea();
+    public abstract double calculatePerimeter();
+}
+                                        
+// Subclass Circle extending Shape
+class Circle extends Shape {
+    // Property
+    private double radius;
+                                        
+    // Constructor
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+                                        
+    // Implementing the calculateArea method for Circle
+    <!-- @Override -->
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+                                        
+    // Implementing the calculatePerimeter method for Circle
+    <!-- @Override -->
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
     }
 }
+                                        
+// Subclass Triangle extending Shape
+class Triangle extends Shape {
+    // Properties
+    private double side1, side2, side3;
+                                        
+    // Constructor
+    public Triangle(double side1, double side2, double side3) {
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
+    }
+                                        
+    // Implementing the calculateArea method for Triangle
+    <!-- @Override -->
+    public double calculateArea() {
+        // Using Heron's formula to calculate the area of a triangle
+        double s = (side1 + side2 + side3) / 2.0;
+        return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+    }
+                                        
+    // Implementing the calculatePerimeter method for Triangle
+    <!-- @Override -->
+    public double calculatePerimeter() {
+        return side1 + side2 + side3;
+    }
+}
+                                        
+// Main class
+public class AbstractShapeExample {
+    public static void main(String[] args) {
+        // Create instances of Circle and Triangle
+        Circle circle = new Circle(5.0);
+        Triangle triangle = new Triangle(3.0, 4.0, 5.0);
+                                        
+        // Call the calculateArea and calculatePerimeter methods for each instance
+        System.out.println("Circle Area: " + circle.calculateArea());
+        System.out.println("Circle Perimeter: " + circle.calculatePerimeter());
+                                        
+        System.out.println("\nTriangle Area: " + triangle.calculateArea());
+        System.out.println("Triangle Perimeter: " + triangle.calculatePerimeter());
+    }
+}                  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Circle Area: 78.53981633974483 <br>
+Circle Perimeter: 31.41592653589793 <br>
 </pre>
                 </div>
             </div>

@@ -45,16 +45,73 @@
 
                     <p class="fs-5 py-3">25. Write a Java program to create an abstract class Bird with abstract methods fly() and makeSound(). Create subclasses Eagle and Hawk that extend the Bird class and implement the respective methods to describe how each bird flies and makes a sound. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+// Abstract class Bird
+abstract class Bird {
+    // Abstract methods
+    public abstract void fly();
+    public abstract void makeSound();
+}
+                                        
+// Subclass Eagle extending Bird
+class Eagle extends Bird {
+    // Implementing the fly method for Eagle
+    <!-- @Override -->
+    public void fly() {
+        System.out.println("Eagle soars high in the sky");
+    }
+                                        
+    // Implementing the makeSound method for Eagle
+    <!-- @Override -->
+    public void makeSound() {
+        System.out.println("Eagle screeches loudly");
     }
 }
+                                        
+// Subclass Hawk extending Bird
+class Hawk extends Bird {
+    // Implementing the fly method for Hawk
+    <!-- @Override -->
+    public void fly() {
+        System.out.println("Hawk glides gracefully through the air");
+    }
+                                        
+    // Implementing the makeSound method for Hawk
+    <!-- @Override -->
+    public void makeSound() {
+        System.out.println("Hawk emits a sharp cry");
+    }
+}
+                                        
+// Main class
+public class AbstractBirdExample {
+    public static void main(String[] args) {
+        // Create instances of Eagle and Hawk
+        Eagle eagle = new Eagle();
+        Hawk hawk = new Hawk();
+                                        
+        // Describe how each bird flies and makes a sound
+        System.out.println("Eagle:");
+        eagle.fly();
+        eagle.makeSound();
+                                        
+        System.out.println(); // Empty line for clarity
+                                        
+        System.out.println("Hawk:");
+        hawk.fly();
+        hawk.makeSound();
+    }
+}          
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Eagle: <br>
+Eagle soars high in the sky <br>
+Eagle screeches loudly <br>
+ <br>
+Hawk: <br>
+Hawk glides gracefully through the air <br>
+Hawk emits a sharp cry <br>
 </pre>
                 </div>
             </div>

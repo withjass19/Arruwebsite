@@ -45,16 +45,43 @@
 
                     <p class="fs-5 py-3">1. Write a Java program to create a class called Animal with a method called makeSound(). Create a subclass called Cat that overrides the makeSound() method to bark. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+/ Base class Animal
+class Animal {
+    // Method to make a generic sound
+    public void makeSound() {
+        System.out.println("Animal makes a generic sound");
     }
 }
+                                        
+// Subclass Cat extending Animal
+class Cat extends Animal {
+    // Override the makeSound method to bark
+    <!-- @Override -->
+    public void makeSound() {
+        System.out.println("Cat makes a 'Meow' sound");
+    }
+}
+                                        
+// Main class
+public class AnimalExample {
+    public static void main(String[] args) {
+        // Create an instance of Animal
+        Animal genericAnimal = new Animal();
+
+        // Create an instance of Cat
+        Cat myCat = new Cat();
+
+        // Demonstrate makeSound for both instances
+        genericAnimal.makeSound(); // Output: Animal makes a generic sound
+        myCat.makeSound();         // Output: Cat makes a 'Meow' sound
+    }
+}     
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Animal makes a generic sound <br>
+Cat makes a 'Meow' sound
 </pre>
                 </div>
             </div>

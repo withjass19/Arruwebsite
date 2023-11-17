@@ -45,16 +45,89 @@
 
                     <p class="fs-5 py-3">20. Write a Java program to create an abstract class Shape3D with abstract methods calculateVolume() and calculateSurfaceArea(). Create subclasses Sphere and Cube that extend the Shape3D class and implement the respective methods to calculate the volume and surface area of each shape </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+// Abstract class Shape3D
+abstract class Shape3D {
+    // Abstract methods
+    public abstract double calculateVolume();
+    public abstract double calculateSurfaceArea();
+}
+                                        
+// Subclass Sphere extending Shape3D
+class Sphere extends Shape3D {
+    // Property specific to Sphere
+    private double radius;
+                                        
+    // Constructor for Sphere
+    public Sphere(double radius) {
+        this.radius = radius;
+    }
+                                        
+    // Implementing the calculateVolume method for Sphere
+    <!-- @Override -->
+    public double calculateVolume() {
+        return (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);
+    }
+                                        
+    // Implementing the calculateSurfaceArea method for Sphere
+    <!-- @Override -->
+    public double calculateSurfaceArea() {
+        return 4.0 * Math.PI * Math.pow(radius, 2);
     }
 }
+                                        
+// Subclass Cube extending Shape3D
+class Cube extends Shape3D {
+    // Property specific to Cube
+    private double sideLength;
+                                        
+    // Constructor for Cube
+    public Cube(double sideLength) {
+        this.sideLength = sideLength;
+    }
+                                        
+    // Implementing the calculateVolume method for Cube
+    <!-- @Override -->
+    public double calculateVolume() {
+        return Math.pow(sideLength, 3);
+    }
+                                        
+    // Implementing the calculateSurfaceArea method for Cube
+    <!-- @Override -->
+    public double calculateSurfaceArea() {
+        return 6.0 * Math.pow(sideLength, 2);
+    }
+}
+                                        
+// Main class
+public class AbstractShape3DExample {
+    public static void main(String[] args) {
+        // Create instances of Sphere and Cube
+        Sphere sphere = new Sphere(5.0);
+        Cube cube = new Cube(4.0);
+                                        
+        // Display volume and surface area for Sphere and Cube
+        System.out.println("Sphere:");
+        System.out.println("Volume: " + sphere.calculateVolume());
+        System.out.println("Surface Area: " + sphere.calculateSurfaceArea());
+                                        
+        System.out.println(); // Empty line for clarity
+                                        
+        System.out.println("Cube:");
+        System.out.println("Volume: " + cube.calculateVolume());
+        System.out.println("Surface Area: " + cube.calculateSurfaceArea());
+    }
+}                               
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Sphere: <br>
+Volume: 523.5987755982989 <br>
+Surface Area: 314.1592653589793 <br>
+ <br>
+Cube: <br>
+Volume: 64.0 <br>
+Surface Area: 96.0 <br>
 </pre>
                 </div>
             </div>

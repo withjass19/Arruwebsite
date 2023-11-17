@@ -45,16 +45,73 @@
 
                     <p class="fs-5 py-3">23. Write a Java program to create an abstract class Instrument with abstract methods play() and tune(). Create subclasses for Glockenspiel and Violin that extend the Instrument class and implement the respective methods to play and tune each instrument. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+// Abstract class Instrument
+abstract class Instrument {
+    // Abstract methods
+    public abstract void play();
+    public abstract void tune();
+}
+                                        
+// Subclass Glockenspiel extending Instrument
+class Glockenspiel extends Instrument {
+    // Implementing the play method for Glockenspiel
+    <!-- @Override -->
+    public void play() {
+        System.out.println("Glockenspiel plays melodious tunes");
+    }
+                                        
+    // Implementing the tune method for Glockenspiel
+    <!-- @Override -->
+    public void tune() {
+        System.out.println("Glockenspiel is tuned by adjusting metal bars");
     }
 }
+                                        
+// Subclass Violin extending Instrument
+class Violin extends Instrument {
+    // Implementing the play method for Violin
+    <!-- @Override -->
+    public void play() {
+        System.out.println("Violin produces beautiful string sounds");
+    }
+                                        
+    // Implementing the tune method for Violin
+    <!-- @Override -->
+    public void tune() {
+        System.out.println("Violin is tuned by adjusting the tension of the strings");
+    }
+}
+                                        
+// Main class
+public class AbstractInstrumentExample {
+    public static void main(String[] args) {
+        // Create instances of Glockenspiel and Violin
+        Glockenspiel glockenspiel = new Glockenspiel();
+        Violin violin = new Violin();
+                                        
+        // Play and tune the instruments
+        System.out.println("Glockenspiel:");
+        glockenspiel.play();
+        glockenspiel.tune();
+                                        
+        System.out.println(); // Empty line for clarity
+                                        
+        System.out.println("Violin:");
+        violin.play();
+        violin.tune();
+    }
+}                                 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Glockenspiel: <br>
+Glockenspiel plays melodious tunes <br>
+Glockenspiel is tuned by adjusting metal bars <br>
+ <br>
+Violin: <br>
+Violin produces beautiful string sounds <br>
+Violin is tuned by adjusting the tension of the strings <br>
 </pre>
                 </div>
             </div>

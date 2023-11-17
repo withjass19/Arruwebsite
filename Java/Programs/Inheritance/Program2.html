@@ -45,16 +45,43 @@
 
                     <p class="fs-5 py-3">2. Write a Java program to create a class called Vehicle with a method called drive(). Create a subclass called Car that overrides the drive() method to print "Repairing a car". </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+// Base class Vehicle
+class Vehicle {
+    // Method to drive the vehicle
+    public void drive() {
+        System.out.println("Vehicle is being driven");
     }
 }
+                                        
+// Subclass Car extending Vehicle
+class Car extends Vehicle {
+    // Override the drive method to print "Repairing a car"
+    <!-- @Override -->
+    public void drive() {
+        System.out.println("Repairing a car");
+    }
+}
+                                        
+// Main class
+public class VehicleExample {
+    public static void main(String[] args) {
+        // Create an instance of Vehicle
+        Vehicle myVehicle = new Vehicle();
+
+        // Create an instance of Car
+        Car myCar = new Car();
+
+        // Demonstrate drive for both instances
+        myVehicle.drive(); // Output: Vehicle is being driven
+        myCar.drive();     // Output: Repairing a car
+    }
+}       
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Vehicle is being driven <br>
+Repairing a car 
 </pre>
                 </div>
             </div>

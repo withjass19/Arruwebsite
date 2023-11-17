@@ -45,16 +45,95 @@
 
                     <p class="fs-5 py-3">18. Write a Java program to create an abstract class Animal with abstract methods eat() and sleep(). Create subclasses Lion, Tiger, and Deer that extend the Animal class and implement the eat() and sleep() methods differently based on their specific behavior. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+// Abstract class Animal
+abstract class Animal {
+    // Abstract methods
+    public abstract void eat();
+    public abstract void sleep();
+}
+                                        
+// Subclass Lion extending Animal
+class Lion extends Animal {
+    // Implementing the eat method for Lion
+    <!-- @Override -->
+    public void eat() {
+        System.out.println("Lion eats meat");
+    }
+                                        
+    // Implementing the sleep method for Lion
+    <!-- @Override -->
+    public void sleep() {
+        System.out.println("Lion sleeps on rocks");
     }
 }
+                                        
+// Subclass Tiger extending Animal
+class Tiger extends Animal {
+    // Implementing the eat method for Tiger
+    <!-- @Override -->
+    public void eat() {
+        System.out.println("Tiger eats meat");
+    }
+                                        
+    // Implementing the sleep method for Tiger
+    <!-- @Override -->
+    public void sleep() {
+        System.out.println("Tiger sleeps in the grass");
+    }
+}
+                                        
+// Subclass Deer extending Animal
+class Deer extends Animal {
+    // Implementing the eat method for Deer
+    <!-- @Override -->
+    public void eat() {
+        System.out.println("Deer eats grass");
+    }
+                                        
+    // Implementing the sleep method for Deer
+    <!-- @Override -->
+    public void sleep() {
+        System.out.println("Deer sleeps under trees");
+    }
+}
+                                        
+// Main class
+public class AbstractAnimalExample {
+    public static void main(String[] args) {
+        // Create instances of Lion, Tiger, and Deer
+        Lion lion = new Lion();
+        Tiger tiger = new Tiger();
+        Deer deer = new Deer();
+                                        
+        // Perform operations on the animals
+        System.out.println("Lion:");
+        lion.eat();
+        lion.sleep();
+                                        
+        System.out.println("\nTiger:");
+        tiger.eat();
+        tiger.sleep();
+                                        
+        System.out.println("\nDeer:");
+        deer.eat();
+        deer.sleep();
+    }
+}                
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Lion: <br>
+Lion eats meat <br>
+Lion sleeps on rocks <br>
+ <br>
+Tiger: <br>
+Tiger eats meat <br>
+Tiger sleeps in the grass <br>
+ <br>
+Deer: <br>
+Deer eats grass <br>
+Deer sleeps under trees <br>
 </pre>
                 </div>
             </div>

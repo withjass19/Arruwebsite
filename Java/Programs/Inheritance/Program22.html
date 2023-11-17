@@ -45,16 +45,73 @@
 
                     <p class="fs-5 py-3">22. Write a Java program to create an abstract class Person with abstract methods eat() and exercise(). Create subclasses Athlete and LazyPerson that extend the Person class and implement the respective methods to describe how each person eats and exercises. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+// Abstract class Person
+abstract class Person {
+    // Abstract methods
+    public abstract void eat();
+    public abstract void exercise();
+}
+                                        
+// Subclass Athlete extending Person
+class Athlete extends Person {
+    // Implementing the eat method for Athlete
+    <!-- @Override -->
+    public void eat() {
+        System.out.println("Athlete eats a balanced diet for energy");
+    }
+                                        
+    // Implementing the exercise method for Athlete
+    <!-- @Override -->
+    public void exercise() {
+        System.out.println("Athlete engages in rigorous exercise routines");
     }
 }
+                                        
+// Subclass LazyPerson extending Person
+class LazyPerson extends Person {
+    // Implementing the eat method for LazyPerson
+    <!-- @Override -->
+    public void eat() {
+        System.out.println("Lazy person eats snacks and fast food");
+    }
+                                        
+    // Implementing the exercise method for LazyPerson
+    <!-- @Override -->
+    public void exercise() {
+        System.out.println("Lazy person avoids exercise and prefers a sedentary lifestyle");
+    }
+}
+                                        
+// Main class
+public class AbstractPersonExample {
+    public static void main(String[] args) {
+        // Create instances of Athlete and LazyPerson
+        Athlete athlete = new Athlete();
+        LazyPerson lazyPerson = new LazyPerson();
+                                        
+        // Describe eating and exercise habits for Athlete and LazyPerson
+        System.out.println("Athlete:");
+        athlete.eat();
+        athlete.exercise();
+                                        
+        System.out.println(); // Empty line for clarity
+                                        
+        System.out.println("Lazy Person:");
+        lazyPerson.eat();
+        lazyPerson.exercise();
+    }
+}        
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Athlete: <br>
+Athlete eats a balanced diet for energy <br>
+Athlete engages in rigorous exercise routines <br>
+ <br>
+Lazy Person: <br>
+Lazy person eats snacks and fast food <br>
+Lazy person avoids exercise and prefers a sedentary lifestyle <br>
 </pre>
                 </div>
             </div>

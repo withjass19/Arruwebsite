@@ -45,16 +45,63 @@
 
                     <p class="fs-5 py-3">4. Write a Java program to create a class called Employee with methods called work() and getSalary(). Create a subclass called HRManager that overrides the work() method and adds a new method called addEmployee(). </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+// Base class Employee
+class Employee {
+    // Method to perform work
+    public void work() {
+        System.out.println("Employee is working");
+    }
+                                        
+    // Method to get the salary
+    public double getSalary() {
+        System.out.println("Employee's salary is calculated");
+        return 0.0; // Default salary for an employee
     }
 }
+                                        
+// Subclass HRManager extending Employee
+class HRManager extends Employee {
+    // Override the work method for HRManager
+    @Override
+    public void work() {
+        System.out.println("HR Manager is managing human resources");
+    }
+                                        
+    // New method specific to HRManager
+    public void addEmployee() {
+        System.out.println("HR Manager is adding a new employee");
+        // Your logic for adding an employee goes here
+    }
+}
+                                        
+// Main class
+public class EmployeeExample {
+    public static void main(String[] args) {
+        // Create an instance of Employee
+        Employee genericEmployee = new Employee();
+
+        // Create an instance of HRManager
+        HRManager hrManager = new HRManager();
+
+        // Demonstrate work and getSalary for both instances
+        genericEmployee.work();       // Output: Employee is working
+        genericEmployee.getSalary();  // Output: Employee's salary is calculated
+
+        hrManager.work();             // Output: HR Manager is managing human resources
+        hrManager.getSalary();        // Output: Employee's salary is calculated
+
+        hrManager.addEmployee();      // Output: HR Manager is adding a new employee
+    }
+}                     
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Employee is working <br>
+Employee's salary is calculated <br>
+HR Manager is managing human resources <br>
+Employee's salary is calculated <br>
+HR Manager is adding a new employee
 </pre>
                 </div>
             </div>

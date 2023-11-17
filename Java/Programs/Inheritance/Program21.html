@@ -45,16 +45,73 @@
 
                     <p class="fs-5 py-3">21. Write a Java program to create an abstract class Vehicle with abstract methods startEngine() and stopEngine(). Create subclasses Car and Motorcycle that extend the Vehicle class and implement the respective methods to start and stop the engines for each vehicle type. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+// Abstract class Vehicle
+abstract class Vehicle {
+    // Abstract methods
+    public abstract void startEngine();
+    public abstract void stopEngine();
+}
+                                        
+// Subclass Car extending Vehicle
+class Car extends Vehicle {
+    // Implementing the startEngine method for Car
+    <!-- @Override -->
+    public void startEngine() {
+        System.out.println("Car engine started");
+    }
+                                        
+    // Implementing the stopEngine method for Car
+    <!-- @Override -->
+    public void stopEngine() {
+        System.out.println("Car engine stopped");
     }
 }
+                                        
+// Subclass Motorcycle extending Vehicle
+class Motorcycle extends Vehicle {
+    // Implementing the startEngine method for Motorcycle
+    <!-- @Override -->
+    public void startEngine() {
+        System.out.println("Motorcycle engine started");
+    }
+                                        
+    // Implementing the stopEngine method for Motorcycle
+    <!-- @Override -->
+    public void stopEngine() {
+        System.out.println("Motorcycle engine stopped");
+    }
+}
+                                        
+// Main class
+public class AbstractVehicleExample {
+    public static void main(String[] args) {
+        // Create instances of Car and Motorcycle
+        Car car = new Car();
+        Motorcycle motorcycle = new Motorcycle();
+                                        
+        // Start and stop engines for Car and Motorcycle
+        System.out.println("Car:");
+        car.startEngine();
+        car.stopEngine();
+                                        
+        System.out.println(); // Empty line for clarity
+                                        
+        System.out.println("Motorcycle:");
+        motorcycle.startEngine();
+        motorcycle.stopEngine();
+    }
+}          
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    Car: <br>
+    Car engine started <br>
+    Car engine stopped <br>
+    
+    <br>Motorcycle: <br>
+    Motorcycle engine started <br>
+    Motorcycle engine stopped  <br>  
 </pre>
                 </div>
             </div>

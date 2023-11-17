@@ -45,16 +45,73 @@
 
                     <p class="fs-5 py-3">24. Write a Java program to create an abstract class Shape2D with abstract methods draw() and resize(). Create subclasses Rectangle and Circle that extend the Shape2D class and implement the respective methods to draw and resize each shape. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+// Abstract class Shape2D
+abstract class Shape2D {
+    // Abstract methods
+    public abstract void draw();
+    public abstract void resize(double factor);
+}
+                                        
+// Subclass Rectangle extending Shape2D
+class Rectangle extends Shape2D {
+    // Implementing the draw method for Rectangle
+    <!-- @Override -->
+    public void draw() {
+        System.out.println("Drawing a rectangle");
+    }
+                                        
+    // Implementing the resize method for Rectangle
+    <!-- @Override -->
+    public void resize(double factor) {
+        System.out.println("Resizing the rectangle by a factor of " + factor);
     }
 }
+                                        
+// Subclass Circle extending Shape2D
+class Circle extends Shape2D {
+    // Implementing the draw method for Circle
+    <!-- @Override -->
+    public void draw() {
+        System.out.println("Drawing a circle");
+    }
+                                        
+    // Implementing the resize method for Circle
+    <!-- @Override -->
+    public void resize(double factor) {
+        System.out.println("Resizing the circle by a factor of " + factor);
+    }
+}
+                                        
+// Main class
+public class AbstractShape2DExample {
+    public static void main(String[] args) {
+        // Create instances of Rectangle and Circle
+        Rectangle rectangle = new Rectangle();
+        Circle circle = new Circle();
+
+        // Draw and resize the shapes
+        System.out.println("Rectangle:");
+        rectangle.draw();
+        rectangle.resize(1.5);
+                                        
+        System.out.println(); // Empty line for clarity
+                                        
+        System.out.println("Circle:");
+        circle.draw();
+        circle.resize(2.0);
+    }
+}                                        
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Rectangle: <br>
+Drawing a rectangle <br>
+Resizing the rectangle by a factor of 1.5 <br>
+ <br>
+Circle: <br>
+Drawing a circle <br>
+Resizing the circle by a factor of 2.0 <br>
 </pre>
                 </div>
             </div>

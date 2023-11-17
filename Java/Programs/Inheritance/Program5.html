@@ -45,16 +45,93 @@
 
                     <p class="fs-5 py-3">5. Write a Java program to create a class known as "BankAccount" with methods called deposit() and withdraw(). Create a subclass called SavingsAccount that overrides the withdraw() method to prevent withdrawals if the account balance falls below one hundred. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+// Base class BankAccount
+class BankAccount {
+    // Attributes
+    protected double balance;
+                                        
+    // Constructor
+    public BankAccount(double initialBalance) {
+        this.balance = initialBalance;
+    }
+                                        
+    // Method to deposit money
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposit: " + amount);
+        displayBalance();
+    }
+                                        
+    // Method to withdraw money
+    public void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrawal: " + amount);
+        } else {
+            System.out.println("Insufficient funds. Withdrawal denied.");
+        }
+        displayBalance();
+    }
+                                        
+    // Method to display the current balance
+    public void displayBalance() {
+        System.out.println("Current Balance: " + balance);
     }
 }
+                                        
+// Subclass SavingsAccount extending BankAccount
+class SavingsAccount extends BankAccount {
+    // Constructor
+    public SavingsAccount(double initialBalance) {
+        super(initialBalance);
+    }
+                                        
+    // Override the withdraw method to prevent withdrawals below one hundred
+    <!-- @Override -->
+    public void withdraw(double amount) {
+        if (balance - amount >= 100) {
+            super.withdraw(amount);
+        } else {
+            System.out.println("Withdrawal denied. Minimum balance of 100 required.");
+        }
+    }
+}
+                                        
+// Main class
+public class BankAccountExample {
+    public static void main(String[] args) {
+        // Create an instance of BankAccount
+        BankAccount myBankAccount = new BankAccount(500.0);
+
+        // Create an instance of SavingsAccount
+        SavingsAccount mySavingsAccount = new SavingsAccount(200.0);
+
+        // Demonstrate deposit and withdraw for both instances
+        myBankAccount.deposit(300.0);
+        myBankAccount.withdraw(200.0);
+
+        System.out.println(); // Add a separator for better output readability
+
+        mySavingsAccount.deposit(150.0);
+        mySavingsAccount.withdraw(50.0);
+        mySavingsAccount.withdraw(150.0);
+    }
+}                    
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Deposit: 300.0 <br>
+Current Balance: 800.0 <br>
+Withdrawal: 200.0 <br>
+Current Balance: 600.0 <br>
+ <br>
+Deposit: 150.0 <br>
+Current Balance: 350.0 <br>
+Withdrawal: 50.0 <br>
+Current Balance: 300.0 <br>
+Withdrawal denied. Minimum balance of 100 required. <br>
+Current Balance: 300.0 <br>
 </pre>
                 </div>
             </div>

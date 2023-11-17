@@ -45,16 +45,66 @@
 
                     <p class="fs-5 py-3">14. Create a program, showing an example of dynamic method dispatch </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+// Base class Animal
+class Animal {
+    // Method
+    public void makeSound() {
+        System.out.println("Generic animal sound");
     }
 }
+                                        
+// Subclass Dog extending Animal
+class Dog extends Animal {
+    // Method overriding the makeSound method in the parent class
+    <!-- @Override -->
+    public void makeSound() {
+        System.out.println("Bark! Bark!");
+    }
+                                        
+    // Additional method specific to Dog
+    public void wagTail() {
+        System.out.println("Dog is wagging its tail");
+    }
+}
+                                        
+// Subclass Cat extending Animal
+class Cat extends Animal {
+    // Method overriding the makeSound method in the parent class
+    @Override
+    public void makeSound() {
+        System.out.println("Meow!");
+    }
+                                        
+    // Additional method specific to Cat
+    public void purr() {
+        System.out.println("Cat is purring");
+    }
+}
+                                        
+// Main class
+public class DynamicMethodDispatchExample {
+    public static void main(String[] args) {
+        // Create instances of Animal, Dog, and Cat
+        Animal myAnimal = new Animal();
+        Animal myDog = new Dog();
+        Animal myCat = new Cat();
+                                        
+        // Call the makeSound method for each instance
+        myAnimal.makeSound(); // Calls the method in Animal class
+        myDog.makeSound();    // Calls the overridden method in Dog class
+        myCat.makeSound();    // Calls the overridden method in Cat class
+                                        
+        // Uncommenting the line below would result in a compilation error
+        // myDog.wagTail();    // This method is not in the Animal class
+    }
+}                 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Generic animal sound <br>
+Bark! Bark! <br>
+Meow! <br>
 </pre>
                 </div>
             </div>

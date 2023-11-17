@@ -45,16 +45,43 @@
 
                     <p class="fs-5 py-3">6. Write a Java program to create a class called Animal with a method named move(). Create a subclass called Cheetah that overrides the move() method to run. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+// Base class Animal
+class Animal {
+    // Method to perform movement
+    public void move() {
+        System.out.println("Animal is moving");
     }
 }
+                                        
+// Subclass Cheetah extending Animal
+class Cheetah extends Animal {
+    // Override the move method for Cheetah
+    <!-- @Override -->
+    public void move() {
+        System.out.println("Cheetah is running");
+    }
+}
+                                        
+// Main class
+public class AnimalExample {
+    public static void main(String[] args) {
+        // Create an instance of Animal
+        Animal genericAnimal = new Animal();
+
+        // Create an instance of Cheetah
+        Cheetah myCheetah = new Cheetah();
+
+        // Demonstrate move for both instances
+        genericAnimal.move();  // Output: Animal is moving
+        myCheetah.move();      // Output: Cheetah is running
+    }
+}           
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Animal is moving <br>
+Cheetah is running
 </pre>
                 </div>
             </div>

@@ -45,16 +45,58 @@
 
                     <p class="fs-5 py-3">12. Create a program, showing an example of super function </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+// Base class Animal
+class Animal {
+    // Property
+    protected String species;
+                                        
+    // Constructor
+    public Animal(String species) {
+        this.species = species;
+    }
+                                        
+    // Method
+    public void displayInfo() {
+        System.out.println("Species: " + species);
     }
 }
+                                        
+// Subclass Bird extending Animal
+class Bird extends Animal {
+    // Additional property
+    private String featherColor;
+                                        
+    // Constructor
+    public Bird(String species, String featherColor) {
+        // Call the constructor of the parent class using super()
+        super(species);
+        this.featherColor = featherColor;
+    }
+                                        
+    // Method overriding the displayInfo method in the parent class
+    <!-- @Override -->
+    public void displayInfo() {
+        // Call the displayInfo method of the parent class using super()
+        super.displayInfo();
+        System.out.println("Feather Color: " + featherColor);
+    }
+}
+                                        
+// Main class
+public class SuperFunctionExample {
+    public static void main(String[] args) {
+        // Create an instance of Bird
+        Bird myBird = new Bird("Sparrow", "Brown");
+                                        
+        // Access properties and methods using the instance of Bird
+        myBird.displayInfo(); // Calling the overridden method in the subclass
+}  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Species: Sparrow <br>
+Feather Color: Brown
 </pre>
                 </div>
             </div>
