@@ -46,16 +46,45 @@
                     <p class="fs-5 py-3"> 10. Create a simple AWT application that displays a Choice with FlowLayout manager.
                     </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                // importing awt class  
+                import java.awt.*;   
+                class a {    
+                  
+                         // class constructor  
+                        a() {    
+                  
+                        // creating a frame  
+                        Frame f = new Frame();    
+                  
+                        // creating a choice component  
+                        Choice c = new Choice();   
+                  
+                        // adding items to the choice menu  
+                        c.add("Item 1");    
+                        c.add("Item 2");    
+                        c.add("Item 3");    
+                        c.add("Item 4");    
+                        c.add("Item 5");    
+                  
+                        // adding choice menu to frame  
+                        f.add(c);    
+                  
+                        // setting size, layout and visibility of frame  
+                        f.setSize(400, 400);    
+                        f.setVisible(true);    
+                     }    
+                  
+                // main method  
+                public static void main(String args[])    
+                {    
+                   new a();    
+                }    
+                }     
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    
 </pre>
                 </div>
             </div>

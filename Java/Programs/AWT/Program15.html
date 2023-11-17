@@ -45,16 +45,29 @@
 
                     <p class="fs-5 py-3">15. Create a simple AWT application that displays a List with Custom Layout.</p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.awt.Choice;
+                import java.awt.Frame;
+                class prog15{
+                public static void main(String args[]){
+                Frame f=new Frame("Custom list app");
+                 Choice choose =new Choice();
+                choose.add("Home");
+                choose.add("Office");
+                choose.add("Card");
+                choose.add("Tables");
+                choose.add("Hourse");
+                choose.add("Purse");
+                choose.add("All");
+                f.add(choose);
+                f.setSize(300,300);
+                f.setVisible(true);
+                }
+                }
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    <img src="15.png">
 </pre>
                 </div>
             </div>

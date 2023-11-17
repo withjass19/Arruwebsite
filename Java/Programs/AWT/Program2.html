@@ -46,72 +46,47 @@
                     <p class="fs-5 py-3">2. Create a simple AWT application that displays a button with Custom Layout. </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-import java.awt.*;
-
-public class CustomLayoutAWTApplication {
-    public static void main(String[] args) {
-        // Create the frame
-        Frame frame = new Frame("Custom Layout AWT Application");
-
-        // Create a button
-        Button button = new Button("Click Me!");
-
-        // Set the layout manager to custom layout
-        frame.setLayout(new CustomLayout());
-
-        // Add the button to the frame
-        frame.add(button);
-
-        // Set the frame size
-        frame.setSize(300, 200);
-
-        // Center the frame on the screen
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int x = (screenSize.width - frame.getWidth()) / 2;
-        int y = (screenSize.height - frame.getHeight()) / 2;
-        frame.setLocation(x, y);
-
-        // Make the frame visible
-        frame.setVisible(true);
-
-        // Add a window listener to handle closing the frame
-        frame.addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-                System.exit(0);
+ import java.awt.*;
+            import java.awt.event.*;
+            
+            class a{
+                public static void main(String[] x) 
+                {
+                    // Create a new frame.
+                    Frame f = new Frame("AWT Button custom Layout ");
+            
+                    // Set the size of the frame.
+                    f.setSize(300, 300);
+            
+                   
+                    // Create a button and add it to the frame.
+                    Button b1= new Button("Click me!");
+                    
+                    // Set the layout manager for the frame tocustom layout.
+                    b1.setBounds(150,100,60,60);
+                    f.add(b1);
+            
+                    // Create a label and add it to the frame.
+                    Label l1 = new Label("Please click the button.");
+                    f.add(l1);
+            
+                  
+                    // Display the frame.
+                    f.setVisible(true);
+                     // Handle the window closing event.
+                    f.addWindowListener(new WindowAdapter() {
+                        public void windowClosing(WindowEvent e) {
+                            System.exit(0);
+                        }
+                    });
+            
+                }
             }
-        });
-    }
-}
-
-class CustomLayout implements LayoutManager {
-    public void addLayoutComponent(String name, Component comp) {
-        // Not used
-    }
-
-    public void layoutContainer(Container parent) {
-        Component[] components = parent.getComponents();
-        int x = (parent.getWidth() - components[0].getWidth()) / 2;
-        int y = (parent.getHeight() - components[0].getHeight()) / 2;
-        components[0].setBounds(x, y, components[0].getWidth(), components[0].getHeight());
-    }
-
-    public Dimension minimumLayoutSize(Container parent) {
-        return new Dimension(0, 0);
-    }
-
-    public Dimension preferredLayoutSize(Container parent) {
-        return new Dimension(200, 100);
-    }
-
-    public void removeLayoutComponent(Component comp) {
-        // Not used
-    }
-}
    
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-   
+    <img src="2.png">
 </pre>
                 </div>
             </div>

@@ -46,16 +46,49 @@
                     <p class="fs-5 py-3"> 11. Create a simple AWT application that displays a Choice with Custom Layout.
                     </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                 // importing awt class  
+            import java.awt.*;   
+            class ChoiceExample1 {    
+              
+                     // class constructor  
+                    ChoiceExample1() {    
+              
+                    // creating a frame  
+                    Frame f = new Frame();    
+              
+                    // creating a choice component  
+                    Choice c = new Choice();   
+              
+                    // setting the bounds of choice menu   
+                    c.setBounds(100, 100, 75, 75);    
+              
+                    // adding items to the choice menu  
+                    c.add("Item 1");    
+                    c.add("Item 2");    
+                    c.add("Item 3");    
+                    c.add("Item 4");    
+                    c.add("Item 5");    
+              
+                    // adding choice menu to frame  
+                    f.add(c);    
+              
+                    // setting size, layout and visibility of frame  
+                    f.setSize(400, 400);    
+                    f.setLayout(null);    
+                    f.setVisible(true);    
+                 }    
+              
+            // main method  
+            public static void main(String args[])    
+            {    
+               new ChoiceExample1();    
+            }    
+            }     
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    <img src="11.png">
 </pre>
                 </div>
             </div>
