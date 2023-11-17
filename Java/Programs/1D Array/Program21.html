@@ -45,16 +45,67 @@
 
                     <p class="fs-5 py-3">21. Program to Remove Duplicate Element in an array </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Arrays;
+
+public class RemoveDuplicatesExample {
+    public static void main(String[] args) {
+        int[] array = {12, 45, 78, 23, 56, 12, 34, 67, 45};
+                                        
+        System.out.println("Original Array:");
+        printArray(array);
+                                        
+        // Remove duplicates from the array
+        int[] uniqueArray = removeDuplicates(array);
+                                        
+        System.out.println("\nArray after Removing Duplicates:");
+        printArray(uniqueArray);
     }
-}
+                                        
+    private static int[] removeDuplicates(int[] array) {
+        if (array.length == 0) {
+            System.out.println("Array is empty.");
+            return new int[0]; // Return an empty array
+        }
+                                        
+        Arrays.sort(array); // Sort the array to bring duplicates together
+                                        
+        int uniqueCount = 1; // At least one unique element (the first one)
+                                                
+        // Count unique elements
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] != array[i - 1]) {
+                uniqueCount++;
+            }
+        }
+                                        
+        int[] uniqueArray = new int[uniqueCount];
+        uniqueArray[0] = array[0];
+                                        
+        // Fill the unique elements in the new array
+        int j = 1;
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] != array[i - 1]) {
+                uniqueArray[j++] = array[i];
+            }
+        }
+                                        
+        return uniqueArray;
+    }
+                                        
+    private static void printArray(int[] array) {
+        for (int value : array) {
+            System.out.print(value + " ");
+        }
+    }
+}      
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Original Array: <br>
+12 45 78 23 56 12 34 67 45  <br>
+Array after Removing Duplicates: <br>
+12 23 34 45 56 67 78 
 </pre>
                 </div>
             </div>

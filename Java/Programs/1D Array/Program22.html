@@ -45,16 +45,53 @@
 
                     <p class="fs-5 py-3">22. Program to Print Odd and Even Numbers from an array </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class OddEvenNumbersExample {
+    public static void main(String[] args) {
+        int[] array = {12, 45, 78, 23, 56, 89, 34, 67};
+                                        
+        System.out.println("Original Array:");
+        printArray(array);
+                                        
+        System.out.println("\nOdd Numbers:");
+        printOddNumbers(array);
+                                        
+        System.out.println("\nEven Numbers:");
+        printEvenNumbers(array);
     }
-}
+                                        
+    private static void printOddNumbers(int[] array) {
+        for (int value : array) {
+            if (value % 2 != 0) {
+                System.out.print(value + " ");
+            }
+        }
+    }
+                                        
+    private static void printEvenNumbers(int[] array) {
+        for (int value : array) {
+            if (value % 2 == 0) {
+                System.out.print(value + " ");
+            }
+        }
+    }
+                                        
+    private static void printArray(int[] array) {
+        for (int value : array) {
+            System.out.print(value + " ");
+        }
+    }
+}     
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Original Array: <br>
+12 45 78 23 56 89 34 67  <br>
+ <br>
+Odd Numbers: <br>
+45 23 89 67  <br>
+Even Numbers: <br>
+12 78 56 34  <br>
 </pre>
                 </div>
             </div>

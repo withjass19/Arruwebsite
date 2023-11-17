@@ -45,16 +45,42 @@
 
                     <p class="fs-5 py-3">19. to Program Find 2nd Smallest Number in an array </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Arrays;
+
+public class SecondSmallestNumberExample {
+    public static void main(String[] args) {
+        int[] array = {12, 45, 78, 23, 56, 89, 34, 67};
+                                        
+        System.out.println("Original Array:");
+        printArray(array);
+                                        
+        int secondSmallest = findSecondSmallestNumber(array);
+        System.out.println("\nSecond Smallest Number in the Array: " + secondSmallest);
     }
-}
+                                        
+    private static int findSecondSmallestNumber(int[] array) {
+        if (array.length < 2) {
+            System.out.println("Array does not have a 2nd smallest number.");
+            return Integer.MIN_VALUE; // Return a special value indicating no valid result
+        }
+                                        
+        // Sort the array in ascending order
+        Arrays.sort(array);
+                                        
+        return array[1];
+    }
+                                        
+    private static void printArray(int[] array) {
+        for (int value : array) {
+            System.out.print(value + " ");
+        }
+    }
+} 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    Destination Array: 1 2 3 4 5
 </pre>
                 </div>
             </div>

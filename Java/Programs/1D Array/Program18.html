@@ -45,16 +45,47 @@
 
                     <p class="fs-5 py-3">18. Program to Find Largest Number in an array </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class LargestNumberExample {
+    public static void main(String[] args) {
+        int[] array = {12, 45, 78, 23, 56, 89, 34, 67};
+                                        
+        System.out.println("Original Array:");
+        printArray(array);
+                                        
+        int largestNumber = findLargestNumber(array);
+        System.out.println("\nLargest Number in the Array: " + largestNumber);
+    }
+                                        
+    private static int findLargestNumber(int[] array) {
+        if (array.length == 0) {
+            System.out.println("Array is empty.");
+            return Integer.MIN_VALUE; // Return a special value indicating no valid result
+        }
+                                        
+        int max = array[0];
+                                        
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+                                        
+        return max;
+    }
+                                        
+    private static void printArray(int[] array) {
+        for (int value : array) {
+            System.out.print(value + " ");
+        }
     }
 }
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Original Array: <br>
+12 45 78 23 56 89 34 67  <br>
+Largest Number in the Array: 89
 </pre>
                 </div>
             </div>

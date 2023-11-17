@@ -45,16 +45,37 @@
 
                     <p class="fs-5 py-3">14. Program to sort the elements of an array in ascending order </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Arrays;
+
+public class SortArrayAscendingExample {
+    public static void main(String[] args) {
+        int[] array = {64, 25, 12, 22, 11};
+                                        
+        System.out.println("Original Array:");
+        printArray(array);
+                                        
+        // Sort the array in ascending order
+        Arrays.sort(array);
+                                        
+        System.out.println("\nArray in Ascending Order:");
+        printArray(array);
     }
-}
+                                        
+    private static void printArray(int[] array) {
+        for (int value : array) {
+            System.out.print(value + " ");
+        }
+    }
+}    
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Original Array: <br>
+64 25 12 22 11  <br>
+ <br>
+Array in Ascending Order: <br>
+11 12 22 25 64 
 </pre>
                 </div>
             </div>

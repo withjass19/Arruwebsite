@@ -45,16 +45,44 @@
 
                     <p class="fs-5 py-3">17. Program to Find 2nd Largest Number in an array </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Arrays;
+
+public class SecondLargestNumberExample {
+    public static void main(String[] args) {
+        int[] array = {12, 45, 78, 23, 56, 89, 34, 67};
+                                        
+        System.out.println("Original Array:");
+        printArray(array);
+                                        
+        int secondLargest = findSecondLargestNumber(array);
+        System.out.println("\nSecond Largest Number in the Array: " + secondLargest);
     }
-}
+                                        
+    private static int findSecondLargestNumber(int[] array) {
+        if (array.length < 2) {
+            System.out.println("Array does not have a 2nd largest number.");
+            return Integer.MIN_VALUE; // Return a special value indicating no valid result
+        }
+                                        
+        // Sort the array in descending order
+        Arrays.sort(array);
+                                        
+        return array[array.length - 2];
+    }
+                                        
+    private static void printArray(int[] array) {
+        for (int value : array) {
+            System.out.print(value + " ");
+        }
+    }
+} 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Original Array: <br>
+12 45 78 23 56 89 34 67  <br>
+Second Largest Number in the Array: 78
 </pre>
                 </div>
             </div>

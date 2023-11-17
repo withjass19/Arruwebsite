@@ -45,16 +45,34 @@
 
                     <p class="fs-5 py-3">4. Program to print the duplicate elements of an array </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.HashMap;
+import java.util.Map;
+                                        
+public class DuplicateElementsExample {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 1, 2, 5, 3, 2, 1};
+                                        
+        // Create a map to store element frequencies
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
+                                        
+        System.out.println("Duplicate Elements:");
+        // Iterate through the array and print duplicates
+        for (int element : array) {
+            frequencyMap.put(element, frequencyMap.getOrDefault(element, 0) + 1);
+            if (frequencyMap.get(element) == 2) {
+                System.out.println(element);
+            }
+        }
     }
-}
+}     
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Duplicate Elements: <br>
+1 <br>
+2 <br>
+3
 </pre>
                 </div>
             </div>

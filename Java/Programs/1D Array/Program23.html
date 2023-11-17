@@ -45,16 +45,36 @@
 
                     <p class="fs-5 py-3">23. How to Sort an Array in Java </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Arrays;
+
+public class ArraySortingExample {
+    public static void main(String[] args) {
+        int[] array = {64, 25, 12, 22, 11};
+                                        
+        System.out.println("Original Array:");
+        printArray(array);
+                                        
+        // Sort the array in ascending order
+        Arrays.sort(array);
+                                        
+        System.out.println("\nArray in Ascending Order:");
+        printArray(array);
     }
-}
+                                        
+    private static void printArray(int[] array) {
+        for (int value : array) {
+            System.out.print(value + " ");
+        }
+    }
+} 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+riginal Array: <br>
+64 25 12 22 11  <br>
+Array in Ascending Order: <br>
+11 12 22 25 64  <br>
 </pre>
                 </div>
             </div>

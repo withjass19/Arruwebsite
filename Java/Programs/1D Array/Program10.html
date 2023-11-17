@@ -45,16 +45,42 @@
 
                     <p class="fs-5 py-3">10. Program to print the smallest element in an array </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class SmallestElementExample {
+    public static void main(String[] args) {
+        int[] array = {12, 45, 78, 23, 56, 89, 34, 67};
+                                        
+        System.out.println("Original Array:");
+        printArray(array);
+                                        
+        int smallestElement = findSmallestElement(array);
+        System.out.println("\nSmallest Element in the Array: " + smallestElement);
     }
-}
+                                        
+    private static int findSmallestElement(int[] array) {
+        int min = array[0];
+                                        
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+                                        
+        return min;
+    }
+                                        
+    private static void printArray(int[] array) {
+        for (int value : array) {
+            System.out.print(value + " ");
+        }
+    }
+}  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Original Array: <br>
+12 45 78 23 56 89 34 67  <br>
+Smallest Element in the Array: 12
 </pre>
                 </div>
             </div>

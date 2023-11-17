@@ -45,16 +45,26 @@
 
                     <p class="fs-5 py-3">5. Program to print the elements of an array </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class PrintArrayExample {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+                                        
+        System.out.println("Elements of the Array:");
+        printArray(array);
     }
-}
+                                        
+    private static void printArray(int[] array) {
+        for (int value : array) {
+            System.out.print(value + " ");
+        }
+    }
+}   
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Elements of the Array: <br>
+1 2 3 4 5
 </pre>
                 </div>
             </div>
