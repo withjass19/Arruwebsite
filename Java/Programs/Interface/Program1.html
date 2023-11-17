@@ -45,16 +45,77 @@
 
                     <p class="fs-5 py-3">1. Write a Java program to create an interface Shape with the getArea() method. Create three classes Rectangle, Circle, and Triangle that implement the Shape interface. Implement the getArea() method for each of the three classes. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+// Interface
+interface Shape {
+    double getArea();
+}
+                                        
+// Rectangle class implementing Shape interface
+class Rectangle implements Shape {
+    private double length;
+    private double width;
+                                        
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+                                        
+    <!-- @Override -->
+    public double getArea() {
+        return length * width;
     }
 }
+                                        
+// Circle class implementing Shape interface
+class Circle implements Shape {
+    private double radius;
+                                        
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+                                        
+    <!-- @Override -->
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+}
+                                        
+// Triangle class implementing Shape interface
+class Triangle implements Shape {
+    private double base;
+    private double height;
+                                        
+    public Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+                                        
+    <!-- @Override -->
+    public double getArea() {
+        return 0.5 * base * height;
+    }
+}
+                                        
+public class ShapeExample {
+    public static void main(String[] args) {
+        // Creating instances of different shapes
+        Rectangle rectangle = new Rectangle(5, 10);
+        Circle circle = new Circle(7);
+        Triangle triangle = new Triangle(4, 6);
+                                        
+        // Calculating and printing the area for each shape
+        System.out.println("Area of Rectangle: " + rectangle.getArea());
+        System.out.println("Area of Circle: " + circle.getArea());
+        System.out.println("Area of Triangle: " + triangle.getArea());
+    }
+}              
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Area of Rectangle: 50.0 <br>
+Area of Circle: 153.93804002589985 <br>
+Area of Triangle: 12.0
 </pre>
                 </div>
             </div>

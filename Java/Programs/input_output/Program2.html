@@ -46,33 +46,42 @@
                     <p class="fs-5 py-3">2. Enter the string from user using BufferedStreamReader </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-// Animal interface
-interface Animal {
-    void bark();
-}
-                                        
-// Dog class implementing Animal interface
-class Dog implements Animal {
-    <!-- @Override -->
-    public void bark() {
-        System.out.println("Dog is barking");
-    }
-}
-                                        
-// Main class
-public class AnimalExample {
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+                                
+public class ReadStringFromUser {
     public static void main(String[] args) {
-        // Creating an instance of Dog
-        Dog dog = new Dog();
-
-        // Calling the bark method
-        dog.bark();
+        // Create a BufferedReader to read input from the console
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+                                
+        try {
+            // Prompt the user to enter a string
+            System.out.print("Enter a string: ");
+                                
+            // Read the string from the user
+            String userInput = bufferedReader.readLine();
+                                
+            // Print the entered string
+            System.out.println("You entered: " + userInput);
+        } catch (IOException e) {
+            System.err.println("Error reading input: " + e.getMessage());
+        } finally {
+            try {
+                // Close the BufferedReader
+                bufferedReader.close();
+            } catch (IOException e) {
+                System.err.println("Error closing BufferedReader: " + e.getMessage());
+            }
+        }
     }
-}                       
+}
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Dog is barking   
+Enter a string: Hello, World! <br>
+You entered: Hello, World!
+
 </pre>
                 </div>
             </div>

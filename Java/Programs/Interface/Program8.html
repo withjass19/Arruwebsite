@@ -45,16 +45,64 @@
 
                     <p class="fs-5 py-3">8. Write a Java program to create an interface Playable with a method play() that takes no arguments and returns void. Create three classes Football, Volleyball, and Basketball that implement the Playable interface and override the play() method to play the respective sports. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+               // Interface for playable sports
+interface Playable {
+    void play();
+}
+                                        
+// Football class implementing Playable interface
+class Football implements Playable {
+    <!-- @Override -->
+    public void play() {
+        System.out.println("Playing football!");
+        // Your logic for playing football goes here
     }
 }
+                                        
+// Volleyball class implementing Playable interface
+class Volleyball implements Playable {
+    <!-- @Override -->
+    public void play() {
+        System.out.println("Playing volleyball!");
+        // Your logic for playing volleyball goes here
+    }
+}
+                                        
+// Basketball class implementing Playable interface
+class Basketball implements Playable {
+    @Override
+    public void play() {
+        System.out.println("Playing basketball!");
+        // Your logic for playing basketball goes here
+    }
+}
+                                        
+// Main class
+public class PlayableExample {
+    public static void main(String[] args) {
+        // Create instances of playable sports
+        Football football = new Football();
+        Volleyball volleyball = new Volleyball();
+        Basketball basketball = new Basketball();
+                                        
+        // Play the sports
+        playSport(football);
+        playSport(volleyball);
+        playSport(basketball);
+    }
+                                        
+    // Method to play any sport implementing the Playable interface
+    private static void playSport(Playable sport) {
+        sport.play();
+    }
+}           
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Playing football! <br>
+Playing volleyball! <br>
+Playing basketball!
 </pre>
                 </div>
             </div>

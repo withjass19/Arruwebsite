@@ -46,54 +46,35 @@
                     <p class="fs-5 py-3">3. Enter the integer from user using Scanner class </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-// Interface
-interface Flyable {
-    void fly_obj();
-}
-                                        
-// Spacecraft class implementing Flyable interface
-class Spacecraft implements Flyable {
-    <!-- @Override -->
-    public void fly_obj() {
-        System.out.println("Spacecraft is flying in outer space");
-    }
-}
-                                        
-// Airplane class implementing Flyable interface
-class Airplane implements Flyable {
-    <!-- @Override -->
-    public void fly_obj() {
-        System.out.println("Airplane is flying in the sky");
-    }
-}
-                                        
-// Helicopter class implementing Flyable interface
-class Helicopter implements Flyable {
-    <!-- @Override -->
-    public void fly_obj() {
-        System.out.println("Helicopter is flying in the air");
-    }
-}
-                                        
-public class FlyableExample {
+import java.util.Scanner;
+
+public class ReadIntegerFromUser {
     public static void main(String[] args) {
-        // Creating instances of different flying objects
-        Spacecraft spacecraft = new Spacecraft();
-        Airplane airplane = new Airplane();
-        Helicopter helicopter = new Helicopter();
-                                        
-        // Calling the fly_obj method for each flying object
-        spacecraft.fly_obj();
-        airplane.fly_obj();
-        helicopter.fly_obj();
+        // Create a Scanner object to read input from the console
+        Scanner scanner = new Scanner(System.in);
+                                
+        try {
+            // Prompt the user to enter an integer
+            System.out.print("Enter an integer: ");
+                                
+            // Read the integer from the user
+            int userInput = scanner.nextInt();
+                                
+            // Print the entered integer
+            System.out.println("You entered: " + userInput);
+        } catch (java.util.InputMismatchException e) {
+            System.err.println("Error: Please enter a valid integer.");
+        } finally {
+            // Close the Scanner
+            scanner.close();
+        }
     }
-}                   
+}
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Spacecraft is flying in outer space <br>
-Airplane is flying in the sky <br>
-Helicopter is flying in the air
+Enter an integer: 42 <br>
+You entered: 42
 </pre>
                 </div>
             </div>

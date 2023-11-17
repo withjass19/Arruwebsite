@@ -46,93 +46,35 @@
                     <p class="fs-5 py-3">7. Enter the short integer from user using Scanner class </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-// Interface for sorting arrays
-interface Sortable {
-    void sort(int[] array);
-}
-                                        
-// BubbleSort class implementing Sortable interface
-class BubbleSort implements Sortable {
-    <!-- @Override -->
-    public void sort(int[] array) {
-        int n = array.length;
-        boolean swapped;
-                                        
-        do {
-            swapped = false;
-                                        
-            for (int i = 1; i < n; i++) {
-                if (array[i - 1] > array[i]) {
-                    // Swap elements if they are in the wrong order
-                    int temp = array[i - 1];
-                    array[i - 1] = array[i];
-                    array[i] = temp;
-                    swapped = true;
-                }
-            }
-        } while (swapped);
-    }
-}
-                                        
-// SelectionSort class implementing Sortable interface
-class SelectionSort implements Sortable {
-    <!-- @Override -->
-    public void sort(int[] array) {
-        int n = array.length;
-                                        
-        for (int i = 0; i < n - 1; i++) {
-            int minIndex = i;
-                                        
-            for (int j = i + 1; j < n; j++) {
-                // Find the minimum element in the unsorted part of the array
-                if (array[j] < array[minIndex]) {
-                    minIndex = j;
-                }
-            }
-                                        
-            // Swap the found minimum element with the first element
-            int temp = array[minIndex];
-            array[minIndex] = array[i];
-            array[i] = temp;
-        }
-    }
-}
-                                        
-// Main class
-public class SortableExample {
+import java.util.Scanner;
+
+public class ReadShortFromUser {
     public static void main(String[] args) {
-        // Example array to be sorted
-        int[] arrayToSort = {64, 34, 25, 12, 22, 11, 90};
-                                        
-        // Sort using BubbleSort
-        Sortable bubbleSort = new BubbleSort();
-        bubbleSort.sort(arrayToSort.clone());
-        System.out.println("Sorted array using BubbleSort: " + arrayToString(arrayToSort));
-                                        
-        // Sort using SelectionSort
-        Sortable selectionSort = new SelectionSort();
-        selectionSort.sort(arrayToSort.clone());
-        System.out.println("Sorted array using SelectionSort: " + arrayToString(arrayToSort));
-    }
-                                        
-                                            // Helper method to convert an array to a string for display
-    private static String arrayToString(int[] array) {
-        StringBuilder result = new StringBuilder("[");
-        for (int i = 0; i < array.length; i++) {
-            result.append(array[i]);
-            if (i < array.length - 1) {
-                result.append(", ");
-            }
+        // Create a Scanner object to read input from the console
+        Scanner scanner = new Scanner(System.in);
+                                
+        try {
+            // Prompt the user to enter a short integer
+            System.out.print("Enter a short integer: ");
+                                
+            // Read the short integer from the user
+            short userInput = scanner.nextShort();
+                                
+            // Print the entered short integer
+            System.out.println("You entered: " + userInput);
+        } catch (java.util.InputMismatchException e) {
+            System.err.println("Error: Please enter a valid short integer.");
+        } finally {
+            // Close the Scanner
+            scanner.close();
         }
-        result.append("]");
-        return result.toString();
     }
-}   
+}                             
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Sorted array using BubbleSort: [11, 12, 22, 25, 34, 64, 90] <br>
-Sorted array using SelectionSort: [11, 12, 22, 25, 34, 64, 90]
+Enter a short integer: 32767 <br>
+You entered: 32767
 </pre>
                 </div>
             </div>

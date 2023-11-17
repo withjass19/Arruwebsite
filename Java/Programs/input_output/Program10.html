@@ -46,88 +46,70 @@
                     <p class="fs-5 py-3">10. Get all characters from the file, count number of lines, words, characters and display on the screen </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-// Interface for encryptable objects
-interface Encryptable {
-    String encrypt(String data);
-    String decrypt(String encryptedData);
-}
-                                        
-// AES class implementing Encryptable interface
-class AES implements Encryptable {
-    <!-- @Override -->
-    public String encrypt(String data) {
-        // Your AES encryption logic goes here
-        System.out.println("AES encryption for: " + data);
-        return "Encrypted_AES_" + data;
-    }
-                                        
-    <!-- @Override -->
-    public String decrypt(String encryptedData) {
-        // Your AES decryption logic goes here
-        System.out.println("AES decryption for: " + encryptedData);
-        return encryptedData.replace("Encrypted_AES_", "");
-    }
-}
-                                        
-// RSA class implementing Encryptable interface
-class RSA implements Encryptable {
-    <!-- @Override -->
-    public String encrypt(String data) {
-        // Your RSA encryption logic goes here
-        System.out.println("RSA encryption for: " + data);
-        return "Encrypted_RSA_" + data;
-    }
-                                        
-    <!-- @Override -->
-    public String decrypt(String encryptedData) {
-        // Your RSA decryption logic goes here
-        System.out.println("RSA decryption for: " + encryptedData);
-        return encryptedData.replace("Encrypted_RSA_", "");
-    }
-}
-                                        
-// Main class
-public class EncryptableExample {
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+                                
+public class ReadFileStatistics {
     public static void main(String[] args) {
-        // Create instances of encryptable objects
-        Encryptable aesEncryptor = new AES();
-        Encryptable rsaEncryptor = new RSA();
-                                        
-        // Encrypt and decrypt using AES
-        String dataAES = "Sensitive data";
-        String encryptedAES = aesEncryptor.encrypt(dataAES);
-        String decryptedAES = aesEncryptor.decrypt(encryptedAES);
-                                        
-        System.out.println("Original Data: " + dataAES);
-        System.out.println("Encrypted Data (AES): " + encryptedAES);
-        System.out.println("Decrypted Data (AES): " + decryptedAES);
-                                        
-        System.out.println();
-                                        
-        // Encrypt and decrypt using RSA
-        String dataRSA = "Confidential information";
-        String encryptedRSA = rsaEncryptor.encrypt(dataRSA);
-        String decryptedRSA = rsaEncryptor.decrypt(encryptedRSA);
-                                        
-        System.out.println("Original Data: " + dataRSA);
-        System.out.println("Encrypted Data (RSA): " + encryptedRSA);
-        System.out.println("Decrypted Data (RSA): " + decryptedRSA);
+        // Specify the path to your file
+        String filePath = "path/to/your/file.txt";
+                                
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            int charCode;
+            int charCount = 0;
+            int wordCount = 0;
+            int lineCount = 0;
+                                
+            // Read characters until the end of the file
+            while ((charCode = reader.read()) != -1) {
+                char character = (char) charCode;
+                                
+                // Count characters
+                charCount++;
+                                
+                // Count words and lines
+                if (Character.isWhitespace(character)) {
+                    wordCount++;
+                }
+                if (character == '\n') {
+                    lineCount++;
+                }
+                                
+                System.out.print(character);
+            }
+                                
+            // Check for the last word (since the last word may not end with whitespace)
+            if (charCount > 0) {
+                wordCount++;
+            }
+                                
+            // Check for the last line
+            if (charCount > 0 && charCode != -1) {
+                lineCount++;
+            }
+                                
+            // Display statistics
+            System.out.println("\n\nStatistics:");
+            System.out.println("Number of characters: " + charCount);
+            System.out.println("Number of words: " + wordCount);
+            System.out.println("Number of lines: " + lineCount);
+                                
+        } catch (IOException e) {
+            System.err.println("Error reading the file: " + e.getMessage());
+        }
     }
-}                                   
+}             
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-AES encryption for: Sensitive data <br>
-AES decryption for: Encrypted_AES_Sensitive data <br>
-Original Data: Sensitive data <br>
-Encrypted Data (AES): Encrypted_AES_Sensitive data <br>
-Decrypted Data (AES): Sensitive data <br>
- <br>
-RSA encryption for: Confidential information <br>
-RSA decryption for: Encrypted_RSA_Confidential information <br>
-Original Data: Confidential information <br>
-Encrypted Data (RSA): Encrypted_RSA_Confidential information <br>
-Decrypted Data (RSA): Confidential information
+Hello, World!<br>
+This is a sample file.<br>
+<br>
+Statistics:<br>
+Number of characters: 37<br>
+Number of words: 9<br>
+Number of lines: 2<br>
 </pre>
                 </div>
             </div>

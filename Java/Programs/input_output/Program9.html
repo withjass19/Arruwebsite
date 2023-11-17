@@ -46,66 +46,32 @@
                     <p class="fs-5 py-3">9. Get all characters from the file and display on the screen </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-// Interface for searchable objects
-interface Searchable {
-    void search(String keyword);
-}
-                                        
-// Document class implementing Searchable interface
-class Document implements Searchable {
-    private String content;
-                                        
-    public Document(String content) {
-        this.content = content;
-    }
-                                        
-    <!-- @Override -->
-    public void search(String keyword) {
-        if (content.contains(keyword)) {
-            System.out.println("Keyword '" + keyword + "' found in the document.");
-        } else {
-            System.out.println("Keyword '" + keyword + "' not found in the document.");
-        }
-    }
-}
-                                        
-// WebPage class implementing Searchable interface
-class WebPage implements Searchable {
-    private String url;
-    private String pageContent;
-                                        
-    public WebPage(String url, String pageContent) {
-        this.url = url;
-        this.pageContent = pageContent;
-    }
-                                        
-    <!-- @Override -->
-    public void search(String keyword) {
-        if (pageContent.contains(keyword)) {
-            System.out.println("Keyword '" + keyword + "' found in the web page at " + url);
-        } else {
-            System.out.println("Keyword '" + keyword + "' not found in the web page at " + url);
-        }
-    }
-}
-                                        
-// Main class
-public class SearchableExample {
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+                                
+public class ReadFileCharacters {
     public static void main(String[] args) {
-        // Create instances of searchable objects
-        Document document = new Document("This is a sample document for searching.");
-        WebPage webPage = new WebPage("http://example.com", "This is a sample web page for searching.");
-                                        
-        // Search for keywords
-        document.search("sample");
-        webPage.search("web");
+        // Specify the path to your file
+        String filePath = "path/to/your/file.txt";
+                                
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            int charCode;
+                                
+            // Read characters until the end of the file
+            while ((charCode = reader.read()) != -1) {
+                char character = (char) charCode;
+                System.out.print(character);
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading the file: " + e.getMessage());
+        }
     }
-}        
+}
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Keyword 'sample' found in the document. <br>
-Keyword 'web' found in the web page at http://example.com
+Hello, World!
 </pre>
                 </div>
             </div>

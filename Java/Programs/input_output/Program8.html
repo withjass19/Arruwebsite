@@ -46,63 +46,36 @@
                     <p class="fs-5 py-3">8. Enter the long integer from user using Scanner class </p>
             <h4>Code</h4>
             <pre class="bg-dark text-white p-4 rounded mt-3"><code>
-// Interface for playable sports
-interface Playable {
-    void play();
-}
-                                        
-// Football class implementing Playable interface
-class Football implements Playable {
-    <!-- @Override -->
-    public void play() {
-        System.out.println("Playing football!");
-        // Your logic for playing football goes here
-    }
-}
-                                        
-// Volleyball class implementing Playable interface
-class Volleyball implements Playable {
-    <!-- @Override -->
-    public void play() {
-        System.out.println("Playing volleyball!");
-        // Your logic for playing volleyball goes here
-    }
-}
-                                        
-// Basketball class implementing Playable interface
-class Basketball implements Playable {
-    @Override
-    public void play() {
-        System.out.println("Playing basketball!");
-        // Your logic for playing basketball goes here
-    }
-}
-                                        
-// Main class
-public class PlayableExample {
+import java.util.Scanner;
+
+public class ReadLongFromUser {
     public static void main(String[] args) {
-        // Create instances of playable sports
-        Football football = new Football();
-        Volleyball volleyball = new Volleyball();
-        Basketball basketball = new Basketball();
-                                        
-        // Play the sports
-        playSport(football);
-        playSport(volleyball);
-        playSport(basketball);
+        // Create a Scanner object to read input from the console
+        Scanner scanner = new Scanner(System.in);
+                                
+        try {
+            // Prompt the user to enter a long integer
+            System.out.print("Enter a long integer: ");
+                                
+            // Read the long integer from the user
+            long userInput = scanner.nextLong();
+                                
+            // Print the entered long integer
+            System.out.println("You entered: " + userInput);
+        } catch (java.util.InputMismatchException e) {
+            System.err.println("Error: Please enter a valid long integer.");
+        } finally {
+            // Close the Scanner
+            scanner.close();
+        }
     }
-                                        
-    // Method to play any sport implementing the Playable interface
-    private static void playSport(Playable sport) {
-        sport.play();
-    }
-}             
+}
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-Playing football! <br>
-Playing volleyball! <br>
-Playing basketball!
+Enter a long integer: 123456789012345 <br>
+You entered: 123456789012345
+
 </pre>
                 </div>
             </div>
