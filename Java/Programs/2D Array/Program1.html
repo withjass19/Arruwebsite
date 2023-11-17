@@ -45,16 +45,70 @@
 
                     <p class="fs-5 py-3">1. Enter the Matrix of rows and columns entered by the user and print in matrix format</p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Scanner;
+
+public class MatrixInputAndPrint {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+                                
+        // Get the number of rows and columns from the user
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+                                
+        System.out.print("Enter the number of columns: ");
+        int columns = scanner.nextInt();
+                                
+        // Create a 2D array to store the matrix
+        int[][] matrix = new int[rows][columns];
+                                
+        // Get matrix elements from the user
+        enterMatrixElements(scanner, matrix);
+                                
+        // Print the matrix
+        System.out.println("Entered Matrix:");
+                                        printMatrix(matrix);
+                                
+        scanner.close();
+    }
+                                
+    // Function to enter matrix elements
+    private static void enterMatrixElements(Scanner scanner, int[][] matrix) {
+        System.out.println("Enter matrix elements:");
+                                
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print("Enter element at position [" + i + "][" + j + "]: ");
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+    }
+                                
+    // Function to print the matrix
+    private static void printMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println(); // Move to the next row
+        }
     }
 }
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter the number of rows: 2 <br>
+Enter the number of columns: 3 <br>
+Enter matrix elements: <br>
+Enter element at position [0][0]: 1 <br>
+Enter element at position [0][1]: 2 <br>
+Enter element at position [0][2]: 3 <br>
+Enter element at position [1][0]: 4 <br>
+Enter element at position [1][1]: 5 <br>
+Enter element at position [1][2]: 6 <br><br>
+Entered Matrix: <br> 
+1 2 3  <br>
+4 5 6  <br>
 </pre>
                 </div>
             </div>

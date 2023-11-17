@@ -46,16 +46,116 @@
                     <p class="fs-5 py-3"> 8. Program to find the frequency of odd & even numbers in the given matrix
                     </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Scanner;
+
+public class FrequencyOfOddEven {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+                                
+        // Get the dimensions of the matrix
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+                                
+        System.out.print("Enter the number of columns: ");
+        int columns = scanner.nextInt();
+                                
+        // Create a matrix
+        int[][] matrix = new int[rows][columns];
+                                
+        // Get elements for the matrix
+        enterMatrixElements(scanner, matrix);
+                                
+        // Find the frequency of odd and even numbers
+        int oddFrequency = countOddNumbers(matrix);
+        int evenFrequency = countEvenNumbers(matrix);
+                                
+        // Print the original matrix and the frequency of odd and even numbers
+        System.out.println("Original Matrix:");
+        printMatrix(matrix);
+                                
+        System.out.println("Frequency of Odd Numbers: " + oddFrequency);
+        System.out.println("Frequency of Even Numbers: " + evenFrequency);
+                                
+        scanner.close();
+    }
+                                
+    // Function to enter matrix elements
+    private static void enterMatrixElements(Scanner scanner, int[][] matrix) {
+        System.out.println("Enter elements for the matrix:");
+                                
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print("Enter element at position [" + i + "][" + j + "]: ");
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+    }
+                                
+    // Function to count the frequency of odd numbers
+    private static int countOddNumbers(int[][] matrix) {
+        int oddCount = 0;
+                                
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] % 2 != 0) {
+                    oddCount++;
+                }
+            }
+        }
+                                
+        return oddCount;
+    }
+                                
+    // Function to count the frequency of even numbers
+    private static int countEvenNumbers(int[][] matrix) {
+        int evenCount = 0;
+                                
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] % 2 == 0) {
+                    evenCount++;
+                }
+            }
+        }
+                                
+        return evenCount;
+    }
+                                
+    // Function to print a matrix
+    private static void printMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println(); // Move to the next row
+        }
+        System.out.println(); // Separate matrices by a blank line
     }
 }
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter the number of rows: 3 <br>
+Enter the number of columns: 3 <br>
+Enter elements for the matrix: <br>
+Enter element at position [0][0]: 1 <br>
+Enter element at position [0][1]: 2 <br>
+Enter element at position [0][2]: 3 <br>
+Enter element at position [1][0]: 4 <br>
+Enter element at position [1][1]: 5 <br>
+Enter element at position [1][2]: 6 <br>
+Enter element at position [2][0]: 7 <br>
+Enter element at position [2][1]: 8 <br>
+Enter element at position [2][2]: 9 <br>
+ <br>
+Original Matrix: <br>
+1 2 3  <br>
+4 5 6  <br>
+7 8 9  <br>
+ <br>
+Frequency of Odd Numbers: 5 <br>
+Frequency of Even Numbers: 4 <br>
 </pre>
                 </div>
             </div>

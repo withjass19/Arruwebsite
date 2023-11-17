@@ -45,16 +45,122 @@
 
                     <p class="fs-5 py-3">3. Program to Multiply Two Matrices </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Scanner;
+
+public class MatrixMultiplication {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+                                
+        // Get the dimensions of the matrices
+        System.out.print("Enter the number of rows for the first matrix: ");
+        int rows1 = scanner.nextInt();
+                                
+        System.out.print("Enter the number of columns for the first matrix: ");
+        int columns1 = scanner.nextInt();
+                                
+        System.out.print("Enter the number of rows for the second matrix: ");
+        int rows2 = scanner.nextInt();
+                                
+        System.out.print("Enter the number of columns for the second matrix: ");
+        int columns2 = scanner.nextInt();
+                                
+        // Check if matrices can be multiplied
+        if (columns1 != rows2) {
+            System.out.println("Matrices cannot be multiplied. Number of columns in the first matrix must be equal to the number of rows in the second matrix.");
+            return;
+        }
+                                
+        // Create two matrices
+        int[][] matrix1 = new int[rows1][columns1];
+        int[][] matrix2 = new int[rows2][columns2];
+        int[][] productMatrix = new int[rows1][columns2];
+                                
+        // Get elements for the first matrix
+        enterMatrixElements(scanner, matrix1, "first");
+                                
+        // Get elements for the second matrix
+        enterMatrixElements(scanner, matrix2, "second");
+                                
+        // Multiply the matrices
+        multiplyMatrices(matrix1, matrix2, productMatrix);
+                                
+        // Print the matrices and their product
+        System.out.println("First Matrix:");
+        printMatrix(matrix1);
+                                
+        System.out.println("Second Matrix:");
+        printMatrix(matrix2);
+                                
+        System.out.println("Product of Matrices:");
+        printMatrix(productMatrix);
+                                
+        scanner.close();
+    }
+                                
+    // Function to enter matrix elements
+    private static void enterMatrixElements(Scanner scanner, int[][] matrix, String matrixName) {
+        System.out.println("Enter elements for the " + matrixName + " matrix:");
+                                
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print("Enter element at position [" + i + "][" + j + "]: ");
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+    }
+                                
+    // Function to multiply two matrices
+    private static void multiplyMatrices(int[][] matrix1, int[][] matrix2, int[][] productMatrix) {
+        for (int i = 0; i < matrix1.length; i++) {
+            for (int j = 0; j < matrix2[0].length; j++) {
+                for (int k = 0; k < matrix2.length; k++) {
+                    productMatrix[i][j] += matrix1[i][k] * matrix2[k][j];
+                }
+            }
+        }
+    }
+                                
+    // Function to print a matrix
+    private static void printMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println(); // Move to the next row
+        }
+        System.out.println(); // Separate matrices by a blank line
     }
 }
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter the number of rows for the first matrix: 2 <br>
+Enter the number of columns for the first matrix: 2 <br>
+Enter the number of rows for the second matrix: 2 <br>
+Enter the number of columns for the second matrix: 2 <br>
+Enter elements for the first matrix: <br>
+Enter element at position [0][0]: 1 <br>
+Enter element at position [0][1]: 2 <br>
+Enter element at position [1][0]: 3 <br>
+Enter element at position [1][1]: 4 <br>
+Enter elements for the second matrix: <br>
+Enter element at position [0][0]: 5 <br>
+Enter element at position [0][1]: 6 <br>
+Enter element at position [1][0]: 7 <br>
+Enter element at position [1][1]: 8 <br>
+<br>
+First Matrix: <br>
+1 2 <br>
+3 4 <br>
+br>
+Second Matrix: <br>
+5 6 <br>
+ 8 <br>
+br>
+Product of Matrices: <br>
+19 22 <br>
+43 50 <br>
 </pre>
                 </div>
             </div>
