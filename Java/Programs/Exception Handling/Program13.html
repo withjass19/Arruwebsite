@@ -45,16 +45,43 @@
 
                     <p class="fs-5 py-3">13. Write a Java program to show an example of nested try block. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class NestedTryExample {
+    public static void main(String[] args) {
+        try {
+            // Outer try block
+            System.out.println("Outer Try Block");
+                                        
+            try {
+                // Inner try block
+                System.out.println("Inner Try Block");
+                // Simulating an ArithmeticException
+                int result = 10 / 0;
+            } catch (ArithmeticException innerException) {
+                System.out.println("Caught Inner ArithmeticException: " + innerException.getMessage());
+            }
+                                        
+            // Simulating an ArrayIndexOutOfBoundsException
+            int[] array = new int[5];
+            int value = array[10];
+                                        
+        } catch (ArrayIndexOutOfBoundsException outerException) {
+            // Outer catch block
+            System.out.println("Caught Outer ArrayIndexOutOfBoundsException: " + outerException.getMessage());
+        } catch (Exception e) {
+            // General catch block for any other exception
+            System.out.println("Caught Exception: " + e.getMessage());
+        } finally {
+            // Finally block
+            System.out.println("This block always executes, regardless of exceptions");
 }
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Outer Try Block <br>
+Inner Try Block <br>
+Caught Inner ArithmeticException: / by zero <br>
+This block always executes, regardless of exceptions
 </pre>
                 </div>
             </div>

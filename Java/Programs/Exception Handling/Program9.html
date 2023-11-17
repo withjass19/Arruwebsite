@@ -45,16 +45,66 @@
 
                     <p class="fs-5 py-3">9. Write a Java program to manage the driver with path, username and password, if not successful then throw an exception </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+                                        
+public class CustomDatabaseConnectionExample {
+    public static void main(String[] args) {
+        try {
+            // Provide the appropriate driver class name
+            String driver = "com.mysql.cj.jdbc.Driver";
+                                                    
+            // Provide the database URL, username, and password
+            String jdbcUrl = "jdbc:mysql://localhost:3306/your_database";
+            String username = "your_username";
+            String password = "your_password";
+                                                    
+            // Load the JDBC driver
+            loadDriver(driver);
+                                        
+            // Connect to the database
+            Connection connection = connectToDatabase(jdbcUrl, username, password);
+            System.out.println("Connected to the database successfully!");
+                                        
+            // Perform database operations here
+                                        
+            // Close the connection when done
+            connection.close();
+        } catch (DatabaseConnectionException | SQLException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+                                        
+    private static void loadDriver(String driver) throws DatabaseConnectionException {
+        try {
+            Class.forName(driver);
+        } catch (ClassNotFoundException e) {
+            throw new DatabaseConnectionException("Failed to load JDBC driver: " + e.getMessage());
+        }
+    }
+                                        
+    private static Connection connectToDatabase(String jdbcUrl, String username, String password)
+            throws DatabaseConnectionException, SQLException {
+        try {
+            Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
+            return connection;
+        } catch (SQLException e) {
+            throw new DatabaseConnectionException("Failed to connect to the database: " + e.getMessage());
+        }
     }
 }
+                                        
+class DatabaseConnectionException extends Exception {
+    public DatabaseConnectionException(String message) {
+        super(message);
+    }
+}            
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Connected to the database successfully!
 </pre>
                 </div>
             </div>

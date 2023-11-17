@@ -45,16 +45,24 @@
 
                     <p class="fs-5 py-3">3. How to convert String to long </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class StringToLongConverter {
+
+    public static void main(String[] args) {
+        // Example string containing a long value
+        String longStr = "123456789012345";
+                                
+        // Convert the string to a long using parseLong
+        long convertedLong = Long.parseLong(longStr);
+                                
+        // Print the result
+        System.out.println("Converted long: " + convertedLong);
     }
-}
+}                 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Converted long: 123456789012345 
 </pre>
                 </div>
             </div>

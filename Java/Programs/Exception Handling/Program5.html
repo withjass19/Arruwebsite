@@ -46,16 +46,45 @@
                     <p class="fs-5 py-3"> 5. Write a Java program that reads a file and throws an exception if the file is empty.
                     </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+                                        
+public class FileNotEmptyCheck {
+    public static void main(String[] args) {
+        try {
+            String fileName = "example.txt"; // Replace with the actual file name
+            checkFileNotEmpty(fileName);
+            System.out.println("File is not empty.");
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: File not found - " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Error reading the file - " + e.getMessage());
+        } catch (FileEmptyException e) {
+            System.out.println("Error: File is empty - " + e.getMessage());
+        }
+    }
+                                        
+    private static void checkFileNotEmpty(String fileName) throws FileNotFoundException, IOException, FileEmptyException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            if (reader.readLine() == null) {
+                throw new FileEmptyException("File is empty.");
+            }
+        }
     }
 }
+                                        
+class FileEmptyException extends Exception {
+    public FileEmptyException(String message) {
+        super(message);
+    }
+}     
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+File is not empty.
 </pre>
                 </div>
             </div>

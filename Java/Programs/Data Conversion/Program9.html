@@ -45,16 +45,36 @@
 
                     <p class="fs-5 py-3">9. How to convert String to Date </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+                                
+public class StringToDateConverter {
+                                
+    public static void main(String[] args) {
+        // Example string containing a date
+        String dateString = "2023-11-14";
+                                
+        // Define the date format to match the pattern in the string
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                                
+        try {
+            // Parse the string to a Date object using the defined format
+            Date convertedDate = dateFormat.parse(dateString);
+                                
+            // Print the result
+            System.out.println("Converted date: " + convertedDate);
+        } catch (ParseException e) {
+            // Handle the exception (e.g., print an error message)
+            System.out.println("Error: Unable to convert the string to a date.");
+        }
     }
-}
+}     
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Converted date: Mon Nov 14 00:00:00 UTC 2023  
 </pre>
                 </div>
             </div>

@@ -45,16 +45,44 @@
 
                     <p class="fs-5 py-3">3. Write a Java program to create a method that reads a file and throws an exception if the file is not found </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+                                        
+public class FileReadExample {
+    public static void main(String[] args) {
+        try {
+            String fileName = "example.txt"; // Replace with the actual file name
+            String content = readFile(fileName);
+            System.out.println("File content:\n" + content);
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: File not found - " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Error reading the file - " + e.getMessage());
+        }
     }
-}
+                                        
+    private static String readFile(String fileName) throws FileNotFoundException, IOException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            StringBuilder content = new StringBuilder();
+            String line;
+                                        
+            while ((line = reader.readLine()) != null) {
+                content.append(line).append("\n");
+            }
+                                        
+            return content.toString();
+        }
+    }
+}             
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+File content: <br>
+Hello, this is an example file. <br>
+This file is used for demonstration.
 </pre>
                 </div>
             </div>

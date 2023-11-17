@@ -45,16 +45,24 @@
 
                     <p class="fs-5 py-3">8. How to convert double to String </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class DoubleToStringConverter {
+
+    public static void main(String[] args) {
+        // Example double
+        double doubleValue = 123.45;
+                                
+        // Convert the double to a String using valueOf
+        String convertedString = String.valueOf(doubleValue);
+                                
+        // Print the result
+        System.out.println("Converted string: " + convertedString);
     }
-}
+}                                   
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Converted string: 123.45 
 </pre>
                 </div>
             </div>

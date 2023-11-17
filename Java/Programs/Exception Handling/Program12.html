@@ -45,16 +45,32 @@
 
                     <p class="fs-5 py-3">12. Write a Java program to show an example of multiple catch </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class MultipleCatchExample {
+    public static void main(String[] args) {
+        try {
+            // Simulating an ArithmeticException
+            int result = 10 / 0;
+            // Simulating an ArrayIndexOutOfBoundsException
+            int[] array = new int[5];
+            int value = array[10];
+        } catch (ArithmeticException e) {
+            System.out.println("Caught ArithmeticException: " + e.getMessage());
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Caught ArrayIndexOutOfBoundsException: " + e.getMessage());
+        } catch (Exception e) {
+            // This block will catch any other type of exception
+            System.out.println("Caught Exception: " + e.getMessage());
+        } finally {
+            System.out.println("This block always executes, regardless of exceptions");
+        }
     }
-}
+}        
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Caught ArithmeticException: / by zero <br>
+This block always executes, regardless of exceptions   
 </pre>
                 </div>
             </div>

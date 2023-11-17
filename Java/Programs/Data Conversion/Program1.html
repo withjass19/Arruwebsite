@@ -45,16 +45,24 @@
 
                     <p class="fs-5 py-3">1. How to convert String to int </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class StringToIntConverter {
+
+    public static void main(String[] args) {
+        // Example string containing a number
+        String numberStr = "123";
+                                
+        // Convert the string to an int using parseInt
+        int convertedNumber = Integer.parseInt(numberStr);
+                                
+        // Print the result
+        System.out.println("Converted number: " + convertedNumber);
     }
-}
+} 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Converted number: 123
 </pre>
                 </div>
             </div>

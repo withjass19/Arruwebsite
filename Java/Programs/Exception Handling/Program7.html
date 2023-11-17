@@ -45,16 +45,47 @@
 
                     <p class="fs-5 py-3">7. Write a Java program to create a method that takes a string as input and throws an exception if the string does not contain vowels. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.HashSet;
+
+public class VowelCheck {
+    public static void main(String[] args) {
+        try {
+            String inputString = "Hll Wrd"; // Replace with the actual string
+            checkForVowels(inputString);
+            System.out.println("String contains vowels.");
+        } catch (NoVowelsException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+                                        
+    private static void checkForVowels(String input) throws NoVowelsException {
+        HashSet<Character> vowels = new HashSet<>();
+        vowels.add('a');
+        vowels.add('e');
+        vowels.add('i');
+        vowels.add('o');
+        vowels.add('u');
+                                        
+        for (char ch : input.toLowerCase().toCharArray()) {
+            if (vowels.contains(ch)) {
+                return; // Found a vowel, no need to continue
+            }
+        }
+                                        
+        throw new NoVowelsException("No vowels found in the string.");
     }
 }
+                                        
+class NoVowelsException extends Exception {
+    public NoVowelsException(String message) {
+        super(message);
+    }
+}             
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+String contains vowels.
 </pre>
                 </div>
             </div>

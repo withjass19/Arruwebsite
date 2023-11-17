@@ -46,16 +46,39 @@
                     <p class="fs-5 py-3"> 1. Write a Java program that throws an exception and catch it using a try-catch block.
                     </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class ExceptionExample {
+    public static void main(String[] args) {
+        try {
+            // Code that may throw an exception
+            int result = divide(10, 0);
+                                        
+            // This line won't be executed if an exception occurs
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            // Catch the specific exception (ArithmeticException in this case)
+            System.out.println("Exception caught: " + e.getMessage());
+        } finally {
+            // This block will be executed regardless of whether an exception occurs
+            System.out.println("Finally block executed");
+        }
+                                        
+        // Rest of the program continues after handling the exception
+        System.out.println("Program continues...");
     }
-}
+                                        
+    // Function that may throw an exception
+    private static int divide(int numerator, int denominator) {
+        // Attempt to divide by zero, which will result in an ArithmeticException
+        return numerator / denominator;
+    }
+}    
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Exception caught: / by zero <br>
+Finally block executed <br>
+Program continues... 
 </pre>
                 </div>
             </div>

@@ -45,16 +45,46 @@
 
                     <p class="fs-5 py-3">8. Write a Java program to connect the Java API to Database, if connection not successful then throw an exception </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+                                        
+public class DatabaseConnectionExample {
+    public static void main(String[] args) {
+        try {
+            Connection connection = connectToDatabase();
+            System.out.println("Connected to the database successfully!");
+            // Perform database operations here
+            connection.close(); // Close the connection when done
+        } catch (DatabaseConnectionException | SQLException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+                                        
+    private static Connection connectToDatabase() throws DatabaseConnectionException, SQLException {
+        String jdbcUrl = "jdbc:mysql://localhost:3306/demo";
+        String username = "root";
+        String password = "";
+                                        
+        try {
+            Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
+            return connection;
+        } catch (SQLException e) {
+            throw new DatabaseConnectionException("Failed to connect to the database: " + e.getMessage());
+        }
     }
 }
+                                        
+class DatabaseConnectionException extends Exception {
+    public DatabaseConnectionException(String message) {
+        super(message);
+    }
+}   
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Connected to the database successfully! 
 </pre>
                 </div>
             </div>

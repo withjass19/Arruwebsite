@@ -45,16 +45,50 @@
 
                     <p class="fs-5 py-3">4. Write a Java program that reads a list of numbers from a file and throws an exception if any of the numbers are positive </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+                                        
+public class NegativeNumberCheck {
+    public static void main(String[] args) {
+        try {
+            String fileName = "numbers.txt"; // Replace with the actual file name
+            checkNumbers(fileName);
+            System.out.println("All numbers are non-positive.");
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: File not found - " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Error reading the file - " + e.getMessage());
+        } catch (PositiveNumberException e) {
+            System.out.println("Error: Positive number detected - " + e.getMessage());
+        }
     }
+                                        
+    private static void checkNumbers(String fileName) throws FileNotFoundException, IOException, PositiveNumberException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            String line;
+                                        
+            while ((line = reader.readLine()) != null) {
+                int number = Integer.parseInt(line);
+                                        
+                if (number > 0) {
+                    throw new PositiveNumberException("Positive number found: " + number);
+                }
+            }
+        }
+    }
+}
+                                        
+class PositiveNumberException extends Exception {
+    public PositiveNumberException(String message) {
+        super(message);
 }
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+All numbers are non-positive.  
 </pre>
                 </div>
             </div>

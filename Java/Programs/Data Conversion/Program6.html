@@ -45,16 +45,24 @@
 
                     <p class="fs-5 py-3">6. How to convert float to String </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class FloatToStringConverter {
+
+    public static void main(String[] args) {
+        // Example float
+        float floatValue = 123.45f;
+                                
+        // Convert the float to a String using valueOf
+        String convertedString = String.valueOf(floatValue);
+                                
+        // Print the result
+        System.out.println("Converted string: " + convertedString);
     }
-}
+}           
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Converted string: 123.45  
 </pre>
                 </div>
             </div>

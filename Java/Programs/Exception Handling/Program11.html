@@ -45,16 +45,30 @@
 
                     <p class="fs-5 py-3">11. Write a Java program to show an example of throws Keyword. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.io.IOException;
+
+public class ThrowsExample {
+    public static void main(String[] args) {
+        try {
+            exampleMethod();
+        } catch (IOException e) {
+            System.out.println("Caught IOException: " + e.getMessage());
+        }
     }
-}
+                                        
+    // Using 'throws' in the method signature to declare that it may throw an IOException
+    private static void exampleMethod() throws IOException {
+        System.out.println("Inside exampleMethod");
+        // Simulating an IOException
+        throw new IOException("This is a simulated IOException");
+    }
+}        
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Inside exampleMethod <br>
+Caught IOException: This is a simulated IOException  
 </pre>
                 </div>
             </div>
