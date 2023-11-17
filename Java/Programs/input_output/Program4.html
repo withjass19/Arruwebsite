@@ -45,16 +45,150 @@
 
                     <p class="fs-5 py-3">4. Enter the float from user using Scanner class </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+// Interface for common account operations
+interface Account {
+    void deposit(double amount);
+    void withdraw(double amount);
+    double calculateInterest();
+    double getBalance();
+}
+                                        
+// SavingsAccount class implementing Account interface
+class SavingsAccount implements Account {
+    private double balance;
+    private double interestRate;
+                                        
+    public SavingsAccount(double initialBalance, double interestRate) {
+        this.balance = initialBalance;
+        this.interestRate = interestRate;
+    }
+                                        
+                                            <!-- @Override -->
+    public void deposit(double amount) {
+        balance += amount;
+    }
+                                        
+    <!-- @Override -->
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+        } else {
+            System.out.println("Insufficient funds!");
+        }
+    }
+                                        
+    <!-- @Override -->
+    public double calculateInterest() {
+        return balance * interestRate;
+    }
+                                        
+    <!-- @Override -->
+    public double getBalance() {
+        return balance;
+    }
+                                        
+    // Additional method specific to SavingsAccount
+    public void applyBonus() {
+        balance += 10; // Just an example, you can implement your own logic
     }
 }
+                                        
+// CurrentAccount class implementing Account interface
+class CurrentAccount implements Account {
+    private double balance;
+    private double overdraftLimit;
+                                        
+    public CurrentAccount(double initialBalance, double overdraftLimit) {
+        this.balance = initialBalance;
+        this.overdraftLimit = overdraftLimit;
+    }
+                                        
+                                            <!-- @Override -->
+    public void deposit(double amount) {
+        balance += amount;
+    }
+                                        
+                                            <!-- @Override -->
+    public void withdraw(double amount) {
+        if (amount <= balance + overdraftLimit) {
+            balance -= amount;
+        } else {
+            System.out.println("Insufficient funds!");
+        }
+    }
+                                        
+    <!-- @Override -->
+    public double calculateInterest() {
+        // Current accounts typically don't earn interest
+        return 0;
+    }
+                                        
+    <!-- @Override -->
+    public double getBalance() {
+        return balance;
+    }
+                                        
+    // Additional method specific to CurrentAccount
+    public void issueOverdraft() {
+        // Logic for issuing an overdraft
+        System.out.println("Overdraft issued!");
+    }
+}
+                                        
+// Bank class to manage accounts
+class Bank {
+    private Account[] accounts;
+    private int numAccounts;
+
+    public Bank(int maxAccounts) {
+        accounts = new Account[maxAccounts];
+        numAccounts = 0;
+    }
+                                        
+    public void addAccount(Account account) {
+        if (numAccounts < accounts.length) {
+            accounts[numAccounts++] = account;
+        } else {
+            System.out.println("Cannot add more accounts. Bank is full.");
+        }
+    }
+                                        
+    public void displayAccountDetails() {
+        System.out.println("Bank Accounts:");
+        for (int i = 0; i < numAccounts; i++) {
+            System.out.println("Account " + (i + 1) + ": Balance = " + accounts[i].getBalance());
+        }
+    }
+}
+                                        
+// Main class
+public class BankingSystemExample {
+    public static void main(String[] args) {
+        // Create a bank
+        Bank myBank = new Bank(5);
+                                        
+        // Create accounts and add them to the bank
+        SavingsAccount savingsAccount = new SavingsAccount(1000, 0.05);
+        CurrentAccount currentAccount = new CurrentAccount(2000, 500);
+                                        
+        myBank.addAccount(savingsAccount);
+        myBank.addAccount(currentAccount);
+                                        
+        // Perform operations on accounts
+        savingsAccount.deposit(500);
+        currentAccount.withdraw(300);
+                                        
+        // Display account details
+        myBank.displayAccountDetails();
+    }
+}        
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Bank Accounts: <br>
+Account 1: Balance = 1705.0 <br>
+Account 2: Balance = 1700.0 
 </pre>
                 </div>
             </div>

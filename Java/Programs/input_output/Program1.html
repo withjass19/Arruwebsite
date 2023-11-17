@@ -45,16 +45,45 @@
 
                     <p class="fs-5 py-3">1. Enter the character from user using InputStreamReader </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class ReadCharFromUser {
+    public static void main(String[] args) {
+        // Create an InputStreamReader to read characters from the console
+        InputStreamReader inputStreamReader = new InputStreamReader(System.in);
+
+        // Wrap the InputStreamReader with BufferedReader for easier reading
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+        try {
+            // Prompt the user to enter a character
+            System.out.print("Enter a character: ");
+
+            // Read a single character from the user
+            char userInput = (char) bufferedReader.read();
+
+            // Print the entered character
+            System.out.println("You entered: " + userInput);
+        } catch (IOException e) {
+            System.err.println("Error reading input: " + e.getMessage());
+        } finally {
+            try {
+                // Close the BufferedReader
+                bufferedReader.close();
+            } catch (IOException e) {
+                System.err.println("Error closing BufferedReader: " + e.getMessage());
+            }
+        }
     }
-}
+} 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter a character: A<br>
+You entered: A
 </pre>
                 </div>
             </div>

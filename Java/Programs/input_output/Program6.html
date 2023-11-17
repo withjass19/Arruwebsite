@@ -45,16 +45,86 @@
 
                     <p class="fs-5 py-3">6. Enter the boolean from user using Scanner class </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+// Interface for drawable objects
+interface Drawable {
+    void draw();
+}
+                                        
+// Circle class implementing Drawable interface
+class Circle implements Drawable {
+    private double radius;
+                                        
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+                                        
+    <!-- @Override -->
+    public void draw() {
+        System.out.println("Drawing a circle with radius " + radius);
+        // Your logic for drawing a circle goes here
     }
 }
+                                        
+// Rectangle class implementing Drawable interface
+class Rectangle implements Drawable {
+    private int width;
+    private int height;
+                                        
+    public Rectangle(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+                                        
+                                            <!-- @Override -->
+    public void draw() {
+        System.out.println("Drawing a rectangle with width " + width + " and height " + height);
+        // Your logic for drawing a rectangle goes here
+    }
+}
+                                        
+// Triangle class implementing Drawable interface
+class Triangle implements Drawable {
+    private int base;
+    private int height;
+                                        
+    public Triangle(int base, int height) {
+        this.base = base;
+        this.height = height;
+    }
+                                        
+    <!-- @Override -->
+    public void draw() {
+        System.out.println("Drawing a triangle with base " + base + " and height " + height);
+        // Your logic for drawing a triangle goes here
+    }
+}
+                                        
+// Main class
+public class DrawableExample {
+    public static void main(String[] args) {
+        // Create instances of drawable objects
+        Circle circle = new Circle(5.0);
+        Rectangle rectangle = new Rectangle(8, 4);
+        Triangle triangle = new Triangle(6, 3);
+                                        
+        // Draw the shapes
+        drawShape(circle);
+        drawShape(rectangle);
+        drawShape(triangle);
+    }
+                                        
+    // Method to draw any shape implementing the Drawable interface
+    private static void drawShape(Drawable drawable) {
+        drawable.draw();
+    }
+}        
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Drawing a circle with radius 5.0 <br>
+Drawing a rectangle with width 8 and height 4 <br>
+Drawing a triangle with base 6 and height 3
 </pre>
                 </div>
             </div>

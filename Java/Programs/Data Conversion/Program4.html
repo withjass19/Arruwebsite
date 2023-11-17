@@ -45,16 +45,24 @@
 
                     <p class="fs-5 py-3">4. How to convert long to String </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class LongToStringConverter {
+
+    public static void main(String[] args) {
+        // Example long
+        long number = 123456789012345L;
+                                
+        // Convert the long to a String using concatenation
+        String convertedString = number + "";
+                                
+        // Print the result
+        System.out.println("Converted string: " + convertedString);
     }
-}
+}     
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Converted string: 123456789012345
 </pre>
                 </div>
             </div>

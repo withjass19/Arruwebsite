@@ -45,16 +45,34 @@
 
                     <p class="fs-5 py-3">2. Enter the string from user using BufferedStreamReader </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+// Animal interface
+interface Animal {
+    void bark();
+}
+                                        
+// Dog class implementing Animal interface
+class Dog implements Animal {
+    <!-- @Override -->
+    public void bark() {
+        System.out.println("Dog is barking");
     }
 }
+                                        
+// Main class
+public class AnimalExample {
+    public static void main(String[] args) {
+        // Creating an instance of Dog
+        Dog dog = new Dog();
+
+        // Calling the bark method
+        dog.bark();
+    }
+}                       
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Dog is barking   
 </pre>
                 </div>
             </div>
