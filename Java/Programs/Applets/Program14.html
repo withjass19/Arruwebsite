@@ -45,16 +45,45 @@
 
                     <p class="fs-5 py-3">14. Create an applet to display a digital clock. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.awt.*;
+import java.applet.Applet;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+public class pro14 extends Applet {
+    DateFormat dateFormat;
+    Date date;
+    Thread t;
+    public void init() {
+        this.setSize(300,200);
+    }
+    public void paint(Graphics g)
+    {
+        try
+        {
+            Font f=new Font("Arial",Font.BOLD,50);
+            g.setFont(f);
+            g.setColor(Color.DARK_GRAY);
+            dateFormat = new SimpleDateFormat("hh:mm:ss a");
+            date = new Date();
+            g.drawString(dateFormat.format(date),5,100);
+            Font f1=new Font("Arial",Font.BOLD,10);
+            g.setFont(f1);
+            t.sleep(1000);
+            repaint();
+        }catch(Exception e)
+        {
+        
+        }
     }
 }
+/* <applet code = "pro14" height = 500 width =500>  
+   </applet> */ 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    <img src="14.png">
 </pre>
                 </div>
             </div>

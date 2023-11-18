@@ -45,16 +45,25 @@
 
                     <p class="fs-5 py-3">10. Create an applet in Java to draw a arc. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.applet.Applet;
+import java.awt.*;
+
+
+public class pro10 extends Applet
+{
+    public void paint(Graphics g){
+        setForeground(Color.red);
+        g.drawArc(10,10,50,100,10,45);
+        g.fillArc(100,10,1000,100,0,90);
+
     }
 }
+/*<applet code="pro10" width="400" height="400"></applet> */
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    <img src="10.png">
 </pre>
                 </div>
             </div>

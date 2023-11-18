@@ -45,16 +45,20 @@
 
                     <p class="fs-5 py-3">6. Create an applet in Java to draw a square. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.applet.*;
+                import java.awt.*;
+                
+                public class pro6 extends Applet {
+                    public void paint(Graphics g) {
+                        g.drawRect(50, 50, 200, 200);
+                    }
+                }
+                /*<applet code="Pro6" width="400" height="400"></applet> */ 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    <img src="6.png">
 </pre>
                 </div>
             </div>

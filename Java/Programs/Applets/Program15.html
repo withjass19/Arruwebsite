@@ -45,16 +45,30 @@
 
                     <p class="fs-5 py-3">15. Java Program to Draw a Smiling Face using Graphics Class Methods </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.applet.Applet;
+import java.awt.*;
+
+   //<applet code= appro1 width= 600 height=500 ></applet>
+   
+public class appro1 extends Applet 
+{
+  public void paint(Graphics g) 
+   {
+      setBackground(Color.red);
+      g.setColor(Color.yellow);
+      g.fillOval(100, 100, 350, 350);
+      g.setColor(Color.black);
+      g.fillOval(195, 190, 40, 40);
+      g.fillOval(325, 190, 40, 40);
+      g.drawArc(200, 290, 150, 70, 180, 180);
+   }
+
 }
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    <img src="15.png">
 </pre>
                 </div>
             </div>
