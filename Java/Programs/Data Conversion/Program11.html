@@ -45,16 +45,42 @@
 
                     <p class="fs-5 py-3">11. How to convert String to char </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class StringToCharConversion {
+    public static void main(String[] args) {
+        // Input String
+        String inputString = "Hello, World!";
+
+        // Convert String to char array
+        char[] charArray = convertStringToCharArray(inputString);
+
+        // Print the result
+        System.out.println("Original String: " + inputString);
+        System.out.print("Converted to char array: ");
+        for (char c : charArray) {
+            System.out.print(c + " ");
+        }
+    }
+
+    // Function to convert String to char array
+    private static char[] convertStringToCharArray(String str) {
+        char[] charArray = new char[str.length()];
+
+        // Copy characters from String to char array
+        for (int i = 0; i < str.length(); i++) {
+            charArray[i] = str.charAt(i);
+        }
+
+        return charArray;
     }
 }
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Original String: Hello, World!
+Converted to char array: H e l l o ,   W o r l d ! 
+
 </pre>
                 </div>
             </div>

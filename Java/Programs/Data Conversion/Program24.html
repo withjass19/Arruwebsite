@@ -45,16 +45,35 @@
 
                     <p class="fs-5 py-3">24. How to convert Timestamp to Date </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.sql.Timestamp;
+import java.util.Date;
+
+public class TimestampToDateExample {
+    public static void main(String[] args) {
+        // Create a Timestamp object
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+
+        // Convert Timestamp to Date using the Date constructor
+        Date date1 = new Date(timestamp.getTime());
+
+        // Convert Timestamp to Date using the getTime() method
+        Date date2 = new Date(timestamp.getTime());
+
+        // Display the results
+        System.out.println("Original Timestamp: " + timestamp);
+        System.out.println("Converted Date (using constructor): " + date1);
+        System.out.println("Converted Date (using getTime()): " + date2);
     }
 }
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Original Timestamp: 2023-11-18 12:34:56.789
+Converted Date (using constructor): Thu Nov 18 12:34:56 UTC 2023
+Converted Date (using getTime()): Thu Nov 18 12:34:56 UTC 2023
+
 </pre>
                 </div>
             </div>

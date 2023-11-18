@@ -45,16 +45,27 @@
 
                     <p class="fs-5 py-3">25. How to convert Binary to Decimal </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class BinaryToDecimalExample {
+    public static void main(String[] args) {
+        // Binary number as a string
+        String binaryNumber = "1101";
+
+        // Convert binary to decimal
+        int decimalNumber = Integer.parseInt(binaryNumber, 2);
+
+        // Display the results
+        System.out.println("Binary number: " + binaryNumber);
+        System.out.println("Decimal number: " + decimalNumber);
     }
 }
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Binary number: 1101
+Decimal number: 13
+
 </pre>
                 </div>
             </div>

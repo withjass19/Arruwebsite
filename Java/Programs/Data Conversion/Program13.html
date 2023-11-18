@@ -45,16 +45,46 @@
 
                     <p class="fs-5 py-3">13. How to convert String to Object </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class StringToObjectConversion {
+    public static void main(String[] args) {
+        // Convert String to Object using Object class
+        String stringValue = "Hello, World!";
+        Object objectValue = (Object) stringValue;
+
+        // Convert String to custom object
+        MyObject customObject = new MyObject(stringValue);
+
+        // Print the results
+        System.out.println("Original String: " + stringValue);
+        System.out.println("Converted to Object: " + objectValue);
+        System.out.println("Converted to Custom Object: " + customObject);
+    }
+
+    // Define a custom class
+    static class MyObject {
+        private String value;
+
+        public MyObject(String value) {
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "MyObject{" +
+                    "value='" + value + '\'' +
+                    '}';
+        }
     }
 }
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Original String: Hello, World!
+Converted to Object: Hello, World!
+Converted to Custom Object: MyObject{value='Hello, World!'}
+
 </pre>
                 </div>
             </div>

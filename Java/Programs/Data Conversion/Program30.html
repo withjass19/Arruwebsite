@@ -45,16 +45,41 @@
 
                     <p class="fs-5 py-3">30. How to convert Decimal to Octal </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Scanner;
+
+public class DecimalToOctalConverter {
+    public static void main(String[] args) {
+        // Create a Scanner object to take user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter a decimal number
+        System.out.print("Enter a decimal number: ");
+        int decimalNumber = scanner.nextInt();
+
+        // Call the method to convert decimal to octal
+        String octalNumber = convertDecimalToOctal(decimalNumber);
+
+        // Display the result
+        System.out.println("Octal equivalent: " + octalNumber);
+
+        // Close the scanner
+        scanner.close();
+    }
+
+    // Method to convert decimal to octal
+    private static String convertDecimalToOctal(int decimalNumber) {
+        // Using Integer.toOctalString() to convert decimal to octal
+        return Integer.toOctalString(decimalNumber);
     }
 }
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter a decimal number: 42
+Octal equivalent: 52
+
 </pre>
                 </div>
             </div>

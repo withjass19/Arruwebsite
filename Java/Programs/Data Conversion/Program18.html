@@ -45,16 +45,36 @@
 
                     <p class="fs-5 py-3">18. How to convert double to int </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class DoubleToIntConversion {
+    public static void main(String[] args) {
+        // Convert double to int with explicit casting
+        double doubleValue = 42.75;
+        int intValue = (int) doubleValue;
+
+        // Print the results
+        System.out.println("Original double value: " + doubleValue);
+        System.out.println("Converted to int value (with explicit casting): " + intValue);
+
+        // Convert double to int with rounding
+        double anotherDoubleValue = 78.56;
+        int roundedValue = (int) Math.round(anotherDoubleValue);
+
+        // Print the results
+        System.out.println("\nOriginal double value: " + anotherDoubleValue);
+        System.out.println("Rounded to int value: " + roundedValue);
     }
 }
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Original double value: 42.75
+Converted to int value (with explicit casting): 42
+
+Original double value: 78.56
+Rounded to int value: 79
+
 </pre>
                 </div>
             </div>

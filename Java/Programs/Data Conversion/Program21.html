@@ -45,16 +45,48 @@
 
                     <p class="fs-5 py-3">21. How to convert String to boolean </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class StringToBooleanConversion {
+    public static void main(String[] args) {
+        // Example String values
+        String trueString = "true";
+        String falseString = "false";
+        String invalidString = "invalid";
+
+        // Using parseBoolean method
+        boolean booleanValue1 = Boolean.parseBoolean(trueString);
+        boolean booleanValue2 = Boolean.parseBoolean(falseString);
+        // Uncommenting the line below would result in a runtime exception
+        // boolean invalidBooleanValue = Boolean.parseBoolean(invalidString);
+
+        // Using valueOf method
+        Boolean booleanObject1 = Boolean.valueOf(trueString);
+        Boolean booleanObject2 = Boolean.valueOf(falseString);
+        // Uncommenting the line below would result in a runtime exception
+        // Boolean invalidBooleanObject = Boolean.valueOf(invalidString);
+
+        // Display the results
+        System.out.println("Using parseBoolean:");
+        System.out.println("trueString: " + booleanValue1);
+        System.out.println("falseString: " + booleanValue2);
+
+        System.out.println("\nUsing valueOf:");
+        System.out.println("trueString: " + booleanObject1);
+        System.out.println("falseString: " + booleanObject2);
     }
 }
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Using parseBoolean:
+trueString: true
+falseString: false
+
+Using valueOf:
+trueString: true
+falseString: false
+
 </pre>
                 </div>
             </div>

@@ -45,16 +45,39 @@
 
                     <p class="fs-5 py-3">12. How to convert char to String </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class CharToStringConversion {
+    public static void main(String[] args) {
+        // Convert char to String using String constructor
+        char char1 = 'A';
+        String string1 = new String(new char[]{char1});
+
+        // Convert char to String using String.valueOf()
+        char char2 = 'B';
+        String string2 = String.valueOf(char2);
+
+        // Print the results
+        System.out.println("Using String constructor:");
+        System.out.println("Original char: " + char1);
+        System.out.println("Converted to String: " + string1);
+
+        System.out.println("\nUsing String.valueOf():");
+        System.out.println("Original char: " + char2);
+        System.out.println("Converted to String: " + string2);
     }
 }
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Using String constructor:
+Original char: A
+Converted to String: A
+
+Using String.valueOf():
+Original char: B
+Converted to String: B
+
 </pre>
                 </div>
             </div>

@@ -45,16 +45,39 @@
 
                     <p class="fs-5 py-3">28. How to convert Decimal to Hex </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Scanner;
+
+public class DecimalToHexConverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input: Decimal number
+        System.out.print("Enter a decimal number: ");
+        int decimalNumber = scanner.nextInt();
+
+        // Convert decimal to hex
+        String hexadecimal = decimalToHex(decimalNumber);
+
+        // Output: Display the result
+        System.out.println("Hexadecimal equivalent: " + hexadecimal);
+
+        // Close the scanner
+        scanner.close();
+    }
+
+    private static String decimalToHex(int decimalNumber) {
+        // Using Integer.toHexString to convert decimal to hexadecimal
+        return Integer.toHexString(decimalNumber).toUpperCase();
     }
 }
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter a decimal number: 255
+Hexadecimal equivalent: FF
+ 
 </pre>
                 </div>
             </div>

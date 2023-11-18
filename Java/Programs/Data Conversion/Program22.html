@@ -45,16 +45,43 @@
 
                     <p class="fs-5 py-3">22. How to convert boolean to String </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+public class BooleanToStringConversion {
+    public static void main(String[] args) {
+        // Example boolean values
+        boolean trueValue = true;
+        boolean falseValue = false;
+
+        // Using String.valueOf()
+        String stringValue1 = String.valueOf(trueValue);
+        String stringValue2 = String.valueOf(falseValue);
+
+        // Using concatenation with an empty string
+        String stringValue3 = trueValue + "";
+        String stringValue4 = falseValue + "";
+
+        // Display the results
+        System.out.println("Using String.valueOf():");
+        System.out.println("trueValue: " + stringValue1);
+        System.out.println("falseValue: " + stringValue2);
+
+        System.out.println("\nUsing concatenation with an empty string:");
+        System.out.println("trueValue: " + stringValue3);
+        System.out.println("falseValue: " + stringValue4);
     }
 }
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Using String.valueOf():
+trueValue: true
+falseValue: false
+
+Using concatenation with an empty string:
+trueValue: true
+falseValue: false
+
 </pre>
                 </div>
             </div>
