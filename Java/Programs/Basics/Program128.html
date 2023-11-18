@@ -45,16 +45,25 @@
 
                     <p class="fs-5 py-3">128. Write a Java method to find number is even number or not </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                        class EvenNumber&#123;<br />
+                            public static void main(String args[])&#123;<br />
+                            java.util.Scanner Input = new java.util.Scanner(System.in);<br />
+                            System.out.print("Enter a number: ");<br />
+                            int num = Input.nextInt();<br />
+                            if(num%2==0)&#123;<br />
+                            System.out.println("Yes, your number is even");<br />
+                            &#125;<br />
+                            else&#123;<br />
+                            System.out.println("No, your number is not even");<br />
+                            &#125;<br />
+                            &#125;<br />
+                            &#125;  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter a number: 2
+Yes, your number is even
 </pre>
                 </div>
             </div>

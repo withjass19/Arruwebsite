@@ -45,16 +45,33 @@
 
                     <p class="fs-5 py-3">131. Write a Java method to find GCD and LCM of Two Numbers </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class GCDandLCMCalculator &#123;<br />
+                public static void main(String[] args) &#123;<br />
+                int num1 = 24;<br />
+                int num2 = 36;<br />
+
+                int gcd = findGCD(num1, num2);<br />
+                int lcm = findLCM(num1, num2);<br />
+
+                System.out.println("GCD of " + num1 + " and " + num2 + " is " + gcd);<br />
+                System.out.println("LCM of " + num1 + " and " + num2 + " is " + lcm);<br />
+                &#125;<br />
+                public static int findGCD(int a, int b) &#123;<br />
+                if (b == 0) &#123;<br />
+                return a;<br />
+                &#125;<br />
+                return findGCD(b, a % b);<br />
+                &#125;<br />
+                public static int findLCM(int a, int b) &#123;<br />
+                return (a * b) / findGCD(a, b);<br />
+                &#125;<br />
+                &#125;<br />
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+GCD of 24 and 36 is 12 <br>
+LCM of 24 and 36 is 72
 </pre>
                 </div>
             </div>

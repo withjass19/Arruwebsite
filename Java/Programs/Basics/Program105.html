@@ -45,16 +45,36 @@
 
                     <p class="fs-5 py-3">105. Write a Java Program to Accept the Marks of a Student and find Total Marks and Percentage </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Scanner;<br />
+ class CalculatePercentage &#123;<br />
+ public static void main(String[] args) &#123;<br />
+ Scanner scanner = new Scanner(System.in);<br />
+ System.out.print("Enter the number of subjects: ");<br />
+ int numSubjects = scanner.nextInt();<br />
+ int totalMarks = 0;<br />
+ double percentage;<br />
+ for (int i = 1; i &lt;= numSubjects; i++) &#123;<br />
+ System.out.print("Enter the marks for Subject " + i + ": ");<br />
+ int subjectMarks = scanner.nextInt();<br />
+ totalMarks += subjectMarks;<br />
+ &#125;<br />
+ percentage = (double) totalMarks / (numSubjects * 100) * 100;<br />
+ System.out.println("Total Marks: " + totalMarks);<br />
+ System.out.println("Percentage: " + percentage + "%");<br />
+ &#125;<br />
+ &#125;
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter the number of subjects: 5 <br>
+Enter the marks for Subject 1: 90 <br>
+Enter the marks for Subject 2: 98 <br>
+Enter the marks for Subject 3: 78 <br>
+Enter the marks for Subject 4: 68 <br>
+Enter the marks for Subject 5: 79 <br>
+Total Marks: 413 <br>
+Percentage: 82.6% <br>
 </pre>
                 </div>
             </div>

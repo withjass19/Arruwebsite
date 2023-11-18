@@ -45,16 +45,40 @@
 
                     <p class="fs-5 py-3">117. Write a java program to count total number of notes in entered amount using loop </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.util.Scanner;<br />
+                class CountNotes &#123;<br />
+                public static void main(String[] args) &#123;<br />
+                Scanner scanner = new Scanner(System.in);<br />
+
+                System.out.print("Enter an amount: ");<br />
+                int amount = scanner.nextInt();<br />
+
+                int[] noteValues = &#123;100, 50, 20, 10, 5, 1&#125;;<br />
+                int[] noteCounts = new int[noteValues.length];<br />
+
+                for (int i = 0; i &lt; noteValues.length; i++) &#123;<br />
+                noteCounts[i] = amount / noteValues[i];<br />
+                amount %= noteValues[i];<br />
+                &#125;<br />
+
+                System.out.println("Count of Notes:");<br />
+                for (int i = 0; i &lt; noteValues.length; i++) &#123;<br />
+                System.out.println("$" + noteValues[i] + " notes: " + noteCounts[i]);<br />
+                &#125;<br />
+                &#125;<br />
+                &#125;   
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter an amount: 123456789 <br>
+Count of Notes: <br>
+$100 notes: 1234567 <br>
+$50 notes: 1 <br>
+$20 notes: 1 <br>
+$10 notes: 1 <br>
+$5 notes: 1 <br>
+$1 notes: 4 <br>
 </pre>
                 </div>
             </div>

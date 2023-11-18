@@ -45,16 +45,36 @@
 
                     <p class="fs-5 py-3">109. Write a Java program to find the factorial value of any number entered through the keyboard </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.util.Scanner;<br />
+                class FactorialCalculator &#123;<br />
+                public static void main(String[] args) &#123;<br />
+                Scanner scanner = new Scanner(System.in);<br />
+                System.out.print("Enter a number: ");<br />
+                int number = scanner.nextInt();<br />
+
+                long factorial = calculateFactorial(number);<br />
+
+                System.out.println("Factorial of " + number + " is " + factorial);<br />
+                &#125;<br />
+                public static long calculateFactorial(int n) &#123;<br />
+                if (n &lt; 0) &#123;<br />
+                return -1;<br />
+                &#125;<br />
+                if (n == 0 || n == 1) &#123;<br />
+                return 1;<br />
+                &#125;<br />
+                long result = 1;<br />
+                for (int i = 2; i &lt;= n; i++) &#123;<br />
+                result *= i;<br />
+                &#125;<br />
+                return result;<br />
+                &#125;<br />
+                &#125; 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Factorial of 5 is: 120
 </pre>
                 </div>
             </div>

@@ -45,16 +45,33 @@
 
                     <p class="fs-5 py-3">118. Write a Java program to print Fibonacci series of n terms where n is input by user using loop </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.util.Scanner;<br />
+                class FibonacciSeries &#123;<br />
+                public static void main(String[] args) &#123;<br />
+                Scanner scanner = new Scanner(System.in);<br />
+                System.out.print("Enter the number of terms for the Fibonacci series: ");<br />
+                int n = scanner.nextInt();<br />
+
+                int first = 0, second = 1;<br />
+
+                System.out.println("Fibonacci Series of " + n + " terms:");<br />
+
+                for (int i = 1; i &lt;= n; i++) &#123;<br />
+                System.out.print(first + " ");<br />
+
+                int next = first + second;<br />
+                first = second;<br />
+                second = next;<br />
+                &#125;<br />
+                &#125;<br />
+                &#125;  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter the number of terms for the Fibonacci series: 4 <br>
+Fibonacci Series of 4 terms: <br>
+0 1 1 2  <br>
 </pre>
                 </div>
             </div>

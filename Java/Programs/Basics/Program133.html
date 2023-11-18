@@ -45,16 +45,34 @@
 
                     <p class="fs-5 py-3">133. Write a Java program to reverse an integer number </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                           class ReverseNumber&#123;<br />
+                                public static void main(String[] args)&#123;<br />
+                                int sum = 0, rem;<br />
+
+                                java.util.Scanner input = new java.util.Scanner(System.in);<br />
+
+                                System.out.println("Enter the number");<br />
+                                int num=input.nextInt();<br />
+
+                                System.out.println("Original number: "+num);<br />
+
+                                while(num&gt;0)&#123;<br />
+                                rem = num%10;<br />
+                                sum = sum*10+rem;<br />
+                                num = num/10;<br />
+                                &#125;<br />
+
+                                System.out.println("Reverse of a Number is "+sum);<br />
+                                &#125;<br />
+                                &#125;
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter the number <br>
+12 <br>
+Original number: 12 <br>
+Reverse of a Number is 21 <br>
 </pre>
                 </div>
             </div>

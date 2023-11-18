@@ -45,16 +45,27 @@
 
                     <p class="fs-5 py-3">91. Write a Java program to convert an array to ArrayList </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.util.ArrayList;<br />
+                import java.util.Arrays;<br />
+                class ArrayToArrayList &#123;<br />
+                public static void main(String[] args) &#123;<br />
+                String[] array = &#123;"apple", "banana", "cherry", "date"&#125;;<br />
+
+                ArrayList&lt;String&gt; arrayList = convertArrayToArrayList(array);<br />
+                System.out.println("ArrayList: " + arrayList);<br />
+                &#125;<br />
+
+                public static &lt;T&gt; ArrayList&lt;T&gt; convertArrayToArrayList(T[] array) &#123;<br />
+                ArrayList&lt;T&gt; arrayList = new ArrayList(Arrays.asList(array));<br />
+
+                return arrayList;<br />
+                &#125;<br />
+                &#125;
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+ArrayList: [apple, banana, cherry, date]
 </pre>
                 </div>
             </div>

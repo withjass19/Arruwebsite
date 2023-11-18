@@ -45,16 +45,28 @@
 
                     <p class="fs-5 py-3">121. Write a Java method to find the smallest number among three numbers </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class SmallestNumber&#123;<br />
+                public static void main(String[] args)&#123;<br />
+                java.util.Scanner input = new java.util.Scanner(System.in);<br />
+                System.out.print("Input the first number: ");<br />
+                int x = input.nextInt();<br />
+                System.out.print("Input the Second number: ");<br />
+                int y = input.nextInt();<br />
+                System.out.print("Input the third number: ");<br />
+                int z = input.nextInt();<br />
+
+                int small = Math.min(Math.min(x,y),z);<br />
+                System.out.println("Smallest number is "+small);<br />
+                &#125;<br />
+                &#125;      
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    Input the first number: 12 <br>
+    Input the Second number: 23 <br>
+    Input the third number: 34 <br>
+    Smallest number is 12 <br>
 </pre>
                 </div>
             </div>

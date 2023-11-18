@@ -45,16 +45,42 @@
 
                     <p class="fs-5 py-3">115. Write a Java program to enter the numbers till the user wants and at the end the program should display the largest and smallest numbers entered </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.util.Scanner;<br />
+                class FindLargestAndSmallestNumbers &#123;<br />
+                public static void main(String[] args) &#123;<br />
+                Scanner scanner = new Scanner(System.in);<br />
+
+                int number;<br />
+                int largest = Integer.MIN_VALUE; <br />
+                int smallest = Integer.MAX_VALUE;<br />
+
+                char choice;<br />
+
+                do &#123;<br />
+                System.out.print("Enter a number: ");<br />
+                number = scanner.nextInt();<br />
+                largest = Math.max(largest, number);<br />
+                smallest = Math.min(smallest, number);<br />
+
+                System.out.print("Do you want to enter another number? (y/n): ");<br />
+                choice = scanner.next().charAt(0);<br />
+
+                &#125; while (choice == 'y' || choice == 'Y');<br />
+
+                System.out.println("Largest number entered: " + largest);<br />
+                System.out.println("Smallest number entered: " + smallest);<br />
+                &#125;<br />
+                &#125;   
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter a number: 12 <br>
+Do you want to enter another number? (y/n): y <br>
+Enter a number: 10 <br>
+Do you want to enter another number? (y/n): n <br>
+Largest number entered: 12 <br>
+Smallest number entered: 10 <br>
 </pre>
                 </div>
             </div>

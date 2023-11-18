@@ -45,16 +45,34 @@
 
                     <p class="fs-5 py-3">113. Write a Java program to calculate HCF of Two given numbers using loop </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.util.Scanner;<br />
+                class HCFCalculator &#123;<br />
+                public static void main(String[] args) &#123;<br />
+                Scanner scanner = new Scanner(System.in);<br />
+                System.out.print("Enter the first number: ");<br />
+                int number1 = scanner.nextInt();<br />
+
+                System.out.print("Enter the second number: ");<br />
+                int number2 = scanner.nextInt();<br />
+                int hcf = calculateHCF(number1, number2);<br />
+                System.out.println("HCF of " + number1 + " and " + number2 + " is " + hcf);<br />
+                &#125;<br />
+                public static int calculateHCF(int a, int b) &#123;<br />
+                while (b != 0) &#123;<br />
+                int temp = b;<br />
+                b = a % b;<br />
+                a = temp;<br />
+                &#125;<br />
+                return a;<br />
+                &#125;<br />
+                &#125;  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter the first number: 123 <br>
+Enter the second number: 3 <br>
+HCF of 123 and 3 is 3 <br>
 </pre>
                 </div>
             </div>

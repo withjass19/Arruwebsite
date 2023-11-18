@@ -45,16 +45,69 @@
 
                     <p class="fs-5 py-3">103. Write a Java Program to Display Transpose Matrix </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.util.Scanner;<br />
+                class TransposeMatrix &#123;<br />
+                public static void main(String[] args) &#123;<br />
+                Scanner scanner = new Scanner(System.in);<br />
+
+                System.out.print("Enter the number of rows: ");<br />
+                int rows = scanner.nextInt();<br />
+
+                System.out.print("Enter the number of columns: ");<br />
+                int columns = scanner.nextInt();<br />
+
+                int[][] matrix = new int[rows][columns];<br />
+
+                System.out.println("Enter the elements of the matrix:");<br />
+                for (int i = 0; i &lt; rows; i++) &#123;<br />
+                for (int j = 0; j &lt; columns; j++) &#123;<br />
+                matrix[i][j] = scanner.nextInt();<br />
+                &#125;<br />
+                &#125;<br />
+
+                int[][] transpose = new int[columns][rows];<br />
+
+                for (int i = 0; i &lt; rows; i++) &#123;<br />
+                for (int j = 0; j &lt; columns; j++) &#123;<br />
+                transpose[j][i] = matrix[i][j];<br />
+                &#125;<br />
+                &#125;<br />
+
+                System.out.println("Original Matrix:");<br />
+                displayMatrix(matrix);<br />
+
+                System.out.println("Transpose Matrix:");<br />
+                displayMatrix(transpose);<br />
+
+                scanner.close();<br />
+                &#125;<br />
+                public static void displayMatrix(int[][] matrix) &#123;<br />
+                for (int[] row : matrix) &#123;<br />
+                for (int element : row) &#123;<br />
+                System.out.print(element + " ");<br />
+                &#125;<br />
+                System.out.println();<br />
+                &#125;<br />
+                &#125;<br />
+                &#125; 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter the number of rows: 3 <br>
+Enter the number of columns: 3 <br>
+Enter the elements of the matrix: <br>
+1 2 3 <br>
+2 3 4 <br>
+3 4 5 <br>
+Original Matrix: <br>
+1 2 3 <br>
+2 3 4 <br>
+3 4 5 <br>
+Transpose Matrix: <br>
+1 2 3 <br>
+2 3 4 <br>
+3 4 5 <br>
 </pre>
                 </div>
             </div>

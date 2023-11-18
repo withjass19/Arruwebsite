@@ -45,16 +45,25 @@
 
                     <p class="fs-5 py-3">101. Write a Java Program to Sort the Array in an Descending Order </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.util.Arrays;<br />
+                import java.util.Collections;<br />
+                class SortArrayDescending &#123;<br />
+                public static void main(String[] args) &#123;<br />
+                Integer[] array = &#123;10, 5, 8, 1, 7, 4&#125;;<br />
+
+                Arrays.sort(array);<br />
+
+                Collections.reverse(Arrays.asList(array));<br />
+
+                System.out.println("Array in descending order: " + Arrays.toString(array));<br />
+                &#125;<br />
+                &#125;<br />
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Array in descending order: [10, 8, 7, 5, 4, 1]
 </pre>
                 </div>
             </div>

@@ -45,16 +45,29 @@
 
                     <p class="fs-5 py-3">135. Write a Java program to test if a double number is an integer </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class TestIfDoubleIsInteger &#123;<br />
+                public static void main(String[] args) &#123;<br />
+                double number1 = 5.0;<br />
+                double number2 = 7.5;<br />
+
+                testIfInteger(number1);<br />
+                testIfInteger(number2);<br />
+                &#125;<br />
+
+                public static void testIfInteger(double number) &#123;<br />
+                if (number == (int) number) &#123;<br />
+                System.out.println(number + " is an integer.");<br />
+                &#125; else &#123;<br />
+                System.out.println(number + " is not an integer.");<br />
+                &#125;<br />
+                &#125;<br />
+                &#125;   
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+5.0 is an integer. <br>
+7.5 is not an integer. <br>
 </pre>
                 </div>
             </div>

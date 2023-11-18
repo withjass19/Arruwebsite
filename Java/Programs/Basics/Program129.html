@@ -45,16 +45,38 @@
 
                     <p class="fs-5 py-3">129. Write a Java method to check numbers is palindrome number or not </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class PrimeNumbers&#123;<br />
+                public static void main(String[] args) &#123;<br />
+                int i, j;<br />
+                boolean isPrime;<br />
+                System.out.println("Prime numbers between 1 and 20 are:");<br />
+                for (i = 2; i &lt;= 20; i++) &#123;<br />
+                isPrime = true;<br />
+                for (j = 2; j &lt; i; j++) &#123;<br />
+                if (i % j == 0) &#123;<br />
+                isPrime = false;<br />
+                break;<br />
+                &#125;<br />
+                &#125;<br />
+                if (isPrime) &#123;<br />
+                System.out.println(i);<br />
+                &#125;<br />
+                &#125;<br />
+                &#125;<br />
+                &#125;  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Prime numbers between 1 and 20 are: <br>
+2 <br>
+3 <br>
+5 <br>
+7 <br>
+11 <br>
+13 <br>
+17 <br>
+19 <br>
 </pre>
                 </div>
             </div>

@@ -45,16 +45,22 @@
 
                     <p class="fs-5 py-3">138. Write a Java program to convert a float value to absolute value </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class ConvertFloatTOAbsoluteValue&#123;<br />
+                public static void main(String args[])&#123;<br />
+                java.util.Scanner Input = new java.util.Scanner(System.in);<br />
+                System.out.print("Enter Float value: ");<br />
+                float num = Input.nextFloat();<br />
+                System.out.println("Your value is "+num);<br />
+                System.out.println("Absolute value is "+Math.abs(num));<br />
+                &#125;<br />
+                &#125;  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter Float value: 2 <br>
+Your value is 2.0 <br>
+Absolute value is 2.0 <br>
 </pre>
                 </div>
             </div>

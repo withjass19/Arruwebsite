@@ -45,16 +45,31 @@
 
                     <p class="fs-5 py-3">81. Write a java program to count total number of lines from a string</p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.util.Scanner;<br />
+                class LineCount &#123;<br />
+                public static void main(String[] args) &#123;<br />
+                Scanner input = new Scanner(System.in);<br />
+
+                System.out.print("Enter a string with multiple lines: ");<br />
+                String inputString = input.nextLine();<br />
+
+                int lineCount = countLines(inputString);<br />
+
+                System.out.println("Total number of lines: " + lineCount);<br />
+                &#125;<br />
+
+                public static int countLines(String input) &#123;<br />
+                String[] lines = input.split("\n");<br />
+
+                return lines.length;<br />
+                &#125;<br />
+                &#125;  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter a string with multiple lines: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, eveniet? <br>
+Total number of lines: 1
 </pre>
                 </div>
             </div>

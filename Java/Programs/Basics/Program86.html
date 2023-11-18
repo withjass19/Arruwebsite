@@ -45,16 +45,33 @@
 
                     <p class="fs-5 py-3">86. Write a Java program to find the maximum and minimum value of an array </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.util.Arrays;<br />
+                class MinAndMaxValueOfArray&#123;<br />
+                public static void main(String[] args) &#123;<br />
+                int[] num;<br />
+                java.util.Scanner input=new java.util.Scanner(System.in);<br />
+                System.out.print("Enter the number of elements: ");<br />
+                int n=input.nextInt();<br />
+                num= new int[n];<br />
+
+                for(int i = 0; i &lt; n; i++) &#123;<br />
+                System.out.print("enter element "+(i+1)+": ");<br />
+                num[i]=input.nextInt();<br />
+                &#125;<br />
+
+                Arrays.sort(num);<br />
+                System.out.println("minimum value is "+num[0]+" and maximum value is "+num[n-1]);<br />
+                &#125;<br />
+                &#125; 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter the number of elements: 3 <br>
+enter element 1: 10 <br>
+enter element 2: 20 <br>
+enter element 3: 30 <br>
+minimum value is 10 and maximum value is 30 <br>
 </pre>
                 </div>
             </div>

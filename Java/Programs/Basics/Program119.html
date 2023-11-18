@@ -45,16 +45,33 @@
 
                     <p class="fs-5 py-3">119. Write a java program to calculate the sum of following series where n is input by user </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                            class AverageOfThreeNumbers&#123;<br />
+                                public static void main(String args[])&#123;<br />
+                                java.util.Scanner input = new java.util.Scanner(System.in);<br />
+                                System.out.println("enter first number: ");<br />
+                                int num1 = input.nextInt();<br />
+                                System.out.println("\nenter second number: ");<br />
+                                int num2 = input.nextInt();<br />
+                                System.out.println("\nenter third number: ");<br />
+                                int num3 = input.nextInt();<br />
+                                float avg =(num1+num2+num3)/3;<br />
+                                System.out.println("\nAverage: "+avg);<br />
+                                &#125;<br />
+                                &#125;
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+enter first number:  <br>
+10 <br>
+ <br>
+enter second number: <br>
+20 <br>
+ <br>
+enter third number: <br>
+30 <br>
+ <br>
+Average: 20.0 <br>
 </pre>
                 </div>
             </div>

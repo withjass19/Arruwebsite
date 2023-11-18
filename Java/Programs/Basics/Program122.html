@@ -45,16 +45,22 @@
 
                     <p class="fs-5 py-3">122. Write a Java method to count all words in a string </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class WordCount &#123;<br />
+                public static void main(String[] args) &#123;<br />
+                String inputString = "This is a sample string with multiple words.";<br />
+                int wordCount = countWords(inputString);<br />
+                System.out.println("Word count: " + wordCount);<br />
+                &#125;<br />
+                public static int countWords(String input) &#123;<br />
+                String[] words = input.split("\\s+");<br />
+                return words.length;<br />
+                &#125;<br />
+                &#125;
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Word count: 8
 </pre>
                 </div>
             </div>
