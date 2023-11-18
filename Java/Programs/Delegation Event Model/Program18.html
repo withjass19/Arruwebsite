@@ -45,16 +45,45 @@
 
                     <p class="fs-5 py-3">18. Java Program to Display Several Dots on the Screen Continuously </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import javax.swing.*;
+import java.awt.*;
+import java.lang.Math;
+import java.awt.Graphics.*;
+class pro18
+{
+	public static void main(String args[])
+	{
+		//Create a frame
+		JFrame frame=new JFrame("Infinite Dots");
+		frame.setSize(500,500);
+		frame.getContentPane().setBackground(Color.black);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		while(frame.isVisible())
+		{
+			paint(frame.getGraphics());
+			try
+			{
+				//Delay by 1ms
+				Thread.sleep(1);
+			}
+			catch(InterruptedException ie){}
+		}
+	}
+	//function to draw a dot on the frame
+	public static void paint(Graphics g)
+	{
+		g.setColor(Color.green);
+		int x=(int)(Math.random()*1000)%500;
+		int y=(int)(Math.random()*1000)%500;
+		g.drawLine(x,y,x,y);
+	}
+} 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    <img src="j18.png">
 </pre>
                 </div>
             </div>

@@ -45,16 +45,30 @@
 
                     <p class="fs-5 py-3">16. Java Program to Change Frame Background Color as Cyan </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+/*Java Program to Display Text with Background Color as Cyan*/
+import java.awt.*;
+class pro16
+{
+     public static void main(String args[])
+    {
+    Frame frame = new Frame("Cyan Text");
+	frame.setSize(400,400);
+	frame.setLayout(new FlowLayout());
+	frame.setBackground(Color.CYAN);
+	String str="The Background of Frame is Cyan";
+	Label text = new Label(str);
+	text.setFont(new Font("Serif",Font.ITALIC,20));
+	frame.add(text);
+	text.setForeground(Color.red);
+	//Display the frame
+	frame.setVisible(true);
     }
 }
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    <img src="j16.png">
 </pre>
                 </div>
             </div>

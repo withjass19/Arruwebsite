@@ -45,16 +45,44 @@
 
                     <p class="fs-5 py-3">11. Java Program to Create a List Box to Select Multiple Items and Display it in the Frame </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.awt.*;
+public class pro11 extends Frame 
+
+{
+    List awtList;
+	
+	public pro11() {
+		
+	    setSize(500, 250);
+	    setLocation(100,100); 
+        setVisible(true);
+	       
+	    awtList = new List(5, true);
+	    awtList.add("Apple");
+	    awtList.add("Orange");
+	    awtList.add("Banana");
+	    awtList.add("Grapes");
+	    awtList.add("Pine Apple");
+	    awtList.add("Strawberry");
+	    awtList.add("Jack Fruit");
+	    awtList.add("Papaya");
+	    awtList.add("Water Melon");
+	    awtList.add("Mango");
+	    
+      setLayout(new FlowLayout());
+      add(awtList);
+    
+	}
+    public static void main(String s[]){
+new pro11();
+}
+
 }
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    <img src="j11.png">
 </pre>
                 </div>
             </div>

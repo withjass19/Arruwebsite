@@ -45,16 +45,38 @@
 
                     <p class="fs-5 py-3">17. Java Program to Change the Applet Background Colour when Button Clicked </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+public class pro17 extends Applet implements ActionListener {
+  Button b1;
+    Color[] c = { Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW };
+    int bgcolor = 0;
+
+    @Override
+    public void init() {
+        b1 = new Button("Change Color");
+        b1.addActionListener(this);
+        add(b1);
     }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (bgcolor < c.length - 1) {
+            bgcolor++;
+        } else {
+            bgcolor = 0;
+        }
+        setBackground(c[bgcolor]);
+    }
+
 }
+//<applet code= pro17 width= 600 height=500 ></applet>  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    <img src="j17.png">
 </pre>
                 </div>
             </div>

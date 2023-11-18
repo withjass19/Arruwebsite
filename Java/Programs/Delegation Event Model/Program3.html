@@ -45,16 +45,49 @@
 
                     <p class="fs-5 py-3">3. Java Program to Create a Button and Display Image in the Frame when Clicked </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+/*Java Program to Display Image when Button is Clicked*/
+import javax.swing.*;
+import javax.swing.ImageIcon.*;
+import java.awt.*;
+import java.awt.event.*;
+class Button_Image implements ActionListener
+{
+	static JFrame frame;
+        //Driver function
+	public static void main(String args[])
+	{
+		//Create a frame
+		frame=new JFrame("Image on Click");
+		frame.setSize(500,500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setBackground(Color.white);
+		frame.setLayout(new FlowLayout());
+		//Create a button
+		JButton button=new JButton("Display");
+		frame.add(button);
+		//Create an object
+		Button_Image obj=new Button_Image();
+		//Associate ActionListener with button
+		button.addActionListener(obj);
+		//Display the frame
+		frame.setVisible(true);
+	}
+        //Function to display image
+	public void actionPerformed(ActionEvent e)
+	{
+		//Display Image
+		ImageIcon icon=new ImageIcon("logo.jpeg");
+		JLabel label=new JLabel(icon);
+		frame.add(label);
+		frame.pack();
+		frame.setSize(500,500);
+	}
+}   
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    <img src="j3.png">
 </pre>
                 </div>
             </div>
