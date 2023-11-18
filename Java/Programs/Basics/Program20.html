@@ -45,16 +45,29 @@
 
                     <p class="fs-5 py-3">20. Write a Java program to compute the sum of the first 100 prime numbers </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class SumPrime&#123;<br />
+                public static void main(String a[])&#123;<br />
+                int sum = 0;<br />
+                for(int i=2;i&lt;=100;i++)&#123;<br />
+                boolean flag=true;<br />
+                for(int j=2;j&lt;=i/2;j++)&#123;<br />
+                if(i%j==0)&#123;<br />
+                flag=false;<br />
+                break;<br />
+                &#125;<br />
+                &#125;<br />
+                if(flag)&#123;<br />
+                sum+=i;<br />
+                &#125;<br />
+                &#125;<br />
+                System.out.println(sum);<br />
+                &#125;<br />
+                &#125;
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+1060  
 </pre>
                 </div>
             </div>

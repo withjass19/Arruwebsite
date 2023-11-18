@@ -45,16 +45,36 @@
 
                     <p class="fs-5 py-3">21. Write a Java program to swap the first and last elements of an array and create a new array </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class SwapArrayElements&#123;<br />
+                public static void main(String a[])&#123;<br />
+                int arr[] = &#123;1,2,3,4,3&#125;<br />
+
+                System.out.println("Before swap");<br />
+                for(int x: arr)&#123;<br />
+                System.out.print(x);<br />
+                &#125;<br />
+                System.out.println();<br />
+
+                int l = arr.length;<br />
+                int s = l-1;<br />
+
+                int temp = 0 ;<br />
+                temp = arr[0];<br />
+                arr[0]=arr[s];<br />
+                arr[s]=temp;<br />
+
+                System.out.println("\nAfter swapping");<br />
+                for (int j:arr)System.out.print(j + " ");<br />
+                &#125;<br />
+                &#125;  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Before swap<br />
+12343<br /><br />
+After swapping<br />
+3 2 3 4 1
 </pre>
                 </div>
             </div>

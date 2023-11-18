@@ -45,16 +45,23 @@
 
                     <p class="fs-5 py-3">26. Write a Java program to add all the digits of a given positive integer </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class DigitSum&#123;<br />
+                public static void main(String a[])&#123;<br />
+                int x =1453;<br />
+                int sum =0;<br />
+                while(x!=0)&#123;<br />
+                int i=x%10;<br />
+                sum+=i;<br />
+                x=x/10;<br />
+                &#125;<br />
+                System.out.println(sum);<br />
+                &#125;<br />
+                &#125;  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+13   
 </pre>
                 </div>
             </div>

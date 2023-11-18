@@ -45,16 +45,32 @@
 
                     <p class="fs-5 py-3">36. Java Program to find volume of cuboid </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class ValumeOfCuboid&#123;
+                double area(double l, double h, double b)&#123;
+                return l*b*h;
+                &#125;
+                &#125;
+                class V_Cuboid&#123;<br/>
+                public static void main(String a[])&#123;<br/>
+                double l = 12;<br/>
+                double b = 7;<br/>
+                double h = 5;<br/>
+                System.out.println("Length of Cuboid: "+l);<br/>
+                System.out.println("Width of Cuboid: "+b);<br/>
+                System.out.println("Height of Cuboid: "+h);<br/>
+                AreaOfCuboid obj = new AreaOfCuboid();<br/>
+                double ans = obj.area(l,b,h);<br/>
+                System.out.println("Valume of Cuboid is "+ ans);<br/>
+                &#125;<br/>
+                &#125;   
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Length of Cuboid: 12.0<br/>
+Width of Cuboid: 7.0<br/>
+Height of Cuboid: 5.0<br/>
+Valume of Cuboid is 358.0
 </pre>
                 </div>
             </div>

@@ -45,16 +45,46 @@
 
                     <p class="fs-5 py-3">55. Write a Java Program to accept number of week’s day (1-7) and print name of the day </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class WeekDays&#123;<br />
+                public static void main(String[] args)&#123;<br />
+                java.util.Scanner input = new java.util.Scanner(System.in);<br />
+                int day;<br />
+                System.out.println("Enter the number of week's days(1-7): ");<br />
+                day=input.nextInt();<br />
+                switch (day) &#123;<br />
+                case 1:<br />
+                System.out.println("Sunday");<br />
+                break;<br />
+                case 2:<br />
+                System.out.println("Monday");<br />
+                break;<br />
+                case 3:<br />
+                System.out.println("Tuesday");<br />
+                break;<br />
+                case 4:<br />
+                System.out.println("Wednesday");<br />
+                break;<br />
+                case 5:<br />
+                System.out.println("Thursday");<br />
+                break;<br />
+                case 6:<br />
+                System.out.println("Friday");<br />
+                break;<br />
+                case 7:<br />
+                System.out.println("Saturday");<br />
+                break;<br />
+                default:<br />
+                System.out.println("Please enter right number.");<br />
+                &#125;<br />
+                &#125;<br />
+                &#125;  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter the number of week's days(1-7): <br> 
+4 <br>
+Wednesday <br>
 </pre>
                 </div>
             </div>

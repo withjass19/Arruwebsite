@@ -45,16 +45,36 @@
 
                     <p class="fs-5 py-3">73. Write a Java program to get a substring of a given string between two specified positions </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.util.Scanner;<br />
+                class SubstringExample&#123;<br />
+                public static void main(String[] args) &#123;<br />
+                Scanner input = new Scanner(System.in);<br />
+
+                System.out.print("Enter a string: ");<br />
+                String originalString = input.nextLine();<br />
+
+                System.out.print("Enter the starting position: ");<br />
+                int startIndex = input.nextInt();<br />
+
+                System.out.print("Enter the ending position: ");<br />
+                int endIndex = input.nextInt();<br />
+
+                if (startIndex &lt; 0 || endIndex &gt; originalString.length() || startIndex &gt; endIndex) &#123;<br />
+                System.out.println("Invalid input. Please check the positions.");<br />
+                &#125; else &#123;<br />
+                String substring = originalString.substring(startIndex, endIndex);<br />
+                System.out.println("Substring: " + substring);<br />
+                &#125;<br />
+                &#125;<br />
+                &#125; 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter a string: Hello <br>
+Enter the starting position: 1 <br>
+Enter the ending position: 3 <br>
+Substring: el <br>
 </pre>
                 </div>
             </div>

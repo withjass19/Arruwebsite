@@ -45,16 +45,29 @@
 
                     <p class="fs-5 py-3">37. Java Program to find volume of cone </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class ValumeOfCone&#123;<br/>
+                double area(double radius, double height)&#123;<br/>
+                return (1/3 * Math.PI * radius * radius * height);<br/>
+                &#125;<br/>
+                &#125;<br/>
+                class Cone&#123;<br/>
+                public static void main(String a[])&#123;<br/>
+                double r = 2;<br/>
+                double h = 5;<br/>
+                System.out.println("Radius of Cone: "+r);<br/>
+                System.out.println("Height of Cone: "+h);<br/>
+                ValumeOfCone obj = new ValumeOfCone();<br/>
+                double ans = obj.area(r,h);<br/>
+                System.out.println("Valume of cone is "+ ans);<br/>
+                &#125;<br/>
+                &#125;
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Radius of Cone: 2.0<br/>
+Height of Cone: 5.0<br/>
+Valume of cone is 50.26548245743669
 </pre>
                 </div>
             </div>

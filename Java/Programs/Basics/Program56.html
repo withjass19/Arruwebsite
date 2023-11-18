@@ -45,16 +45,26 @@
 
                     <p class="fs-5 py-3">56. Write a Java program that takes a year from user and print whether that year is a leap year or not </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class LeapYear&#123;<br />
+                public static void main(String[] args) &#123;<br />
+                java.util.Scanner sc=new java.util.Scanner(System.in);<br />
+                System.out.println("Enter a year:");<br />
+                int year=sc.nextInt();<br />
+                if((year%4==0 && year%100!=0 )|| (year%400==0))&#123;<br />
+                System.out.println(year+" is a leap year.");<br />
+                &#125;<br />
+                else&#123;<br />
+                System.out.print(year + " is not a leap year");<br />
+                &#125;<br />
+                &#125;<br />
+                &#125; 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter a year: <br>
+2024 <br>
+2024 is a leap year. <br>
 </pre>
                 </div>
             </div>

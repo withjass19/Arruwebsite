@@ -45,16 +45,37 @@
 
                     <p class="fs-5 py-3">11. Write a Java program to create an interface Sortable with a method sort (int[] array) that sorts an array of integers in descending order. Create two classes QuickSort and MergeSort that implement the Sortable interface and provide their own implementations of the sort() method. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+class MySQLConnectionExample {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/test";
+        String user = "root";
+        String password = "";
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection(url, user, password);
+
+            if (connection != null) {
+                System.out.println("Connected to the MySQL database");
+                connection.close();
+            }
+        } catch (ClassNotFoundException e) {
+            System.err.println("MySQL JDBC driver not found");
+        } catch (SQLException e) {
+            System.err.println("Connection to the database failed: " + e.getMessage());
+        }
     }
 }
+
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+   <img src="1.png">
 </pre>
                 </div>
             </div>

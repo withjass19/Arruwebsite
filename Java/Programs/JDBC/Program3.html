@@ -45,16 +45,27 @@
 
                     <p class="fs-5 py-3">3. Insert the row in the table in the database from Java API. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.sql.*;
+
+class employee{
+public static void main(String s[]){
+
+try{
+Class.forName("com.mysql.cj.jdbc.Driver");
+Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb","root","");
+
+Statement s1=con.createStatement();
+int x= s1.executeUpdate("insert into users values(8,'test','something@gmail.com')");
+if(x==1){
+System.out.println("Row inserted successfully");}
+}catch(ClassNotFoundException e){System.out.println(e);}
+catch(SQLException e){System.out.println(e);}
+}}   
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    <img src="3.png">
 </pre>
                 </div>
             </div>

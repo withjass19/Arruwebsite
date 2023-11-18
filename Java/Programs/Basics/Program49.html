@@ -45,16 +45,36 @@
 
                     <p class="fs-5 py-3">49. Java Pogram to Calculate Commission Percentage </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.util.Scanner;<br/>
+                class calculateBattingAverage&#123;<br/>
+                public static void main(String[] args) &#123;<br/>
+                Scanner scanner = new Scanner(System.in);<br/>
+
+                System.out.println("Enter the total number of hits:");<br/>
+                int totalHits = scanner.nextInt();<br/>
+
+                System.out.println("Enter the total number of at-bats:");<br/>
+                int totalAtBats = scanner.nextInt();<br/>
+
+                double battingAverage = Average(totalHits, totalAtBats);<br/>
+                System.out.println("The calculated batting average is: " + battingAverage);<br/>
+
+                scanner.close();<br/>
+                &#125;<br/>
+
+                private static double Average(int totalHits, int totalAtBats) &#123;<br/>
+                return (double) totalHits / totalAtBats;<br/>
+                &#125;<br/>
+                &#125;   
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    Enter the total number of hits:<br/>
+    7<br/>
+    Enter the total number of at-bats:<br/>
+    3<br/>
+    The calculated batting average is: 2.3333333333333335
 </pre>
                 </div>
             </div>

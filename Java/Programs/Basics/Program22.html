@@ -45,16 +45,48 @@
 
                     <p class="fs-5 py-3">22. Write a Java program to count the number of even and odd elements in a given array </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.util.Scanner;<br />
+                class CountEvenOdd&#123;<br />
+                public static void main(String[] args) &#123;<br />
+                Scanner scanner = new Scanner(System.in);<br />
+
+                System.out.print("Enter the size of the array: ");<br />
+                int size = scanner.nextInt();<br />
+
+                int[] arr = new int[size];<br />
+
+                System.out.println("Enter the elements of the array:");<br />
+                for (int i = 0; i &lt; size; i++) &#123;<br />
+                arr[i] = scanner.nextInt();<br />
+                &#125;<br />
+
+                int even = 0;<br />
+                int odd = 0;<br /><br />
+
+                for (int i = 0; i &lt; size; i++) &#123;<br />
+                if (arr[i] % 2 == 0) &#123;<br />
+                even++;<br />
+                &#125; else &#123;<br />
+                odd++;<br />
+                &#125;<br />
+                &#125;<br />
+                System.out.println("Number of even elements: " + even);<br />
+                System.out.println("Number of odd elements: " + odd);<br />
+                &#125;<br />
+                &#125;<br /> 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter the size of the array: 5<br />
+Enter the elements of the array:<br />
+1<br />
+2<br />
+4<br />
+6<br />
+8<br />
+Number of even elements: 4<br />
+Number of odd elements: 1
 </pre>
                 </div>
             </div>

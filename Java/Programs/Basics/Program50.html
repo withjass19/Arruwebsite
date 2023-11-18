@@ -45,16 +45,40 @@
 
                     <p class="fs-5 py-3">50. Java Pogram To Find Distance Between Two Points  </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class Calculate_Commission&#123;<br/>
+                float formula(float cp, float a)&#123;<br/>
+                return ((cp/100)*a);<br/>
+                &#125;<br/>
+                &#125;<br/>
+
+                class CommissionValue&#123;<br/>
+                public static void main(String args[])&#123;<br/>
+                float cp;<br/>
+                float a;<br/>
+
+                java.util.Scanner Input = new java.util.Scanner(System.in);<br/>
+
+                System.out.println("Enter the commision percentage: ");<br/>
+                cp = Input.nextFloat();<br/>
+
+                System.out.println("Enter the Amount: ");<br/>
+                a = Input.nextFloat();<br/>
+
+                Calculate_Commission CA = new Calculate_Commission();<br/>
+                float ans = CA.formula(cp,a);<br/>
+
+                System.out.println("Commission amount: "+ans);<br/>
+                &#125;<br/>
+                &#125;  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    Enter the commision percentage:<br/>
+    50<br/>
+    Enter the Amount:<br/>
+    10000<br/>
+    Commission amount: 5000.0
 </pre>
                 </div>
             </div>

@@ -45,16 +45,26 @@
 
                     <p class="fs-5 py-3">34. Java Program to find volume of sphere </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class ValumeOfSphere&#123;<br/>
+                double area(double radius)&#123;<br/>
+                return (4/3 * Math.PI * radius * radius * radius);<br/>
+                &#125;<br/>
+                &#125;<br/>
+                class Sphere&#123;<br/>
+                public static void main(String a[])&#123;<br/>
+                double r = 3;<br/>
+                System.out.println("Radius of Sphere: "+r);<br/>
+                ValumeOfSphere obj = new ValumeOfSphere();<br/>
+                double ans = obj.area(r);<br/>
+                System.out.println("Valume of Sphere is "+ ans);<br/>
+                &#125;<br/>
+                &#125;
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Radius of Sphere: 3.0<br/>
+Valume of Sphere is 113.09733552923255 
 </pre>
                 </div>
             </div>

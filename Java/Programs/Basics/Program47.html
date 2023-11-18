@@ -45,16 +45,41 @@
 
                     <p class="fs-5 py-3">47. Java Program to calculate compound interest </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.util.Scanner; <br>
+                class CGPAPercentageCalculator &#123; <br>
+                public static void main(String[] args) &#123; <br>
+                Scanner input = new Scanner(System.in); <br>
+<br>
+                System.out.print("Enter the number of Subject: "); <br>
+                int numCourses = input.nextInt(); <br>
+<br>
+                double totalCGPA = 0.0; <br>
+                double totalCredits = 0.0; <br>
+<br>
+                for (int i = 1; i &lt;= numCourses; i++) &#123; <br>
+                System.out.printf("Enter CGPA for Subject %d: ", i); <br>
+                double cgpa = input.nextDouble(); <br>
+<br>
+                System.out.printf("Enter Credits for Subject %d: ", i); <br>
+                int credits = input.nextInt(); <br>
+<br>
+                totalCGPA += cgpa * credits; <br>
+                totalCredits += credits; <br>
+                &#125; <br>
+<br>
+                if (totalCredits == 0) &#123; <br>
+                System.out.println("Error: Total credits cannot be zero."); <br>
+                &#125; else &#123; <br>
+                double cgpaPercentage = (totalCGPA / totalCredits) * 10; <br>
+                System.out.printf("CGPA Percentage: %.2f%%\n", cgpaPercentage); <br>
+                &#125; <br>
+                &#125; <br>
+                &#125; 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    
 </pre>
                 </div>
             </div>

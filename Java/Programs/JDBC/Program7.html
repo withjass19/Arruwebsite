@@ -45,16 +45,41 @@
 
                     <p class="fs-5 py-3">7. Create a Scrollable Readonly Resultset and ask the row number from the user and display that row on the screen. </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.sql.*;
+import java.util.Scanner;
+
+class DatabaseManager {
+    public static void main(String[] args) throws ClassNotFoundException {
+       Class.forName("com.mysql.cj.jdbc.Driver");
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/chatTest", "root", "");
+            System.out.println("Connection successfully");
+            Statement st = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet result = st.executeQuery("select * from chats");
+
+            try{
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter row number : ");
+                int row = scanner.nextInt();
+                result.absolute(row);
+                System.out.println("Id = "+result.getInt("id")+ ", username = " + result.getString("username") + ", message = " + result.getString("message"));
+                scanner.close();
+            } catch(NumberFormatException e){
+                System.out.println("Exception: " + e.getMessage());
+            }
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println("SQL Exception: " + e.getMessage());
+        } catch (Exception e){
+            System.out.println("Exception: " + e.getMessage());
+        }
     }
-}
+} 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    <img src="7.png">
 </pre>
                 </div>
             </div>

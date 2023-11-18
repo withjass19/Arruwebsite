@@ -45,16 +45,30 @@
 
                     <p class="fs-5 py-3">54. Write a Java program to test a number is positive or negative </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class TestNumber&#123;<br />
+                public static void main(String args[])&#123;<br />
+                int num;<br />
+                java.util.Scanner sc = new java.util.Scanner(System.in);<br />
+                System.out.println("Enter a number: ");<br />
+                num=sc.nextInt();<br />
+                if(num &gt; 0)&#123;<br />
+                System.out.println(num+" is positive.");<br />
+                &#125;<br />
+                else if(num &lt; 0)&#123;<br />
+                System.out.println(num+" is negative.");<br />
+                &#125;<br />
+                else&#123;<br />
+                System.out.println(num+" is zero.");<br />
+                &#125;<br />
+                &#125;<br />
+                &#125;  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter a number: <br> 
+23 <br>
+23 is positive.
 </pre>
                 </div>
             </div>

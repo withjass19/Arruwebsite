@@ -45,16 +45,48 @@
 
                     <p class="fs-5 py-3">57. Write a Java program to input 5 numbers from keyboard and find their sum and average </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class FiveInput&#123;<br />
+                public static void main(String args[])&#123;<br />
+                java.util.Scanner sc=new java.util.Scanner(System.in);<br />
+                int num1,num2,num3,num4,num5;<br />
+                System.out.println("Enter first number: ");<br />
+                num1=sc.nextInt();<br />
+                System.out.println("\nEnter second number: ");<br />
+                num2 = sc.nextInt();<br />
+                System.out.println("\nEnter third number: ");<br />
+                num3 = sc.nextInt();<br />
+                System.out.println("\nEnter fourth number: ");<br />
+                num4 = sc.nextInt();<br />
+                System.out.println("\nEnter fifth number: ");<br />
+                num5 = sc.nextInt();<br />
+
+                int sum = num1+num2+num3+num4+num5;<br />
+                System.out.println("Sum: "+sum);<br />
+
+                double avg = sum/5;<br />
+                System.out.println("Average: "+avg);<br />
+                &#125;<br />
+                &#125;   
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    Enter first number:  <br>
+    1 <br>
+     <br>
+    Enter second number: <br>
+    2 <br>
+     <br>
+    Enter third number: <br>
+    3 <br>
+     <br>
+    Enter fourth number: <br>
+    4 <br>
+    
+    Enter fifth number: <br>
+    5 <br>
+    Sum: 15 <br>
+    Average: 3.0 <br>
 </pre>
                 </div>
             </div>

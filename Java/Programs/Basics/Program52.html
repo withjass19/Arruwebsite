@@ -45,16 +45,38 @@
 
                     <p class="fs-5 py-3">52. Write a Java program to take three numbers from the user and print the greatest number </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class LargestNumber&#123;
+                public static void main(String[] args)&#123;
+                java.util.Scanner input = new java.util.Scanner(System.in);
+                int num1,num2,num3;
+                System.out.println("Enter First number:");
+                num1=input.nextInt();
+                System.out.println("\nEnter Second number:");
+                num2=input.nextInt();
+                System.out.println("\nEnter third number:");
+                num3=input.nextInt();
+                System.out.println("\n\n");
+                if( num1 &gt;= num2 && num1 &gt;= num3)
+                System.out.println(num1 + " is the largest number.");
+
+                else if (num2 &gt;= num1 && num2 &gt;= num3)
+                System.out.println(num2 + " is the largest number.");
+
+                else
+                System.out.println(num3 + " is the largest number.");
+                &#125;
+                &#125;  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    Enter First number: <br>
+    3 <br>
+    Enter Second number: <br>
+    4 <br>
+    Enter third number: <br>
+    1 <br>
+    4 is the largest number. <br>
 </pre>
                 </div>
             </div>

@@ -45,16 +45,27 @@
 
                     <p class="fs-5 py-3">64. Write a Java program that reads an positive integer and count the number of digits </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Scanner;<br />
+class CountDigits&#123;<br />
+public static void main(String[] args) &#123;<br />
+Scanner scanner = new Scanner(System.in);<br />
+System.out.print("Enter a positive integer: ");<br />
+int num = scanner.nextInt();<br />
+if (num &lt; 0) &#123;<br />
+System.out.println("Please enter a positive integer.");<br />
+&#125; else &#123;<br />
+String numStr = Integer.toString(num);<br />
+int digits = numStr.length();<br />
+System.out.println("Number of digits: " + digits);<br />
+&#125;<br />
+&#125;<br />
+&#125;
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter a positive integer: 123 <br>
+Number of digits: 3
 </pre>
                 </div>
             </div>

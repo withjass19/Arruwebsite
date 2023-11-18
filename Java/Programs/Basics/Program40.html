@@ -45,16 +45,27 @@
 
                     <p class="fs-5 py-3">40. Java program to find surface area of cube </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class AreaOfCube&#123;<br/>
+                double area(double s)&#123;<br/>
+                double a = 6*Math.pow(s,2);<br/>
+                return a;<br/>
+                &#125;<br/>
+                &#125;<br/>
+                class Cube&#123;<br/>
+                public static void main(String a[])&#123;<br/>
+                double s = 10;<br/>
+                System.out.println("side of CUbe: "+s);<br/>
+                AreaOfCube obj = new AreaOfCube();<br/>
+                double ans = obj.area(s);<br/>
+                System.out.println("Area of CUbe is "+ ans);<br/>
+                &#125;<br/>
+                &#125; 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+side of CUbe: 10.0<br/>
+Area of CUbe is 600.0
 </pre>
                 </div>
             </div>

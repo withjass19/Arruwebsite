@@ -45,16 +45,23 @@
 
                     <p class="fs-5 py-3">33. Java Program to find area of Prism </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class Squre_Prism&#123;<br/>
+                public static double Prism_Area(int side, int height)&#123;<br/>
+                double SA = 2*side*side + 4*side*height;<br/>
+                return SA;<br/>
+                &#125;<br/>
+
+                public static void main(String args[])&#123;<br/>
+                int s = 7,<br/>
+                h = 11;<br/>
+                System.out.println("The area of the squre prism is: " + Prism_Area(s,h));<br/>
+                &#125;<br/>
+                &#125;<br/>   
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+The area of the squre prism is: 406.0
 </pre>
                 </div>
             </div>

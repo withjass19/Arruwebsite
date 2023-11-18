@@ -45,16 +45,38 @@
 
                     <p class="fs-5 py-3">44. Java program to find factorial of any number </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+import java.util.Scanner;<br/>
+class SumOfN_Numbers&#123;<br/>
+public static void main(String[] args) &#123;<br/>
+int sum = 0;<br/>
+Scanner Input = new Scanner (System.in);<br/>
+System.out.println("Enter the number of terms you want sum");<br/>
+int n=Input.nextInt();<br/>
+int arr[] = new int[n];<br/>
+System.out.println("enter the "+n+" numbers ");<br/>
+for(int i=0;i&lt;n;i++)&#123;<br/>
+System.out.print("Enter number "+(i+1)+" : ");<br/>
+arr[i] = Input.nextInt();<br/>
+&#125;<br/>
+for(int i=0;i&lt;n;i++)&#123;<br/>
+sum +=arr[i];<br/>
+&#125;<br/>
+System.out.println("sum of "+n+" numbers is "+sum);<br/>
+#125;<br/>
+&#125;
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    Enter the number of terms you want sum<br/>
+    5<br/>
+    enter the 5 numbers<br/>
+    Enter number 1 : 12<br/>
+    Enter number 2 : 09<br/>
+    Enter number 3 : 33<br/>
+    Enter number 4 : 04<br/>
+    Enter number 5 : 58<br/>
+    sum of 5 numbers is 116  
 </pre>
                 </div>
             </div>

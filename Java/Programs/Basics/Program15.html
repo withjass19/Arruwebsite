@@ -45,16 +45,20 @@
 
                     <p class="fs-5 py-3">15. Write a Java program to display the system time </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.util.Calendar;<br />
+                class CurrentTime&#123;<br />
+                public static void main(String a[])&#123;<br />
+                Calendar cal = Calendar.getInstance();<br />
+                int hour=cal.get(Calendar.HOUR);<br />
+                int minute=cal.get(Calendar.MINUTE);<br />
+                System.out.println("Current Time is : "+hour+":"+minute);<br />
+                &#125;<br />
+                &#125;
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Current Time is : 8:24
 </pre>
                 </div>
             </div>

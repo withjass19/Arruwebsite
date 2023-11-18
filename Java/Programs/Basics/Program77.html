@@ -45,16 +45,32 @@
 
                     <p class="fs-5 py-3">77. Write a Java program to get the character at the given index within the String </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.util.Scanner;<br />
+                class CharacterAtIndex &#123;<br />
+                public static void main(String[] args) &#123;<br />
+                Scanner input = new Scanner(System.in);<br />
+
+                System.out.print("Enter a string: ");<br />
+                String inputString = input.nextLine();<br />
+
+                System.out.print("Enter the index to get the character: ");<br />
+                int index = input.nextInt();<br />
+
+                if (index &gt;= 0 && index &lt; inputString.length()) &#123;<br />
+                char character = inputString.charAt(index);<br />
+                System.out.println("Character at index " + index + " is: " + character);<br />
+                &#125; else &#123;<br />
+                System.out.println("Invalid index. Please check the index value.");<br />
+                &#125;<br />
+                &#125;<br />
+                &#125; 
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter a string: Hello <br>
+Enter the index to get the character: 3 <br>
+Character at index 3 is: l <br>
 </pre>
                 </div>
             </div>

@@ -45,16 +45,40 @@
 
                     <p class="fs-5 py-3">67. Write a Java program that determines a student’s grade </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                import java.util.Scanner;<br />
+                class CalculateGrade &#123;<br />
+                public static void main(String[] args) &#123;<br />
+                Scanner input = new Scanner(System.in);<br />
+
+                System.out.print("Enter the student's score (0-100): ");<br />
+                int score = input.nextInt();<br />
+
+                if (score &lt; 0 || score &gt; 100) &#123;<br />
+                System.out.println("Invalid score. Please enter a score between 0 and 100.");<br />
+                &#125; else &#123;<br />
+                char grade;<br />
+
+                if (score &gt;= 90) &#123;<br />
+                grade = 'A';<br />
+                &#125; else if (score &gt;= 80) &#123;<br />
+                grade = 'B';<br />
+                &#125; else if (score &gt;= 70) &#123;<br />
+                grade = 'C';<br />
+                &#125; else if (score &gt;= 60) &#123;<br />
+                grade = 'D';<br />
+                &#125; else &#123;<br />
+                grade = 'F';<br />
+                &#125;<br />
+                System.out.println("The student's grade is: " + grade);<br />
+                &#125;<br />
+                &#125;<br />
+                &#125;  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Enter the student's score (0-100): 87 <br>
+The student's grade is: B
 </pre>
                 </div>
             </div>

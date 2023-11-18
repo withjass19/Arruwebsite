@@ -45,16 +45,30 @@
 
                     <p class="fs-5 py-3">61. Write a Java program to display the n terms of odd natural number and their sum </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+ class OddNumbers&#123;<br />
+ public static void main(String args[])&#123;<br />
+ int i, n, sum = 0;<br />
+ System.out.print("Input number of terms is: ");<br />
+ java.util.Scanner input = new java.util.Scanner(System.in);<br />
+n=input.nextInt();<br />
+ System.out.println ("\nThe odd numbers are :");<br />
+ for(i=1;i&lt;=n;i++)&#123;<br />
+ System.out.println (2*i-1);<br />
+ sum+=2*i-1;<br />
+ &#125;<br />
+ System.out.println ("The Sum of odd Natural Number upto " +n+" terms is: " +sum);<br />
+ &#125;<br />
+ &#125;
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Input number of terms is: 4 <br>
+ <br>
+The odd numbers are : <br>
+1 <br>
+3 <br>
+5 <br>
 </pre>
                 </div>
             </div>

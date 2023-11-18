@@ -45,16 +45,28 @@
 
                     <p class="fs-5 py-3">78. Write a java program to remove a particular character from a string </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class RemoveCharacter&#123;<br />
+                public static void main(String args[])&#123;<br />
+                String str = "Hello World!";<br />
+                System.out.println("Original string: "+str);<br />
+                char ch = 'o';<br />
+                StringBuilder sb = new StringBuilder();<br />
+                for (int i = 0; i &lt; str.length(); i++) &#123;<br />
+                char c = str.charAt(i);<br />
+                if(c != ch)&#123;<br />
+                sb.append(c);<br />
+                &#125;      <br />
+                &#125;<br />
+                String result=sb.toString().trim();<br />
+                System.out.print("New string after removing "+result);<br />
+                &#125;<br />
+                &#125;  
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+Original string: Hello World! <br>
+New string after removing Hell Wrld!
 </pre>
                 </div>
             </div>

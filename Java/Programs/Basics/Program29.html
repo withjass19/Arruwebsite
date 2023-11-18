@@ -45,16 +45,28 @@
 
                     <p class="fs-5 py-3">29. Java Program to find area of triangle </p>
             <h4>Code</h4>
-            <pre class="bg-dark text-white p-4 rounded mt-3"><code>import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="bg-dark text-white p-4 rounded mt-3"><code>
+                class AreaOfTriangle&#123;<br />
+                double area(double height, double base)&#123;<br />
+                return 0.5*height*base;<br />
+                &#125;<br />
+                &#125;<br />
+                class Triangle&#123;<br />
+                public static void main(String a[])&#123;<br />
+                double h = 3;<br />
+                double b = 7;<br />
+                System.out.println("Height of triangle: "+h);<br />
+                System.out.println("Base of triangle: "+b);<br />
+                AreaOfTriangle obj = new AreaOfTriangle();<br />
+                System.out.println("Area of triangle is "+obj.area(h,b));<br />
+                &#125;<br />
+                &#125;<br />
 </code></pre>
 <h4 class="py-3">Output</h4>
 <pre class="bg-dark text-white p-4 rounded">
-    Hello World!
+    Height of triangle: 3.0<br />
+    Base of triangle: 7.0<br />
+    Area of triangle is 10.5
 </pre>
                 </div>
             </div>
